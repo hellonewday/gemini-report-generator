@@ -227,15 +227,21 @@ class ReportGenerator:
                     size: landscape;
                     margin: 2.5cm;
                 }}
-
+                
                 body {{
                     font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
                     font-size: 16px;
                     line-height: 1.7;
                     color: #2c3e50;
-                    background-color: #fafafa;
                     margin: 0;
                     padding: 0;
+                }}
+
+                /* Container for content */
+                .container {{
+                    max-width: 1200px;
+                    margin: 0 auto;
+                    padding: 0 2rem;
                 }}
 
                 /* Titles */
@@ -249,7 +255,7 @@ class ReportGenerator:
                     letter-spacing: 0.5px;
                     page-break-after: always;
                 }}
-
+                
                 h2 {{
                     color: #1f618d;
                     font-size: 1.8em;
@@ -257,24 +263,23 @@ class ReportGenerator:
                     margin-bottom: 0.8em;
                     padding-left: 0.5em;
                     border-left: 5px solid #1f618d;
-                    background-color: #ecf0f1;
                     padding: 0.3em 0.6em;
                     page-break-before: always;
                 }}
-
+                
                 h3 {{
                     color: #2980b9;
                     font-size: 1.4em;
                     margin-top: 1.5em;
                     margin-bottom: 0.6em;
                 }}
-
+                
                 /* Paragraphs */
                 p {{
                     text-align: justify;
                     margin-bottom: 1.2em;
                 }}
-
+                
                 /* Tables */
                 table {{
                     width: 100%;
@@ -285,7 +290,7 @@ class ReportGenerator:
                     overflow: hidden;
                     page-break-inside: avoid;
                 }}
-
+                
                 th {{
                     background-color: #154360;
                     color: white;
@@ -293,44 +298,43 @@ class ReportGenerator:
                     text-align: left;
                     font-weight: bold;
                 }}
-
+                
                 td {{
                     padding: 12px;
                     border-bottom: 1px solid #ddd;
                 }}
-
+                
                 tr:nth-child(even) {{
                     background-color: #f4f6f7;
                 }}
-
+                
                 tr:hover {{
                     background-color: #e5e8e8;
                 }}
-
+                
                 /* TOC */
                 .toc {{
-                    background-color: #f4f6f6;
                     padding: 1.5em;
                     margin: 2em 0;
                     border-left: 4px solid #154360;
                     border-radius: 4px;
                     page-break-after: always;
                 }}
-
+                
                 .toc h2 {{
                     margin-top: 0;
                     color: #154360;
                 }}
-
+                
                 .toc ul {{
                     list-style-type: none;
                     padding-left: 1em;
                 }}
-
+                
                 .toc li {{
                     margin: 0.5em 0;
                 }}
-
+                
                 /* Links */
                 a {{
                     color: #1f618d;
@@ -339,7 +343,7 @@ class ReportGenerator:
                 a:hover {{
                     text-decoration: underline;
                 }}
-
+                
                 /* Blockquote */
                 blockquote {{
                     background-color: #f0f3f4;
@@ -348,7 +352,7 @@ class ReportGenerator:
                     font-style: italic;
                     margin: 1.5em 0;
                 }}
-
+                
                 /* Code */
                 code {{
                     background-color: #f0f0f0;
@@ -356,14 +360,14 @@ class ReportGenerator:
                     font-family: 'Courier New', monospace;
                     border-radius: 4px;
                 }}
-
+                
                 pre {{
                     background-color: #f0f0f0;
                     padding: 1em;
                     border-radius: 4px;
                     overflow-x: auto;
                 }}
-
+                
                 /* Images */
                 img {{
                     max-width: 100%;
@@ -404,10 +408,38 @@ class ReportGenerator:
                 .page-break {{
                     page-break-after: always;
                 }}
+
+                /* Media Queries for Responsive Design */
+                @media screen and (max-width: 1200px) {{
+                    .container {{
+                        max-width: 100%;
+                        padding: 0 1.5rem;
+                    }}
+                }}
+
+                @media screen and (max-width: 768px) {{
+                    .container {{
+                        padding: 0 1rem;
+                    }}
+                    
+                    h1 {{
+                        font-size: 2em;
+                    }}
+                    
+                    h2 {{
+                        font-size: 1.6em;
+                    }}
+                    
+                    h3 {{
+                        font-size: 1.2em;
+                    }}
+                }}
             </style>
         </head>
         <body>
-            {content}
+            <div class="container">
+                {content}
+            </div>
         </body>
         </html>
         """
@@ -801,8 +833,8 @@ class ReportGenerator:
             # Generate and add references section
             self.logger.info("📚 Generating References section...")
             references_content = self.generate_references_section(report)
-            md_content += "## References\n\n"
-            md_content += references_content
+            # md_content += "## References\n\n"
+            # md_content += references_content
             
             # Save markdown file
             with open(md_filename, 'w', encoding='utf-8') as f:
