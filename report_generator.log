@@ -3107,3 +3107,1059 @@ C. Glossary of Terms
 2025-05-06 19:29:23,865 - INFO - Saved conversation history to history/conversation_20250506_192607.json
 2025-05-06 19:29:23,866 - INFO - ✨ Polishing content...
 2025-05-06 19:29:23,867 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 22:07:46,616 - INFO - Created directory: history
+2025-05-06 22:07:46,617 - INFO - Created directory: reports
+2025-05-06 22:07:46,621 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 22:08:27,883 - INFO - HTTP Request: POST https://aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/global/publishers/google/models/gemini-2.5-pro-preview-03-25:generateContent "HTTP/1.1 200 OK"
+2025-05-06 22:08:27,886 - INFO - AFC remote call 1 is done.
+2025-05-06 22:08:27,887 - INFO - Saved conversation history to history\conversation_20250506_220746.json
+2025-05-06 22:08:27,897 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 22:08:30,589 - INFO - HTTP Request: POST https://aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/global/publishers/google/models/gemini-2.5-pro-preview-03-25:generateContent "HTTP/1.1 200 OK"
+2025-05-06 22:08:30,590 - INFO - AFC remote call 1 is done.
+2025-05-06 22:08:30,591 - INFO - Saved conversation history to history\conversation_20250506_220746.json
+2025-05-06 22:08:30,593 - INFO - Extracted 6 sections from TOC
+2025-05-06 22:08:30,599 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 22:09:11,390 - INFO - HTTP Request: POST https://aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/global/publishers/google/models/gemini-2.5-pro-preview-03-25:generateContent "HTTP/1.1 200 OK"
+2025-05-06 22:09:11,394 - INFO - AFC remote call 1 is done.
+2025-05-06 22:09:11,397 - INFO - Saved conversation history to history\conversation_20250506_220746.json
+2025-05-06 22:09:11,403 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 22:10:06,244 - INFO - HTTP Request: POST https://aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/global/publishers/google/models/gemini-2.5-pro-preview-03-25:generateContent "HTTP/1.1 200 OK"
+2025-05-06 22:10:06,246 - INFO - AFC remote call 1 is done.
+2025-05-06 22:10:06,248 - INFO - Saved conversation history to history\conversation_20250506_220746.json
+2025-05-06 22:10:06,257 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 22:10:42,719 - INFO - HTTP Request: POST https://aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/global/publishers/google/models/gemini-2.5-pro-preview-03-25:generateContent "HTTP/1.1 200 OK"
+2025-05-06 22:10:42,721 - INFO - AFC remote call 1 is done.
+2025-05-06 22:10:42,723 - INFO - Saved conversation history to history\conversation_20250506_220746.json
+2025-05-06 22:10:42,730 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 22:11:46,647 - INFO - HTTP Request: POST https://aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/global/publishers/google/models/gemini-2.5-pro-preview-03-25:generateContent "HTTP/1.1 200 OK"
+2025-05-06 22:11:46,651 - INFO - AFC remote call 1 is done.
+2025-05-06 22:11:46,653 - INFO - Saved conversation history to history\conversation_20250506_220746.json
+2025-05-06 22:11:46,661 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 22:12:46,274 - INFO - HTTP Request: POST https://aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/global/publishers/google/models/gemini-2.5-pro-preview-03-25:generateContent "HTTP/1.1 200 OK"
+2025-05-06 22:12:46,277 - INFO - AFC remote call 1 is done.
+2025-05-06 22:12:46,278 - INFO - Saved conversation history to history\conversation_20250506_220746.json
+2025-05-06 22:12:46,279 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 22:13:21,447 - INFO - HTTP Request: POST https://aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/global/publishers/google/models/gemini-2.5-pro-preview-03-25:generateContent "HTTP/1.1 200 OK"
+2025-05-06 22:13:21,450 - INFO - AFC remote call 1 is done.
+2025-05-06 22:13:21,452 - INFO - Saved conversation history to history\conversation_20250506_220746.json
+2025-05-06 22:13:21,457 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 22:14:00,006 - INFO - HTTP Request: POST https://aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/global/publishers/google/models/gemini-2.5-pro-preview-03-25:generateContent "HTTP/1.1 200 OK"
+2025-05-06 22:14:00,009 - INFO - AFC remote call 1 is done.
+2025-05-06 22:14:00,015 - INFO - Saved conversation history to history\conversation_20250506_220746.json
+2025-05-06 22:14:00,018 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 22:14:14,197 - INFO - HTTP Request: POST https://aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/global/publishers/google/models/gemini-2.5-pro-preview-03-25:generateContent "HTTP/1.1 200 OK"
+2025-05-06 22:14:14,199 - INFO - AFC remote call 1 is done.
+2025-05-06 22:14:14,201 - INFO - Saved conversation history to history\conversation_20250506_220746.json
+2025-05-06 22:14:14,209 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 22:14:41,686 - INFO - HTTP Request: POST https://aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/global/publishers/google/models/gemini-2.5-pro-preview-03-25:generateContent "HTTP/1.1 200 OK"
+2025-05-06 22:14:41,689 - INFO - AFC remote call 1 is done.
+2025-05-06 22:14:41,691 - INFO - Saved conversation history to history\conversation_20250506_220746.json
+2025-05-06 22:14:41,692 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 22:14:58,998 - INFO - HTTP Request: POST https://aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/global/publishers/google/models/gemini-2.5-pro-preview-03-25:generateContent "HTTP/1.1 200 OK"
+2025-05-06 22:14:59,001 - INFO - AFC remote call 1 is done.
+2025-05-06 22:14:59,003 - INFO - Saved conversation history to history\conversation_20250506_220746.json
+2025-05-06 22:14:59,007 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 22:15:11,291 - INFO - HTTP Request: POST https://aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/global/publishers/google/models/gemini-2.5-pro-preview-03-25:generateContent "HTTP/1.1 200 OK"
+2025-05-06 22:15:11,292 - INFO - AFC remote call 1 is done.
+2025-05-06 22:15:11,295 - INFO - Saved conversation history to history\conversation_20250506_220746.json
+2025-05-06 22:15:11,296 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 22:15:32,226 - INFO - HTTP Request: POST https://aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/global/publishers/google/models/gemini-2.5-pro-preview-03-25:generateContent "HTTP/1.1 200 OK"
+2025-05-06 22:15:32,227 - INFO - AFC remote call 1 is done.
+2025-05-06 22:15:32,231 - INFO - Saved conversation history to history\conversation_20250506_220746.json
+2025-05-06 22:15:32,241 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 22:15:38,299 - INFO - HTTP Request: POST https://aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/global/publishers/google/models/gemini-2.5-pro-preview-03-25:generateContent "HTTP/1.1 200 OK"
+2025-05-06 22:15:38,305 - INFO - AFC remote call 1 is done.
+2025-05-06 22:15:38,306 - INFO - Saved conversation history to history\conversation_20250506_220746.json
+2025-05-06 22:15:38,308 - INFO - Extracted 6 sections from TOC
+2025-05-06 22:24:42,153 - INFO - Created directory: history
+2025-05-06 22:24:42,153 - INFO - Created directory: reports
+2025-05-06 22:24:42,157 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 22:24:44,068 - INFO - HTTP Request: POST https://aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/global/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 404 Not Found"
+2025-05-06 22:24:44,069 - WARNING - Attempt 1 failed: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'Publisher Model `projects/nth-droplet-458903-p4/locations/global/publishers/google/models/gemini-2.5-pro-preview-05-06` not found.', 'status': 'NOT_FOUND'}}
+2025-05-06 22:24:44,070 - INFO - Retrying in 8.5 seconds...
+2025-05-06 22:24:52,540 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 22:24:53,083 - INFO - HTTP Request: POST https://aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/global/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 404 Not Found"
+2025-05-06 22:24:53,084 - WARNING - Attempt 2 failed: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'Publisher Model `projects/nth-droplet-458903-p4/locations/global/publishers/google/models/gemini-2.5-pro-preview-05-06` not found.', 'status': 'NOT_FOUND'}}
+2025-05-06 22:24:53,084 - INFO - Retrying in 6.9 seconds...
+2025-05-06 22:24:59,957 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 22:25:00,490 - INFO - HTTP Request: POST https://aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/global/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 404 Not Found"
+2025-05-06 22:25:00,491 - WARNING - Attempt 3 failed: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'Publisher Model `projects/nth-droplet-458903-p4/locations/global/publishers/google/models/gemini-2.5-pro-preview-05-06` not found.', 'status': 'NOT_FOUND'}}
+2025-05-06 22:25:00,491 - ERROR - All retry attempts failed
+2025-05-06 22:27:32,944 - INFO - Created directory: history
+2025-05-06 22:27:32,944 - INFO - Created directory: reports
+2025-05-06 22:27:32,948 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 22:28:03,611 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 22:28:03,612 - INFO - AFC remote call 1 is done.
+2025-05-06 22:28:03,614 - INFO - Saved conversation history to history\conversation_20250506_222732.json
+2025-05-06 22:28:03,629 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 22:28:43,336 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 22:28:43,347 - INFO - AFC remote call 1 is done.
+2025-05-06 22:28:43,348 - INFO - Saved conversation history to history\conversation_20250506_222732.json
+2025-05-06 22:28:43,352 - INFO - Extracted 6 sections from TOC
+2025-05-06 22:28:43,377 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 22:29:34,018 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 22:29:34,031 - INFO - AFC remote call 1 is done.
+2025-05-06 22:29:34,033 - INFO - Saved conversation history to history\conversation_20250506_222732.json
+2025-05-06 22:29:34,035 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 22:30:25,784 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 22:30:25,791 - INFO - AFC remote call 1 is done.
+2025-05-06 22:30:25,792 - INFO - Saved conversation history to history\conversation_20250506_222732.json
+2025-05-06 22:30:25,799 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 22:31:16,070 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 22:31:16,077 - INFO - AFC remote call 1 is done.
+2025-05-06 22:31:16,081 - INFO - Saved conversation history to history\conversation_20250506_222732.json
+2025-05-06 22:31:16,083 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 22:31:45,471 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 22:31:45,479 - INFO - AFC remote call 1 is done.
+2025-05-06 22:31:45,482 - INFO - Saved conversation history to history\conversation_20250506_222732.json
+2025-05-06 22:31:45,488 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 22:32:50,512 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 22:32:50,520 - INFO - AFC remote call 1 is done.
+2025-05-06 22:32:50,522 - INFO - Saved conversation history to history\conversation_20250506_222732.json
+2025-05-06 22:32:50,524 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 22:33:46,546 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 22:33:46,556 - INFO - AFC remote call 1 is done.
+2025-05-06 22:33:46,558 - INFO - Saved conversation history to history\conversation_20250506_222732.json
+2025-05-06 22:33:46,562 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 22:34:22,183 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 22:34:22,190 - INFO - AFC remote call 1 is done.
+2025-05-06 22:34:22,192 - INFO - Saved conversation history to history\conversation_20250506_222732.json
+2025-05-06 22:34:22,193 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 22:34:43,415 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 22:34:43,423 - INFO - AFC remote call 1 is done.
+2025-05-06 22:34:43,424 - INFO - Saved conversation history to history\conversation_20250506_222732.json
+2025-05-06 22:34:43,431 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 22:35:16,065 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 22:35:16,073 - INFO - AFC remote call 1 is done.
+2025-05-06 22:35:16,075 - INFO - Saved conversation history to history\conversation_20250506_222732.json
+2025-05-06 22:35:16,077 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 22:35:36,094 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 22:35:36,101 - INFO - AFC remote call 1 is done.
+2025-05-06 22:35:36,104 - INFO - Saved conversation history to history\conversation_20250506_222732.json
+2025-05-06 22:35:36,109 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 22:35:58,475 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 22:35:58,477 - INFO - AFC remote call 1 is done.
+2025-05-06 22:35:58,479 - INFO - Saved conversation history to history\conversation_20250506_222732.json
+2025-05-06 22:35:58,485 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 22:36:03,384 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 22:36:03,394 - INFO - AFC remote call 1 is done.
+2025-05-06 22:36:03,398 - INFO - Saved conversation history to history\conversation_20250506_222732.json
+2025-05-06 22:36:03,403 - INFO - Extracted 6 sections from TOC
+2025-05-06 22:38:36,972 - INFO - Created directory: history
+2025-05-06 22:38:36,972 - INFO - Created directory: reports
+2025-05-06 22:38:36,976 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 22:39:02,540 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 22:39:02,553 - INFO - AFC remote call 1 is done.
+2025-05-06 22:39:02,555 - INFO - Saved conversation history to history\conversation_20250506_223836.json
+2025-05-06 22:39:02,561 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 22:39:05,150 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 22:39:05,161 - INFO - AFC remote call 1 is done.
+2025-05-06 22:39:05,162 - INFO - Saved conversation history to history\conversation_20250506_223836.json
+2025-05-06 22:39:05,163 - INFO - Extracted 6 sections from TOC
+2025-05-06 22:39:05,168 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 22:39:42,499 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 22:39:42,503 - INFO - AFC remote call 1 is done.
+2025-05-06 22:39:42,504 - INFO - Saved conversation history to history\conversation_20250506_223836.json
+2025-05-06 22:39:42,506 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 22:40:52,147 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 22:40:52,158 - INFO - AFC remote call 1 is done.
+2025-05-06 22:40:52,160 - INFO - Saved conversation history to history\conversation_20250506_223836.json
+2025-05-06 22:40:52,167 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 22:41:24,149 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 22:41:24,163 - INFO - AFC remote call 1 is done.
+2025-05-06 22:41:24,164 - INFO - Saved conversation history to history\conversation_20250506_223836.json
+2025-05-06 22:41:24,166 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 22:41:45,203 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 22:41:45,216 - INFO - AFC remote call 1 is done.
+2025-05-06 22:41:45,217 - INFO - Saved conversation history to history\conversation_20250506_223836.json
+2025-05-06 22:41:45,226 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 22:42:32,211 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 22:42:32,214 - INFO - AFC remote call 1 is done.
+2025-05-06 22:42:32,215 - INFO - Saved conversation history to history\conversation_20250506_223836.json
+2025-05-06 22:42:32,216 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 22:44:02,724 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 22:44:02,727 - INFO - AFC remote call 1 is done.
+2025-05-06 22:44:02,728 - INFO - Saved conversation history to history\conversation_20250506_223836.json
+2025-05-06 22:44:02,734 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 22:44:44,618 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 22:44:44,621 - INFO - AFC remote call 1 is done.
+2025-05-06 22:44:44,623 - INFO - Saved conversation history to history\conversation_20250506_223836.json
+2025-05-06 22:44:44,624 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 22:45:51,328 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 22:45:51,331 - INFO - AFC remote call 1 is done.
+2025-05-06 22:45:51,334 - INFO - Saved conversation history to history\conversation_20250506_223836.json
+2025-05-06 22:45:51,339 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 22:46:29,229 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 22:46:29,233 - INFO - AFC remote call 1 is done.
+2025-05-06 22:46:29,234 - INFO - Saved conversation history to history\conversation_20250506_223836.json
+2025-05-06 22:46:29,236 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 22:46:48,092 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 22:46:48,095 - INFO - AFC remote call 1 is done.
+2025-05-06 22:46:48,097 - INFO - Saved conversation history to history\conversation_20250506_223836.json
+2025-05-06 22:46:48,102 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 22:47:19,586 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 22:47:19,595 - INFO - AFC remote call 1 is done.
+2025-05-06 22:47:19,597 - INFO - Saved conversation history to history\conversation_20250506_223836.json
+2025-05-06 22:47:19,609 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 22:47:23,809 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 22:47:23,819 - INFO - AFC remote call 1 is done.
+2025-05-06 22:47:23,823 - INFO - Saved conversation history to history\conversation_20250506_223836.json
+2025-05-06 22:47:23,825 - INFO - Extracted 6 sections from TOC
+2025-05-06 22:59:40,513 - INFO - Created directory: history
+2025-05-06 22:59:40,514 - INFO - Created directory: reports
+2025-05-06 22:59:40,518 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 23:00:14,639 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 23:00:14,641 - INFO - AFC remote call 1 is done.
+2025-05-06 23:00:14,642 - INFO - Saved conversation history to history\conversation_20250506_225940.json
+2025-05-06 23:00:14,644 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 23:00:17,804 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 23:00:17,814 - INFO - AFC remote call 1 is done.
+2025-05-06 23:00:17,814 - INFO - Saved conversation history to history\conversation_20250506_225940.json
+2025-05-06 23:00:17,817 - INFO - Extracted 6 sections from TOC
+2025-05-06 23:00:17,824 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 23:01:19,844 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 23:01:19,848 - INFO - AFC remote call 1 is done.
+2025-05-06 23:01:19,848 - INFO - Saved conversation history to history\conversation_20250506_225940.json
+2025-05-06 23:01:19,850 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 23:01:50,830 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 23:01:50,833 - INFO - AFC remote call 1 is done.
+2025-05-06 23:01:50,834 - INFO - Saved conversation history to history\conversation_20250506_225940.json
+2025-05-06 23:01:50,839 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 23:02:37,954 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 23:02:37,958 - INFO - AFC remote call 1 is done.
+2025-05-06 23:02:37,960 - INFO - Saved conversation history to history\conversation_20250506_225940.json
+2025-05-06 23:02:37,963 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 23:03:07,079 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 23:03:07,082 - INFO - AFC remote call 1 is done.
+2025-05-06 23:03:07,083 - INFO - Saved conversation history to history\conversation_20250506_225940.json
+2025-05-06 23:03:07,090 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 23:03:43,222 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 23:03:43,225 - INFO - AFC remote call 1 is done.
+2025-05-06 23:03:43,226 - INFO - Saved conversation history to history\conversation_20250506_225940.json
+2025-05-06 23:03:43,228 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 23:04:14,486 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 23:04:14,490 - INFO - AFC remote call 1 is done.
+2025-05-06 23:04:14,492 - INFO - Saved conversation history to history\conversation_20250506_225940.json
+2025-05-06 23:04:14,496 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 23:04:34,838 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 23:04:34,842 - INFO - AFC remote call 1 is done.
+2025-05-06 23:04:34,844 - INFO - Saved conversation history to history\conversation_20250506_225940.json
+2025-05-06 23:04:34,846 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 23:04:55,448 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 23:04:55,451 - INFO - AFC remote call 1 is done.
+2025-05-06 23:04:55,453 - INFO - Saved conversation history to history\conversation_20250506_225940.json
+2025-05-06 23:04:55,460 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 23:05:29,941 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 23:05:29,944 - INFO - AFC remote call 1 is done.
+2025-05-06 23:05:29,946 - INFO - Saved conversation history to history\conversation_20250506_225940.json
+2025-05-06 23:05:29,948 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 23:05:50,131 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 23:05:50,134 - INFO - AFC remote call 1 is done.
+2025-05-06 23:05:50,137 - INFO - Saved conversation history to history\conversation_20250506_225940.json
+2025-05-06 23:05:50,148 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 23:06:03,637 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 23:06:03,639 - INFO - AFC remote call 1 is done.
+2025-05-06 23:06:03,641 - INFO - Saved conversation history to history\conversation_20250506_225940.json
+2025-05-06 23:06:03,644 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 23:06:07,858 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 23:06:07,868 - INFO - AFC remote call 1 is done.
+2025-05-06 23:06:07,870 - INFO - Saved conversation history to history\conversation_20250506_225940.json
+2025-05-06 23:06:07,872 - INFO - Extracted 6 sections from TOC
+2025-05-06 23:08:47,950 - INFO - Created directory: history
+2025-05-06 23:08:47,950 - INFO - Created directory: reports
+2025-05-06 23:08:47,954 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 23:09:13,347 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-03-25:generateContent "HTTP/1.1 200 OK"
+2025-05-06 23:09:13,359 - INFO - AFC remote call 1 is done.
+2025-05-06 23:09:13,360 - INFO - Saved conversation history to history\conversation_20250506_230847.json
+2025-05-06 23:09:13,364 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 23:09:15,737 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-03-25:generateContent "HTTP/1.1 200 OK"
+2025-05-06 23:09:15,747 - INFO - AFC remote call 1 is done.
+2025-05-06 23:09:15,747 - INFO - Saved conversation history to history\conversation_20250506_230847.json
+2025-05-06 23:09:15,749 - INFO - Extracted 6 sections from TOC
+2025-05-06 23:09:15,754 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 23:09:50,125 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-03-25:generateContent "HTTP/1.1 200 OK"
+2025-05-06 23:09:50,138 - INFO - AFC remote call 1 is done.
+2025-05-06 23:09:50,139 - INFO - Saved conversation history to history\conversation_20250506_230847.json
+2025-05-06 23:09:50,141 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 23:11:11,917 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-03-25:generateContent "HTTP/1.1 200 OK"
+2025-05-06 23:11:11,928 - INFO - AFC remote call 1 is done.
+2025-05-06 23:11:11,929 - INFO - Saved conversation history to history\conversation_20250506_230847.json
+2025-05-06 23:11:11,934 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 23:11:49,764 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-03-25:generateContent "HTTP/1.1 200 OK"
+2025-05-06 23:11:49,777 - INFO - AFC remote call 1 is done.
+2025-05-06 23:11:49,778 - INFO - Saved conversation history to history\conversation_20250506_230847.json
+2025-05-06 23:11:49,779 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 23:12:13,340 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-03-25:generateContent "HTTP/1.1 200 OK"
+2025-05-06 23:12:13,346 - INFO - AFC remote call 1 is done.
+2025-05-06 23:12:13,347 - INFO - Saved conversation history to history\conversation_20250506_230847.json
+2025-05-06 23:12:13,353 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 23:13:06,668 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-03-25:generateContent "HTTP/1.1 200 OK"
+2025-05-06 23:13:06,673 - INFO - AFC remote call 1 is done.
+2025-05-06 23:13:06,674 - INFO - Saved conversation history to history\conversation_20250506_230847.json
+2025-05-06 23:13:06,679 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 23:13:35,836 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-03-25:generateContent "HTTP/1.1 200 OK"
+2025-05-06 23:13:35,842 - INFO - AFC remote call 1 is done.
+2025-05-06 23:13:35,844 - INFO - Saved conversation history to history\conversation_20250506_230847.json
+2025-05-06 23:13:35,873 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 23:14:10,420 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-03-25:generateContent "HTTP/1.1 200 OK"
+2025-05-06 23:14:10,425 - INFO - AFC remote call 1 is done.
+2025-05-06 23:14:10,440 - INFO - Saved conversation history to history\conversation_20250506_230847.json
+2025-05-06 23:14:10,445 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 23:14:36,159 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-03-25:generateContent "HTTP/1.1 200 OK"
+2025-05-06 23:14:36,165 - INFO - AFC remote call 1 is done.
+2025-05-06 23:14:36,174 - INFO - Saved conversation history to history\conversation_20250506_230847.json
+2025-05-06 23:14:36,181 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 23:15:07,271 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-03-25:generateContent "HTTP/1.1 200 OK"
+2025-05-06 23:15:07,277 - INFO - AFC remote call 1 is done.
+2025-05-06 23:15:07,282 - INFO - Saved conversation history to history\conversation_20250506_230847.json
+2025-05-06 23:15:07,284 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 23:16:01,571 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-03-25:generateContent "HTTP/1.1 200 OK"
+2025-05-06 23:16:01,576 - INFO - AFC remote call 1 is done.
+2025-05-06 23:16:01,578 - INFO - Saved conversation history to history\conversation_20250506_230847.json
+2025-05-06 23:16:01,583 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 23:16:12,109 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-03-25:generateContent "HTTP/1.1 200 OK"
+2025-05-06 23:16:12,110 - INFO - AFC remote call 1 is done.
+2025-05-06 23:16:12,112 - INFO - Saved conversation history to history\conversation_20250506_230847.json
+2025-05-06 23:16:12,116 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 23:16:16,261 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-03-25:generateContent "HTTP/1.1 200 OK"
+2025-05-06 23:16:16,271 - INFO - AFC remote call 1 is done.
+2025-05-06 23:16:16,273 - INFO - Saved conversation history to history\conversation_20250506_230847.json
+2025-05-06 23:16:16,274 - INFO - Extracted 6 sections from TOC
+2025-05-06 23:20:57,077 - INFO - Created directory: history
+2025-05-06 23:20:57,078 - INFO - Created directory: reports
+2025-05-06 23:20:57,078 - INFO - [LANG] Selected language: Korean
+2025-05-06 23:20:57,078 - INFO - [START] Starting new report generation...
+2025-05-06 23:20:57,079 - INFO - [TOC] Creating Table of Contents...
+2025-05-06 23:20:57,079 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 23:21:25,951 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 23:21:25,952 - INFO - AFC remote call 1 is done.
+2025-05-06 23:21:25,953 - INFO - Saved conversation history to history\conversation_20250506_232057.json
+2025-05-06 23:21:25,954 - INFO - [SUCCESS] Table of Contents created successfully
+2025-05-06 23:21:25,954 - INFO - [ANALYZE] Analyzing Table of Contents structure...
+2025-05-06 23:21:25,954 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 23:21:29,527 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 23:21:29,538 - INFO - AFC remote call 1 is done.
+2025-05-06 23:21:29,539 - INFO - Saved conversation history to history\conversation_20250506_232057.json
+2025-05-06 23:21:29,539 - INFO - Extracted title: 프리미엄 카드 시장 리더십 확보를 위한 KB국민은행의 전략적 로드맵: 경쟁 우위 분석 및 미래 성장 전략
+2025-05-06 23:21:29,539 - INFO - Extracted 8 sections from TOC
+2025-05-06 23:21:29,539 - INFO - [TITLE] Report Title: 프리미엄 카드 시장 리더십 확보를 위한 KB국민은행의 전략적 로드맵: 경쟁 우위 분석 및 미래 성장 전략
+2025-05-06 23:21:29,539 - INFO - [PDF] Found 8 sections to process
+2025-05-06 23:21:29,539 - INFO - 
+[START] Processing Section 1/8: I. 서론: 프리미엄 카드 시장의 새로운 지평과 KB국민은행의 기회
+2025-05-06 23:21:29,540 - INFO - [WAIT] Estimated time remaining: 3.8 minutes
+2025-05-06 23:21:29,540 - INFO - [GENERATE] Generating content...
+2025-05-06 23:21:29,540 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 23:22:16,419 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 23:22:16,420 - INFO - AFC remote call 1 is done.
+2025-05-06 23:22:16,421 - INFO - Saved conversation history to history\conversation_20250506_232057.json
+2025-05-06 23:22:16,421 - INFO - [POLISH] Polishing content...
+2025-05-06 23:22:16,422 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 23:23:57,673 - INFO - Created directory: history
+2025-05-06 23:23:57,673 - INFO - Created directory: reports
+2025-05-06 23:23:57,673 - INFO - [LANG] Selected language: Korean
+2025-05-06 23:23:57,673 - INFO - [START] Starting new report generation...
+2025-05-06 23:23:57,674 - INFO - [TOC] Creating Table of Contents...
+2025-05-06 23:23:57,674 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 23:24:31,749 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 23:24:31,762 - INFO - AFC remote call 1 is done.
+2025-05-06 23:24:31,764 - INFO - Saved conversation history to history\conversation_20250506_232357.json
+2025-05-06 23:24:31,764 - INFO - [SUCCESS] Table of Contents created successfully
+2025-05-06 23:24:31,764 - INFO - [ANALYZE] Analyzing Table of Contents structure...
+2025-05-06 23:24:31,765 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 23:24:34,344 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 23:24:34,354 - INFO - AFC remote call 1 is done.
+2025-05-06 23:24:34,355 - INFO - Saved conversation history to history\conversation_20250506_232357.json
+2025-05-06 23:24:34,355 - INFO - Extracted title: 대한민국 프리미엄 카드 시장의 미래: KB국민카드의 전략적 포지셔닝
+2025-05-06 23:24:34,355 - INFO - Extracted 6 sections from TOC
+2025-05-06 23:24:34,356 - INFO - [TITLE] Report Title: 대한민국 프리미엄 카드 시장의 미래: KB국민카드의 전략적 포지셔닝
+2025-05-06 23:24:34,356 - INFO - [PDF] Found 6 sections to process
+2025-05-06 23:24:34,356 - INFO - 
+[TOC] Sections to be processed:
+2025-05-06 23:24:34,356 - INFO -   1. I. 시장 개요 및 주요 동향
+2025-05-06 23:24:34,356 - INFO -   2. II. KB국민은행 프리미엄 카드 상품 경쟁력 분석
+2025-05-06 23:24:34,356 - INFO -   3. III. 주요 경쟁사 프리미엄 카드 전략 비교 분석
+2025-05-06 23:24:34,356 - INFO -   4. IV. 전략적 인사이트 및 미래 트렌드 전망
+2025-05-06 23:24:34,356 - INFO -   5. V. KB국민카드 프리미엄 시장 선도를 위한 전략적 제언
+2025-05-06 23:24:34,356 - INFO -   6. VI. 참고 자료
+2025-05-06 23:24:34,356 - INFO - 
+2025-05-06 23:24:34,356 - INFO - 
+[START] Processing Section 1/6: I. 시장 개요 및 주요 동향
+2025-05-06 23:24:34,356 - INFO - [WAIT] Estimated time remaining: 3.1 minutes
+2025-05-06 23:24:34,356 - INFO - [GENERATE] Generating content...
+2025-05-06 23:24:34,357 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 23:25:19,010 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 23:25:19,012 - INFO - AFC remote call 1 is done.
+2025-05-06 23:25:19,013 - INFO - Saved conversation history to history\conversation_20250506_232357.json
+2025-05-06 23:25:19,013 - INFO - [POLISH] Polishing content...
+2025-05-06 23:25:19,014 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 23:25:43,952 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 23:25:43,955 - INFO - AFC remote call 1 is done.
+2025-05-06 23:25:43,957 - INFO - Saved conversation history to history\conversation_20250506_232357.json
+2025-05-06 23:25:43,957 - INFO - [SUCCESS] Content polished successfully
+2025-05-06 23:25:43,957 - INFO - [SUCCESS] Section 1/6 completed
+2025-05-06 23:25:43,957 - INFO - 
+[START] Processing Section 2/6: II. KB국민은행 프리미엄 카드 상품 경쟁력 분석
+2025-05-06 23:25:43,957 - INFO - [WAIT] Estimated time remaining: 3.5 minutes
+2025-05-06 23:25:43,957 - INFO - [GENERATE] Generating content...
+2025-05-06 23:25:43,957 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 23:26:29,157 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 23:26:29,160 - INFO - AFC remote call 1 is done.
+2025-05-06 23:26:29,162 - INFO - Saved conversation history to history\conversation_20250506_232357.json
+2025-05-06 23:26:29,164 - INFO - [POLISH] Polishing content...
+2025-05-06 23:26:29,167 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 23:28:01,661 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 23:28:01,665 - INFO - AFC remote call 1 is done.
+2025-05-06 23:28:01,667 - INFO - Saved conversation history to history\conversation_20250506_232357.json
+2025-05-06 23:28:01,667 - INFO - [SUCCESS] Content polished successfully
+2025-05-06 23:28:01,667 - INFO - [SUCCESS] Section 2/6 completed
+2025-05-06 23:28:01,667 - INFO - 
+[START] Processing Section 3/6: III. 주요 경쟁사 프리미엄 카드 전략 비교 분석
+2025-05-06 23:28:01,669 - INFO - [WAIT] Estimated time remaining: 4.1 minutes
+2025-05-06 23:28:01,669 - INFO - [GENERATE] Generating content...
+2025-05-06 23:28:01,673 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 23:28:37,232 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 23:28:37,239 - INFO - AFC remote call 1 is done.
+2025-05-06 23:28:37,242 - INFO - Saved conversation history to history\conversation_20250506_232357.json
+2025-05-06 23:28:37,242 - INFO - [POLISH] Polishing content...
+2025-05-06 23:28:37,242 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 23:29:57,738 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 23:29:57,739 - INFO - AFC remote call 1 is done.
+2025-05-06 23:29:57,742 - INFO - Saved conversation history to history\conversation_20250506_232357.json
+2025-05-06 23:29:57,742 - INFO - [SUCCESS] Content polished successfully
+2025-05-06 23:29:57,742 - INFO - [SUCCESS] Section 3/6 completed
+2025-05-06 23:29:57,743 - INFO - 
+[START] Processing Section 4/6: IV. 전략적 인사이트 및 미래 트렌드 전망
+2025-05-06 23:29:57,743 - INFO - [WAIT] Estimated time remaining: 3.0 minutes
+2025-05-06 23:29:57,743 - INFO - [GENERATE] Generating content...
+2025-05-06 23:29:57,744 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 23:30:30,430 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 23:30:30,433 - INFO - AFC remote call 1 is done.
+2025-05-06 23:30:30,435 - INFO - Saved conversation history to history\conversation_20250506_232357.json
+2025-05-06 23:30:30,435 - INFO - [POLISH] Polishing content...
+2025-05-06 23:30:30,435 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 23:30:58,558 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 23:30:58,561 - INFO - AFC remote call 1 is done.
+2025-05-06 23:30:58,563 - INFO - Saved conversation history to history\conversation_20250506_232357.json
+2025-05-06 23:30:58,563 - INFO - [SUCCESS] Content polished successfully
+2025-05-06 23:30:58,563 - INFO - [SUCCESS] Section 4/6 completed
+2025-05-06 23:30:58,563 - INFO - 
+[START] Processing Section 5/6: V. KB국민카드 프리미엄 시장 선도를 위한 전략적 제언
+2025-05-06 23:30:58,564 - INFO - [WAIT] Estimated time remaining: 1.4 minutes
+2025-05-06 23:30:58,564 - INFO - [GENERATE] Generating content...
+2025-05-06 23:30:58,564 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 23:31:31,315 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 23:31:31,318 - INFO - AFC remote call 1 is done.
+2025-05-06 23:31:31,320 - INFO - Saved conversation history to history\conversation_20250506_232357.json
+2025-05-06 23:31:31,320 - INFO - [POLISH] Polishing content...
+2025-05-06 23:31:31,321 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 23:31:54,971 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 23:31:54,975 - INFO - AFC remote call 1 is done.
+2025-05-06 23:31:54,977 - INFO - Saved conversation history to history\conversation_20250506_232357.json
+2025-05-06 23:31:54,977 - INFO - [SUCCESS] Content polished successfully
+2025-05-06 23:31:54,978 - INFO - [SUCCESS] Section 5/6 completed
+2025-05-06 23:31:54,984 - INFO - 
+[START] Processing Section 6/6: VI. 참고 자료
+2025-05-06 23:31:54,985 - INFO - [GENERATE] Generating content...
+2025-05-06 23:31:54,987 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 23:32:14,898 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 23:32:14,899 - INFO - AFC remote call 1 is done.
+2025-05-06 23:32:14,901 - INFO - Saved conversation history to history\conversation_20250506_232357.json
+2025-05-06 23:32:14,902 - INFO - [SKIP] Skipping content polishing for this section (reason: last section)
+2025-05-06 23:32:14,902 - INFO - [SUCCESS] Section 6/6 completed
+2025-05-06 23:32:14,902 - INFO - 
+[COMPLETE] Report generation completed in 8.3 minutes
+2025-05-06 23:32:14,903 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 23:32:18,895 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 23:32:18,905 - INFO - AFC remote call 1 is done.
+2025-05-06 23:32:18,908 - INFO - Saved conversation history to history\conversation_20250506_232357.json
+2025-05-06 23:32:18,909 - INFO - Extracted title: 대한민국 프리미엄 카드 시장의 미래: KB국민카드의 전략적 포지셔닝
+2025-05-06 23:32:18,913 - INFO - Extracted 6 sections from TOC
+2025-05-06 23:32:18,913 - INFO - 
+[FILE] Saving report: 대한민국 프리미엄 카드 시장의 미래: KB국민카드의 전략적 포지셔닝
+2025-05-06 23:32:18,915 - INFO - [SUCCESS] File saved: reports\credit_card_analysis_20250506_233214.md
+2025-05-06 23:32:18,916 - INFO - 🔄 Converting to HTML...
+2025-05-06 23:32:19,017 - INFO - [SUCCESS] File saved: reports\credit_card_analysis_20250506_233214.html
+2025-05-06 23:32:19,019 - INFO - 🔄 Converting to PDF...
+2025-05-06 23:32:20,001 - INFO - [SUCCESS] PDF generated: reports\credit_card_analysis_20250506_233214.pdf
+2025-05-06 23:32:20,001 - INFO - 
+[COMPLETE] Report generation complete!
+2025-05-06 23:32:20,001 - INFO - [FILE] Markdown file: reports\credit_card_analysis_20250506_233214.md
+2025-05-06 23:32:20,002 - INFO - [LANG] HTML file: reports\credit_card_analysis_20250506_233214.html
+2025-05-06 23:32:20,002 - INFO - [PDF] PDF file: reports\credit_card_analysis_20250506_233214.pdf
+2025-05-06 23:43:55,547 - INFO - Created directory: history
+2025-05-06 23:43:55,548 - INFO - Created directory: reports
+2025-05-06 23:43:55,548 - INFO - [LANG] Selected language: Korean
+2025-05-06 23:43:55,549 - INFO - [START] Starting new report generation...
+2025-05-06 23:43:55,549 - INFO - [TOC] Creating Table of Contents...
+2025-05-06 23:43:55,549 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 23:44:30,610 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 23:44:30,612 - INFO - AFC remote call 1 is done.
+2025-05-06 23:44:30,613 - INFO - Saved conversation history to history\conversation_20250506_234355.json
+2025-05-06 23:44:30,613 - INFO - [SUCCESS] Table of Contents created successfully
+2025-05-06 23:44:30,613 - INFO - [ANALYZE] Analyzing Table of Contents structure...
+2025-05-06 23:44:30,613 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 23:44:33,089 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 23:44:33,099 - INFO - AFC remote call 1 is done.
+2025-05-06 23:44:33,104 - INFO - Saved conversation history to history\conversation_20250506_234355.json
+2025-05-06 23:44:33,104 - INFO - Extracted title: 프리미엄 카드 시장 리더십 확보 전략: 경쟁 우위 분석 및 미래 성장 동력
+2025-05-06 23:44:33,105 - INFO - Extracted 6 sections from TOC
+2025-05-06 23:44:33,105 - INFO - [TITLE] Report Title: 프리미엄 카드 시장 리더십 확보 전략: 경쟁 우위 분석 및 미래 성장 동력
+2025-05-06 23:44:33,105 - INFO - [PDF] Found 6 sections to process
+2025-05-06 23:44:33,105 - INFO - 
+[TOC] Sections to be processed:
+2025-05-06 23:44:33,105 - INFO -   1. I. 프리미엄 신용카드 시장 환경 분석 및 주요 동향
+2025-05-06 23:44:33,105 - INFO -   2. II. KB국민카드 프리미엄 상품 경쟁력 진단
+2025-05-06 23:44:33,106 - INFO -   3. III. 주요 경쟁사 프리미엄 카드 전략 비교 분석
+2025-05-06 23:44:33,106 - INFO -   4. IV. 전략적 통찰 및 시장 트렌드 전망
+2025-05-06 23:44:33,106 - INFO -   5. V. KB국민카드 프리미엄 시장 리더십 강화를 위한 핵심 전략 제언
+2025-05-06 23:44:33,106 - INFO -   6. VI. 참고 문헌
+2025-05-06 23:44:33,106 - INFO - 
+2025-05-06 23:44:33,106 - INFO - 
+[START] Processing Section 1/6: I. 프리미엄 신용카드 시장 환경 분석 및 주요 동향
+2025-05-06 23:44:33,107 - INFO - [WAIT] Estimated time remaining: 3.1 minutes
+2025-05-06 23:44:33,107 - INFO - [GENERATE] Generating content...
+2025-05-06 23:44:33,107 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 23:45:17,425 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 23:45:17,428 - INFO - AFC remote call 1 is done.
+2025-05-06 23:45:17,429 - INFO - Saved conversation history to history\conversation_20250506_234355.json
+2025-05-06 23:45:17,429 - INFO - [POLISH] Polishing content...
+2025-05-06 23:45:17,430 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 23:46:30,704 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 23:46:30,707 - INFO - AFC remote call 1 is done.
+2025-05-06 23:46:30,709 - INFO - Saved conversation history to history\conversation_20250506_234355.json
+2025-05-06 23:46:30,709 - INFO - [SUCCESS] Content polished successfully
+2025-05-06 23:46:30,710 - INFO - [SUCCESS] Section 1/6 completed
+2025-05-06 23:46:30,710 - INFO - 
+[START] Processing Section 2/6: II. KB국민카드 프리미엄 상품 경쟁력 진단
+2025-05-06 23:46:30,710 - INFO - [WAIT] Estimated time remaining: 5.2 minutes
+2025-05-06 23:46:30,710 - INFO - [GENERATE] Generating content...
+2025-05-06 23:46:30,710 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 23:47:16,481 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 23:47:16,485 - INFO - AFC remote call 1 is done.
+2025-05-06 23:47:16,486 - INFO - Saved conversation history to history\conversation_20250506_234355.json
+2025-05-06 23:47:16,487 - INFO - [POLISH] Polishing content...
+2025-05-06 23:47:16,487 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 23:48:57,437 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 23:48:57,442 - INFO - AFC remote call 1 is done.
+2025-05-06 23:48:57,444 - INFO - Saved conversation history to history\conversation_20250506_234355.json
+2025-05-06 23:48:57,444 - INFO - [SUCCESS] Content polished successfully
+2025-05-06 23:48:57,445 - INFO - [SUCCESS] Section 2/6 completed
+2025-05-06 23:48:57,446 - INFO - 
+[START] Processing Section 3/6: III. 주요 경쟁사 프리미엄 카드 전략 비교 분석
+2025-05-06 23:48:57,446 - INFO - [WAIT] Estimated time remaining: 5.0 minutes
+2025-05-06 23:48:57,446 - INFO - [GENERATE] Generating content...
+2025-05-06 23:48:57,447 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 23:49:53,634 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 23:49:53,637 - INFO - AFC remote call 1 is done.
+2025-05-06 23:49:53,639 - INFO - Saved conversation history to history\conversation_20250506_234355.json
+2025-05-06 23:49:53,640 - INFO - [POLISH] Polishing content...
+2025-05-06 23:49:53,640 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 23:50:36,193 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 23:50:36,197 - INFO - AFC remote call 1 is done.
+2025-05-06 23:50:36,198 - INFO - Saved conversation history to history\conversation_20250506_234355.json
+2025-05-06 23:50:36,198 - INFO - [SUCCESS] Content polished successfully
+2025-05-06 23:50:36,198 - INFO - [SUCCESS] Section 3/6 completed
+2025-05-06 23:50:36,199 - INFO - 
+[START] Processing Section 4/6: IV. 전략적 통찰 및 시장 트렌드 전망
+2025-05-06 23:50:36,199 - INFO - [WAIT] Estimated time remaining: 3.3 minutes
+2025-05-06 23:50:36,199 - INFO - [GENERATE] Generating content...
+2025-05-06 23:50:36,199 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 23:50:53,121 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 23:50:53,123 - INFO - AFC remote call 1 is done.
+2025-05-06 23:50:53,125 - INFO - Saved conversation history to history\conversation_20250506_234355.json
+2025-05-06 23:50:53,128 - INFO - [POLISH] Polishing content...
+2025-05-06 23:50:53,131 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 23:51:11,778 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 23:51:11,781 - INFO - AFC remote call 1 is done.
+2025-05-06 23:51:11,783 - INFO - Saved conversation history to history\conversation_20250506_234355.json
+2025-05-06 23:51:11,783 - INFO - [SUCCESS] Content polished successfully
+2025-05-06 23:51:11,783 - INFO - [SUCCESS] Section 4/6 completed
+2025-05-06 23:51:11,783 - INFO - 
+[START] Processing Section 5/6: V. KB국민카드 프리미엄 시장 리더십 강화를 위한 핵심 전략 제언
+2025-05-06 23:51:11,784 - INFO - [WAIT] Estimated time remaining: 1.5 minutes
+2025-05-06 23:51:11,784 - INFO - [GENERATE] Generating content...
+2025-05-06 23:51:11,784 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 23:51:35,720 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 23:51:35,723 - INFO - AFC remote call 1 is done.
+2025-05-06 23:51:35,724 - INFO - Saved conversation history to history\conversation_20250506_234355.json
+2025-05-06 23:51:35,725 - INFO - [POLISH] Polishing content...
+2025-05-06 23:51:35,725 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 23:52:30,162 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 23:52:30,165 - INFO - AFC remote call 1 is done.
+2025-05-06 23:52:30,168 - INFO - Saved conversation history to history\conversation_20250506_234355.json
+2025-05-06 23:52:30,168 - INFO - [SUCCESS] Content polished successfully
+2025-05-06 23:52:30,168 - INFO - [SUCCESS] Section 5/6 completed
+2025-05-06 23:52:30,168 - INFO - 
+[START] Processing Section 6/6: VI. 참고 문헌
+2025-05-06 23:52:30,168 - INFO - [GENERATE] Generating content...
+2025-05-06 23:52:30,168 - INFO - [SKIP] Skipping content polishing for this section (reason: last section)
+2025-05-06 23:52:30,168 - INFO - [SUCCESS] Section 6/6 completed
+2025-05-06 23:52:30,168 - INFO - 
+[COMPLETE] Report generation completed in 8.6 minutes
+2025-05-06 23:52:30,168 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 23:52:34,108 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 23:52:34,118 - INFO - AFC remote call 1 is done.
+2025-05-06 23:52:34,120 - INFO - Saved conversation history to history\conversation_20250506_234355.json
+2025-05-06 23:52:34,121 - INFO - Extracted title: 프리미엄 카드 시장 리더십 확보 전략: 경쟁 우위 분석 및 미래 성장 동력
+2025-05-06 23:52:34,121 - INFO - Extracted 6 sections from TOC
+2025-05-06 23:52:34,121 - INFO - 
+[FILE] Saving report: 프리미엄 카드 시장 리더십 확보 전략: 경쟁 우위 분석 및 미래 성장 동력
+2025-05-06 23:52:34,123 - INFO - [SUCCESS] File saved: reports\credit_card_analysis_20250506_235230.md
+2025-05-06 23:52:34,123 - INFO - 🔄 Converting to HTML...
+2025-05-06 23:52:34,160 - INFO - [SUCCESS] File saved: reports\credit_card_analysis_20250506_235230.html
+2025-05-06 23:52:34,160 - INFO - 🔄 Converting to PDF...
+2025-05-06 23:52:35,204 - INFO - [SUCCESS] PDF generated: reports\credit_card_analysis_20250506_235230.pdf
+2025-05-06 23:52:35,204 - INFO - 
+[COMPLETE] Report generation complete!
+2025-05-06 23:52:35,204 - INFO - [FILE] Markdown file: reports\credit_card_analysis_20250506_235230.md
+2025-05-06 23:52:35,204 - INFO - [LANG] HTML file: reports\credit_card_analysis_20250506_235230.html
+2025-05-06 23:52:35,205 - INFO - [PDF] PDF file: reports\credit_card_analysis_20250506_235230.pdf
+2025-05-06 23:54:50,139 - INFO - Created directory: history
+2025-05-06 23:54:50,140 - INFO - Created directory: reports
+2025-05-06 23:54:50,140 - INFO - [LANG] Selected language: Korean
+2025-05-06 23:54:50,140 - INFO - [START] Starting new report generation...
+2025-05-06 23:54:50,140 - INFO - [TOC] Creating Table of Contents...
+2025-05-06 23:54:50,140 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 23:55:11,434 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 23:55:11,447 - INFO - AFC remote call 1 is done.
+2025-05-06 23:55:11,448 - INFO - Saved conversation history to history\conversation_20250506_235450.json
+2025-05-06 23:55:11,448 - INFO - [SUCCESS] Table of Contents created successfully
+2025-05-06 23:55:11,449 - INFO - [ANALYZE] Analyzing Table of Contents structure...
+2025-05-06 23:55:11,449 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 23:55:13,730 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 23:55:13,738 - INFO - AFC remote call 1 is done.
+2025-05-06 23:55:13,740 - INFO - Saved conversation history to history\conversation_20250506_235450.json
+2025-05-06 23:55:13,741 - INFO - Extracted title: 프리미엄 카드 시장 리더십 확보를 위한 KB국민카드 경쟁 전략 분석
+2025-05-06 23:55:13,742 - INFO - Extracted 6 sections from TOC
+2025-05-06 23:55:13,742 - INFO - [TITLE] Report Title: 프리미엄 카드 시장 리더십 확보를 위한 KB국민카드 경쟁 전략 분석
+2025-05-06 23:55:13,742 - INFO - [PDF] Found 6 sections to process
+2025-05-06 23:55:13,743 - INFO - 
+[TOC] Sections to be processed:
+2025-05-06 23:55:13,743 - INFO -   1. I. 국내 프리미엄 카드 시장 동향 및 경쟁 구도
+2025-05-06 23:55:13,744 - INFO -   2. II. KB국민카드 프리미엄 상품 경쟁력 분석
+2025-05-06 23:55:13,744 - INFO -   3. III. 주요 경쟁사 프리미엄 카드 상품 비교 분석
+2025-05-06 23:55:13,744 - INFO -   4. IV. 시장 변화에 따른 전략적 통찰 및 미래 전망
+2025-05-06 23:55:13,745 - INFO -   5. V. KB국민카드 프리미엄 시장 경쟁 우위 확보 전략
+2025-05-06 23:55:13,745 - INFO -   6. VI. 참고자료
+2025-05-06 23:55:13,745 - INFO - 
+2025-05-06 23:55:13,748 - INFO - 
+[START] Processing Section 1/6: I. 국내 프리미엄 카드 시장 동향 및 경쟁 구도
+2025-05-06 23:55:13,750 - INFO - [WAIT] Estimated time remaining: 2.0 minutes
+2025-05-06 23:55:13,750 - INFO - [GENERATE] Generating content...
+2025-05-06 23:55:13,751 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 23:55:51,149 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 23:55:51,161 - INFO - AFC remote call 1 is done.
+2025-05-06 23:55:51,162 - INFO - Saved conversation history to history\conversation_20250506_235450.json
+2025-05-06 23:55:51,163 - INFO - [POLISH] Polishing content...
+2025-05-06 23:55:51,167 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 23:57:00,844 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 23:57:00,858 - INFO - AFC remote call 1 is done.
+2025-05-06 23:57:00,859 - INFO - Saved conversation history to history\conversation_20250506_235450.json
+2025-05-06 23:57:00,860 - INFO - [SUCCESS] Content polished successfully
+2025-05-06 23:57:00,860 - INFO - [SUCCESS] Section 1/6 completed
+2025-05-06 23:57:00,860 - INFO - 
+[START] Processing Section 2/6: II. KB국민카드 프리미엄 상품 경쟁력 분석
+2025-05-06 23:57:00,860 - INFO - [WAIT] Estimated time remaining: 4.4 minutes
+2025-05-06 23:57:00,860 - INFO - [GENERATE] Generating content...
+2025-05-06 23:57:00,861 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 23:57:48,904 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-06 23:57:48,907 - INFO - AFC remote call 1 is done.
+2025-05-06 23:57:48,908 - INFO - Saved conversation history to history\conversation_20250506_235450.json
+2025-05-06 23:57:48,909 - INFO - [POLISH] Polishing content...
+2025-05-06 23:57:48,913 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-07 00:01:11,812 - INFO - Created directory: history
+2025-05-07 00:01:11,812 - INFO - Created directory: reports
+2025-05-07 00:01:11,813 - INFO - [LANG] Selected language: Korean
+2025-05-07 00:01:11,813 - INFO - [START] Starting new report generation...
+2025-05-07 00:01:11,813 - INFO - [TOC] Creating Table of Contents...
+2025-05-07 00:01:11,814 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-07 00:02:12,020 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-07 00:02:12,022 - INFO - AFC remote call 1 is done.
+2025-05-07 00:02:12,023 - INFO - Saved conversation history to history\conversation_20250507_000111.json
+2025-05-07 00:02:12,023 - INFO - [SUCCESS] Table of Contents created successfully
+2025-05-07 00:02:12,023 - INFO - [ANALYZE] Analyzing Table of Contents structure...
+2025-05-07 00:02:12,023 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-07 00:02:14,822 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-07 00:02:14,836 - INFO - AFC remote call 1 is done.
+2025-05-07 00:02:14,837 - INFO - Saved conversation history to history\conversation_20250507_000111.json
+2025-05-07 00:02:14,838 - INFO - Extracted title: KB국민카드, 프리미엄 시장 제패를 위한 경쟁 우위 전략: 심층 분석 및 미래 로드맵
+2025-05-07 00:02:14,838 - INFO - Extracted 6 sections from TOC
+2025-05-07 00:02:14,838 - INFO - [TITLE] Report Title: KB국민카드, 프리미엄 시장 제패를 위한 경쟁 우위 전략: 심층 분석 및 미래 로드맵
+2025-05-07 00:02:14,838 - INFO - [PDF] Found 6 sections to process
+2025-05-07 00:02:14,838 - INFO - 
+[TOC] Sections to be processed:
+2025-05-07 00:02:14,838 - INFO -   1. I. 프리미엄 카드 시장 환경 및 주요 동향 분석
+2025-05-07 00:02:14,839 - INFO -   2. II. KB국민카드 프리미엄 상품 경쟁력 심층 분석
+2025-05-07 00:02:14,839 - INFO -   3. III. 주요 경쟁사 프리미엄 카드 전략 비교 분석
+2025-05-07 00:02:14,839 - INFO -   4. IV. 프리미엄 카드 시장 핵심 트렌드 및 전략적 시사점
+2025-05-07 00:02:14,839 - INFO -   5. V. KB국민카드 프리미엄 시장 리더십 확보를 위한 핵심 전략 제언
+2025-05-07 00:02:14,839 - INFO -   6. VI. 참고 자료
+2025-05-07 00:02:14,839 - INFO - 
+2025-05-07 00:02:14,841 - INFO - 
+[START] Processing Section 1/6: I. 프리미엄 카드 시장 환경 및 주요 동향 분석
+2025-05-07 00:02:14,841 - INFO - [WAIT] Estimated time remaining: 5.3 minutes
+2025-05-07 00:02:14,841 - INFO - [GENERATE] Generating content...
+2025-05-07 00:02:14,842 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-07 00:02:57,880 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-07 00:02:57,883 - INFO - AFC remote call 1 is done.
+2025-05-07 00:02:57,884 - INFO - Saved conversation history to history\conversation_20250507_000111.json
+2025-05-07 00:02:57,884 - INFO - [POLISH] Polishing content...
+2025-05-07 00:02:57,884 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-07 00:04:02,432 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-07 00:04:02,435 - INFO - AFC remote call 1 is done.
+2025-05-07 00:04:02,436 - INFO - Saved conversation history to history\conversation_20250507_000111.json
+2025-05-07 00:04:02,436 - INFO - [SUCCESS] Content polished successfully
+2025-05-07 00:04:02,436 - INFO - [SUCCESS] Section 1/6 completed
+2025-05-07 00:04:02,436 - INFO - 
+[START] Processing Section 2/6: II. KB국민카드 프리미엄 상품 경쟁력 심층 분석
+2025-05-07 00:04:02,436 - INFO - [WAIT] Estimated time remaining: 5.7 minutes
+2025-05-07 00:04:02,437 - INFO - [GENERATE] Generating content...
+2025-05-07 00:04:02,437 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-07 00:04:55,244 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-07 00:04:55,249 - INFO - AFC remote call 1 is done.
+2025-05-07 00:04:55,250 - INFO - Saved conversation history to history\conversation_20250507_000111.json
+2025-05-07 00:04:55,250 - INFO - [POLISH] Polishing content...
+2025-05-07 00:04:55,250 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-07 00:05:21,446 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-07 00:05:21,449 - INFO - AFC remote call 1 is done.
+2025-05-07 00:05:21,452 - INFO - Saved conversation history to history\conversation_20250507_000111.json
+2025-05-07 00:05:21,452 - INFO - [SUCCESS] Content polished successfully
+2025-05-07 00:05:21,452 - INFO - [SUCCESS] Section 2/6 completed
+2025-05-07 00:05:21,452 - INFO - 
+[START] Processing Section 3/6: III. 주요 경쟁사 프리미엄 카드 전략 비교 분석
+2025-05-07 00:05:21,452 - INFO - [WAIT] Estimated time remaining: 4.2 minutes
+2025-05-07 00:05:21,453 - INFO - [GENERATE] Generating content...
+2025-05-07 00:05:21,453 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-07 00:06:08,361 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-07 00:06:08,365 - INFO - AFC remote call 1 is done.
+2025-05-07 00:06:08,367 - INFO - Saved conversation history to history\conversation_20250507_000111.json
+2025-05-07 00:06:08,367 - INFO - [POLISH] Polishing content...
+2025-05-07 00:06:08,367 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-07 00:07:15,050 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-07 00:07:15,054 - INFO - AFC remote call 1 is done.
+2025-05-07 00:07:15,056 - INFO - Saved conversation history to history\conversation_20250507_000111.json
+2025-05-07 00:07:15,056 - INFO - [SUCCESS] Content polished successfully
+2025-05-07 00:07:15,056 - INFO - [SUCCESS] Section 3/6 completed
+2025-05-07 00:07:15,056 - INFO - 
+[START] Processing Section 4/6: IV. 프리미엄 카드 시장 핵심 트렌드 및 전략적 시사점
+2025-05-07 00:07:15,056 - INFO - [WAIT] Estimated time remaining: 3.0 minutes
+2025-05-07 00:07:15,056 - INFO - [GENERATE] Generating content...
+2025-05-07 00:07:15,057 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-07 00:08:03,168 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-07 00:08:03,171 - INFO - AFC remote call 1 is done.
+2025-05-07 00:08:03,173 - INFO - Saved conversation history to history\conversation_20250507_000111.json
+2025-05-07 00:08:03,174 - INFO - [POLISH] Polishing content...
+2025-05-07 00:08:03,174 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-07 00:08:17,451 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-07 00:08:17,455 - INFO - AFC remote call 1 is done.
+2025-05-07 00:08:17,457 - INFO - Saved conversation history to history\conversation_20250507_000111.json
+2025-05-07 00:08:17,457 - INFO - [SUCCESS] Content polished successfully
+2025-05-07 00:08:17,457 - INFO - [SUCCESS] Section 4/6 completed
+2025-05-07 00:08:17,458 - INFO - 
+[START] Processing Section 5/6: V. KB국민카드 프리미엄 시장 리더십 확보를 위한 핵심 전략 제언
+2025-05-07 00:08:17,458 - INFO - [WAIT] Estimated time remaining: 1.4 minutes
+2025-05-07 00:08:17,458 - INFO - [GENERATE] Generating content...
+2025-05-07 00:08:17,458 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-07 00:08:51,997 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-07 00:08:52,001 - INFO - AFC remote call 1 is done.
+2025-05-07 00:08:52,003 - INFO - Saved conversation history to history\conversation_20250507_000111.json
+2025-05-07 00:08:52,003 - INFO - [POLISH] Polishing content...
+2025-05-07 00:08:52,003 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-07 00:09:50,645 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-07 00:09:50,649 - INFO - AFC remote call 1 is done.
+2025-05-07 00:09:50,653 - INFO - Saved conversation history to history\conversation_20250507_000111.json
+2025-05-07 00:09:50,655 - INFO - [SUCCESS] Content polished successfully
+2025-05-07 00:09:50,656 - INFO - [SUCCESS] Section 5/6 completed
+2025-05-07 00:09:50,657 - INFO - 
+[START] Processing Section 6/6: VI. 참고 자료
+2025-05-07 00:09:50,657 - INFO - [GENERATE] Generating content...
+2025-05-07 00:09:50,658 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-07 00:10:06,766 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-07 00:10:06,768 - INFO - AFC remote call 1 is done.
+2025-05-07 00:10:06,771 - INFO - Saved conversation history to history\conversation_20250507_000111.json
+2025-05-07 00:10:06,771 - INFO - [SKIP] Skipping content polishing for this section (reason: last section)
+2025-05-07 00:10:06,771 - INFO - [SUCCESS] Section 6/6 completed
+2025-05-07 00:10:06,772 - INFO - 
+[COMPLETE] Report generation completed in 8.9 minutes
+2025-05-07 00:10:06,772 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-07 00:10:13,210 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-07 00:10:13,219 - INFO - AFC remote call 1 is done.
+2025-05-07 00:10:13,225 - INFO - Saved conversation history to history\conversation_20250507_000111.json
+2025-05-07 00:10:13,226 - INFO - Extracted title: KB국민카드, 프리미엄 시장 제패를 위한 경쟁 우위 전략: 심층 분석 및 미래 로드맵
+2025-05-07 00:10:13,226 - INFO - Extracted 6 sections from TOC
+2025-05-07 00:10:13,226 - INFO - 
+[FILE] Saving report: KB국민카드, 프리미엄 시장 제패를 위한 경쟁 우위 전략: 심층 분석 및 미래 로드맵
+2025-05-07 00:10:13,229 - INFO - [SUCCESS] File saved: reports\credit_card_analysis_20250507_001006.md
+2025-05-07 00:10:13,230 - INFO - 🔄 Converting to HTML...
+2025-05-07 00:10:13,316 - INFO - [SUCCESS] File saved: reports\credit_card_analysis_20250507_001006.html
+2025-05-07 00:10:13,317 - INFO - 🔄 Converting to PDF...
+2025-05-07 00:10:14,320 - INFO - [SUCCESS] PDF generated: reports\credit_card_analysis_20250507_001006.pdf
+2025-05-07 00:10:14,321 - INFO - 
+[COMPLETE] Report generation complete!
+2025-05-07 00:10:14,321 - INFO - [FILE] Markdown file: reports\credit_card_analysis_20250507_001006.md
+2025-05-07 00:10:14,321 - INFO - [LANG] HTML file: reports\credit_card_analysis_20250507_001006.html
+2025-05-07 00:10:14,322 - INFO - [PDF] PDF file: reports\credit_card_analysis_20250507_001006.pdf
+2025-05-07 00:11:50,793 - INFO - Created directory: history
+2025-05-07 00:11:50,794 - INFO - Created directory: reports
+2025-05-07 00:11:50,794 - INFO - [LANG] Selected language: English
+2025-05-07 00:11:50,794 - INFO - [START] Starting new report generation...
+2025-05-07 00:11:50,794 - INFO - [TOC] Creating Table of Contents...
+2025-05-07 00:11:50,795 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-07 00:12:18,663 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-07 00:12:18,676 - INFO - AFC remote call 1 is done.
+2025-05-07 00:12:18,677 - INFO - Saved conversation history to history\conversation_20250507_001150.json
+2025-05-07 00:12:18,677 - INFO - [SUCCESS] Table of Contents created successfully
+2025-05-07 00:12:18,677 - INFO - [ANALYZE] Analyzing Table of Contents structure...
+2025-05-07 00:12:18,678 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-07 00:12:21,296 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-07 00:12:21,305 - INFO - AFC remote call 1 is done.
+2025-05-07 00:12:21,306 - INFO - Saved conversation history to history\conversation_20250507_001150.json
+2025-05-07 00:12:21,306 - INFO - Extracted title: Ascendancy in Affluence: A Strategic Blueprint for Kookmin Bank's Premium Credit Card Leadership
+2025-05-07 00:12:21,306 - INFO - Extracted 6 sections from TOC
+2025-05-07 00:12:21,306 - INFO - [TITLE] Report Title: Ascendancy in Affluence: A Strategic Blueprint for Kookmin Bank's Premium Credit Card Leadership
+2025-05-07 00:12:21,306 - INFO - [PDF] Found 6 sections to process
+2025-05-07 00:12:21,307 - INFO - 
+[TOC] Sections to be processed:
+2025-05-07 00:12:21,307 - INFO -   1. I. The Premium Credit Market: An Overview
+2025-05-07 00:12:21,307 - INFO -   2. II. Kookmin Bank's Premium Portfolio: A Deep Dive
+2025-05-07 00:12:21,307 - INFO -   3. III. Competitive Benchmarking: Strategies of Key Players
+2025-05-07 00:12:21,307 - INFO -   4. IV. Unlocking Future Growth: Strategic Insights and Emerging Trends
+2025-05-07 00:12:21,307 - INFO -   5. V. Charting the Course: Strategic Recommendations for Market Leadership
+2025-05-07 00:12:21,307 - INFO -   6. VI. References
+2025-05-07 00:12:21,307 - INFO - 
+2025-05-07 00:12:21,307 - INFO - 
+[START] Processing Section 1/6: I. The Premium Credit Market: An Overview
+2025-05-07 00:12:21,307 - INFO - [WAIT] Estimated time remaining: 2.5 minutes
+2025-05-07 00:12:21,308 - INFO - [GENERATE] Generating content...
+2025-05-07 00:12:21,308 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-07 00:13:00,201 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-07 00:13:00,211 - INFO - AFC remote call 1 is done.
+2025-05-07 00:13:00,212 - INFO - Saved conversation history to history\conversation_20250507_001150.json
+2025-05-07 00:13:00,212 - INFO - [POLISH] Polishing content...
+2025-05-07 00:13:00,212 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-07 00:13:53,511 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-07 00:13:53,514 - INFO - AFC remote call 1 is done.
+2025-05-07 00:13:53,516 - INFO - Saved conversation history to history\conversation_20250507_001150.json
+2025-05-07 00:13:53,516 - INFO - [SUCCESS] Content polished successfully
+2025-05-07 00:13:53,516 - INFO - [SUCCESS] Section 1/6 completed
+2025-05-07 00:13:53,516 - INFO - 
+[START] Processing Section 2/6: II. Kookmin Bank's Premium Portfolio: A Deep Dive
+2025-05-07 00:13:53,516 - INFO - [WAIT] Estimated time remaining: 4.1 minutes
+2025-05-07 00:13:53,516 - INFO - [GENERATE] Generating content...
+2025-05-07 00:13:53,517 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-07 00:14:22,016 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-07 00:14:22,021 - INFO - AFC remote call 1 is done.
+2025-05-07 00:14:22,023 - INFO - Saved conversation history to history\conversation_20250507_001150.json
+2025-05-07 00:14:22,023 - INFO - [POLISH] Polishing content...
+2025-05-07 00:14:22,023 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-07 00:15:17,067 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-07 00:15:17,071 - INFO - AFC remote call 1 is done.
+2025-05-07 00:15:17,072 - INFO - Saved conversation history to history\conversation_20250507_001150.json
+2025-05-07 00:15:17,072 - INFO - [SUCCESS] Content polished successfully
+2025-05-07 00:15:17,073 - INFO - [SUCCESS] Section 2/6 completed
+2025-05-07 00:15:17,073 - INFO - 
+[START] Processing Section 3/6: III. Competitive Benchmarking: Strategies of Key Players
+2025-05-07 00:15:17,073 - INFO - [WAIT] Estimated time remaining: 3.4 minutes
+2025-05-07 00:15:17,073 - INFO - [GENERATE] Generating content...
+2025-05-07 00:15:17,073 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-07 00:16:04,718 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-07 00:16:04,721 - INFO - AFC remote call 1 is done.
+2025-05-07 00:16:04,723 - INFO - Saved conversation history to history\conversation_20250507_001150.json
+2025-05-07 00:16:04,724 - INFO - [POLISH] Polishing content...
+2025-05-07 00:16:04,724 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-07 00:16:24,936 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-07 00:16:24,939 - INFO - AFC remote call 1 is done.
+2025-05-07 00:16:24,942 - INFO - Saved conversation history to history\conversation_20250507_001150.json
+2025-05-07 00:16:24,944 - INFO - [SUCCESS] Content polished successfully
+2025-05-07 00:16:24,944 - INFO - [SUCCESS] Section 3/6 completed
+2025-05-07 00:16:24,945 - INFO - 
+[START] Processing Section 4/6: IV. Unlocking Future Growth: Strategic Insights and Emerging Trends
+2025-05-07 00:16:24,945 - INFO - [WAIT] Estimated time remaining: 2.3 minutes
+2025-05-07 00:16:24,945 - INFO - [GENERATE] Generating content...
+2025-05-07 00:16:24,946 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-07 00:16:59,050 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-07 00:16:59,054 - INFO - AFC remote call 1 is done.
+2025-05-07 00:16:59,055 - INFO - Saved conversation history to history\conversation_20250507_001150.json
+2025-05-07 00:16:59,059 - INFO - [POLISH] Polishing content...
+2025-05-07 00:16:59,060 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-07 00:17:16,281 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-07 00:17:16,285 - INFO - AFC remote call 1 is done.
+2025-05-07 00:17:16,287 - INFO - Saved conversation history to history\conversation_20250507_001150.json
+2025-05-07 00:17:16,288 - INFO - [SUCCESS] Content polished successfully
+2025-05-07 00:17:16,289 - INFO - [SUCCESS] Section 4/6 completed
+2025-05-07 00:17:16,289 - INFO - 
+[START] Processing Section 5/6: V. Charting the Course: Strategic Recommendations for Market Leadership
+2025-05-07 00:17:16,289 - INFO - [WAIT] Estimated time remaining: 1.1 minutes
+2025-05-07 00:17:16,290 - INFO - [GENERATE] Generating content...
+2025-05-07 00:17:16,291 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-07 00:17:50,889 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-07 00:17:50,892 - INFO - AFC remote call 1 is done.
+2025-05-07 00:17:50,895 - INFO - Saved conversation history to history\conversation_20250507_001150.json
+2025-05-07 00:17:50,895 - INFO - [POLISH] Polishing content...
+2025-05-07 00:17:50,895 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-07 00:18:07,506 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-07 00:18:07,510 - INFO - AFC remote call 1 is done.
+2025-05-07 00:18:07,516 - INFO - Saved conversation history to history\conversation_20250507_001150.json
+2025-05-07 00:18:07,517 - INFO - [SUCCESS] Content polished successfully
+2025-05-07 00:18:07,517 - INFO - [SUCCESS] Section 5/6 completed
+2025-05-07 00:18:07,518 - INFO - 
+[START] Processing Section 6/6: VI. References
+2025-05-07 00:18:07,519 - INFO - [GENERATE] Generating content...
+2025-05-07 00:18:07,520 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-07 00:18:31,237 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-07 00:18:31,239 - INFO - AFC remote call 1 is done.
+2025-05-07 00:18:31,241 - INFO - Saved conversation history to history\conversation_20250507_001150.json
+2025-05-07 00:18:31,241 - INFO - [SKIP] Skipping content polishing for this section (reason: last section)
+2025-05-07 00:18:31,241 - INFO - [SUCCESS] Section 6/6 completed
+2025-05-07 00:18:31,242 - INFO - 
+[COMPLETE] Report generation completed in 6.7 minutes
+2025-05-07 00:18:31,242 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-07 00:18:35,595 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-07 00:18:35,604 - INFO - AFC remote call 1 is done.
+2025-05-07 00:18:35,607 - INFO - Saved conversation history to history\conversation_20250507_001150.json
+2025-05-07 00:18:35,607 - INFO - Extracted title: Ascendancy in Affluence: A Strategic Blueprint for Kookmin Bank's Premium Credit Card Leadership
+2025-05-07 00:18:35,611 - INFO - Extracted 6 sections from TOC
+2025-05-07 00:18:35,612 - INFO - 
+[FILE] Saving report: Ascendancy in Affluence: A Strategic Blueprint for Kookmin Bank's Premium Credit Card Leadership
+2025-05-07 00:18:35,619 - INFO - [SUCCESS] File saved: reports\credit_card_analysis_20250507_001831.md
+2025-05-07 00:18:35,621 - INFO - 🔄 Converting to HTML...
+2025-05-07 00:18:35,757 - INFO - [SUCCESS] File saved: reports\credit_card_analysis_20250507_001831.html
+2025-05-07 00:18:35,758 - INFO - 🔄 Converting to PDF...
+2025-05-07 00:18:36,566 - INFO - [SUCCESS] PDF generated: reports\credit_card_analysis_20250507_001831.pdf
+2025-05-07 00:18:36,567 - INFO - 
+[COMPLETE] Report generation complete!
+2025-05-07 00:18:36,568 - INFO - [FILE] Markdown file: reports\credit_card_analysis_20250507_001831.md
+2025-05-07 00:18:36,568 - INFO - [LANG] HTML file: reports\credit_card_analysis_20250507_001831.html
+2025-05-07 00:18:36,569 - INFO - [PDF] PDF file: reports\credit_card_analysis_20250507_001831.pdf
+2025-05-07 00:26:49,405 - INFO - Created directory: history
+2025-05-07 00:26:49,405 - INFO - Created directory: reports
+2025-05-07 00:26:49,406 - INFO - [LANG] Selected language: Vietnamese
+2025-05-07 00:26:49,406 - INFO - [START] Starting new report generation...
+2025-05-07 00:26:49,406 - INFO - [TOC] Creating Table of Contents...
+2025-05-07 00:26:49,406 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-07 00:27:25,752 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-07 00:27:25,753 - INFO - AFC remote call 1 is done.
+2025-05-07 00:27:25,754 - INFO - Saved conversation history to history\conversation_20250507_002649.json
+2025-05-07 00:27:25,755 - INFO - [SUCCESS] Table of Contents created successfully
+2025-05-07 00:27:25,755 - INFO - [ANALYZE] Analyzing Table of Contents structure...
+2025-05-07 00:27:25,755 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-07 00:27:29,270 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-07 00:27:29,281 - INFO - AFC remote call 1 is done.
+2025-05-07 00:27:29,282 - INFO - Saved conversation history to history\conversation_20250507_002649.json
+2025-05-07 00:27:29,282 - INFO - Extracted title: Dẫn Đầu Phân Khúc Thượng Lưu: Phân Tích So Sánh Thẻ Tín Dụng Cao Cấp và Định Hướng Chiến Lược cho Ngân Hàng Kookmin
+2025-05-07 00:27:29,282 - INFO - Extracted 6 sections from TOC
+2025-05-07 00:27:29,282 - INFO - [TITLE] Report Title: Dẫn Đầu Phân Khúc Thượng Lưu: Phân Tích So Sánh Thẻ Tín Dụng Cao Cấp và Định Hướng Chiến Lược cho Ngân Hàng Kookmin
+2025-05-07 00:27:29,282 - INFO - [PDF] Found 6 sections to process
+2025-05-07 00:27:29,282 - INFO - 
+[TOC] Sections to be processed:
+2025-05-07 00:27:29,283 - INFO -   1. I. Tổng Quan và Động Lực Thị Trường Thẻ Tín Dụng Cao Cấp
+2025-05-07 00:27:29,283 - INFO -   2. II. Phân Tích Danh Mục Sản Phẩm Thẻ Tín Dụng Cao Cấp của Ngân Hàng Kookmin
+2025-05-07 00:27:29,283 - INFO -   3. III. Phân Tích Cạnh Tranh Chi Tiết trên Thị Trường Thẻ Cao Cấp
+2025-05-07 00:27:29,284 - INFO -   4. IV. Nhận Diện Cơ Hội, Thách Thức và Xu Hướng Chiến Lược
+2025-05-07 00:27:29,284 - INFO -   5. V. Đề Xuất Chiến Lược và Lộ Trình Hành Động
+2025-05-07 00:27:29,284 - INFO -   6. VI. Tài Liệu Tham Khảo
+2025-05-07 00:27:29,284 - INFO - 
+2025-05-07 00:27:29,285 - INFO - 
+[START] Processing Section 1/6: I. Tổng Quan và Động Lực Thị Trường Thẻ Tín Dụng Cao Cấp
+2025-05-07 00:27:29,285 - INFO - [WAIT] Estimated time remaining: 3.3 minutes
+2025-05-07 00:27:29,285 - INFO - [GENERATE] Generating content...
+2025-05-07 00:27:29,285 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-07 00:28:11,761 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-07 00:28:11,764 - INFO - AFC remote call 1 is done.
+2025-05-07 00:28:11,766 - INFO - Saved conversation history to history\conversation_20250507_002649.json
+2025-05-07 00:28:11,766 - INFO - [POLISH] Polishing content...
+2025-05-07 00:28:11,766 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-07 00:29:15,294 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-07 00:29:15,297 - INFO - AFC remote call 1 is done.
+2025-05-07 00:29:15,299 - INFO - Saved conversation history to history\conversation_20250507_002649.json
+2025-05-07 00:29:15,299 - INFO - [SUCCESS] Content polished successfully
+2025-05-07 00:29:15,299 - INFO - [SUCCESS] Section 1/6 completed
+2025-05-07 00:29:15,299 - INFO - 
+[START] Processing Section 2/6: II. Phân Tích Danh Mục Sản Phẩm Thẻ Tín Dụng Cao Cấp của Ngân Hàng Kookmin
+2025-05-07 00:29:15,299 - INFO - [WAIT] Estimated time remaining: 4.9 minutes
+2025-05-07 00:29:15,300 - INFO - [GENERATE] Generating content...
+2025-05-07 00:29:15,300 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-07 00:29:57,833 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-07 00:29:57,837 - INFO - AFC remote call 1 is done.
+2025-05-07 00:29:57,839 - INFO - Saved conversation history to history\conversation_20250507_002649.json
+2025-05-07 00:29:57,839 - INFO - [POLISH] Polishing content...
+2025-05-07 00:29:57,840 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-07 00:30:30,680 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-07 00:30:30,683 - INFO - AFC remote call 1 is done.
+2025-05-07 00:30:30,684 - INFO - Saved conversation history to history\conversation_20250507_002649.json
+2025-05-07 00:30:30,684 - INFO - [SUCCESS] Content polished successfully
+2025-05-07 00:30:30,684 - INFO - [SUCCESS] Section 2/6 completed
+2025-05-07 00:30:30,685 - INFO - 
+[START] Processing Section 3/6: III. Phân Tích Cạnh Tranh Chi Tiết trên Thị Trường Thẻ Cao Cấp
+2025-05-07 00:30:30,685 - INFO - [WAIT] Estimated time remaining: 3.7 minutes
+2025-05-07 00:30:30,685 - INFO - [GENERATE] Generating content...
+2025-05-07 00:30:30,685 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-07 00:31:21,691 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-07 00:31:21,694 - INFO - AFC remote call 1 is done.
+2025-05-07 00:31:21,707 - INFO - Saved conversation history to history\conversation_20250507_002649.json
+2025-05-07 00:31:21,707 - INFO - [POLISH] Polishing content...
+2025-05-07 00:31:21,708 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-07 00:32:05,747 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-07 00:32:05,750 - INFO - AFC remote call 1 is done.
+2025-05-07 00:32:05,753 - INFO - Saved conversation history to history\conversation_20250507_002649.json
+2025-05-07 00:32:05,757 - INFO - [SUCCESS] Content polished successfully
+2025-05-07 00:32:05,757 - INFO - [SUCCESS] Section 3/6 completed
+2025-05-07 00:32:05,757 - INFO - 
+[START] Processing Section 4/6: IV. Nhận Diện Cơ Hội, Thách Thức và Xu Hướng Chiến Lược
+2025-05-07 00:32:05,757 - INFO - [WAIT] Estimated time remaining: 2.6 minutes
+2025-05-07 00:32:05,758 - INFO - [GENERATE] Generating content...
+2025-05-07 00:32:05,760 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-07 00:32:28,495 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-07 00:32:28,498 - INFO - AFC remote call 1 is done.
+2025-05-07 00:32:28,501 - INFO - Saved conversation history to history\conversation_20250507_002649.json
+2025-05-07 00:32:28,501 - INFO - [POLISH] Polishing content...
+2025-05-07 00:32:28,501 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-07 00:32:49,354 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-07 00:32:49,357 - INFO - AFC remote call 1 is done.
+2025-05-07 00:32:49,372 - INFO - Saved conversation history to history\conversation_20250507_002649.json
+2025-05-07 00:32:49,372 - INFO - [SUCCESS] Content polished successfully
+2025-05-07 00:32:49,373 - INFO - [SUCCESS] Section 4/6 completed
+2025-05-07 00:32:49,374 - INFO - 
+[START] Processing Section 5/6: V. Đề Xuất Chiến Lược và Lộ Trình Hành Động
+2025-05-07 00:32:49,374 - INFO - [WAIT] Estimated time remaining: 1.2 minutes
+2025-05-07 00:32:49,377 - INFO - [GENERATE] Generating content...
+2025-05-07 00:32:49,383 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-07 00:33:37,082 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-07 00:33:37,085 - INFO - AFC remote call 1 is done.
+2025-05-07 00:33:37,088 - INFO - Saved conversation history to history\conversation_20250507_002649.json
+2025-05-07 00:33:37,088 - INFO - [POLISH] Polishing content...
+2025-05-07 00:33:37,089 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-07 00:34:11,122 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-07 00:34:11,128 - INFO - AFC remote call 1 is done.
+2025-05-07 00:34:11,132 - INFO - Saved conversation history to history\conversation_20250507_002649.json
+2025-05-07 00:34:11,133 - INFO - [SUCCESS] Content polished successfully
+2025-05-07 00:34:11,133 - INFO - [SUCCESS] Section 5/6 completed
+2025-05-07 00:34:11,133 - INFO - 
+[START] Processing Section 6/6: VI. Tài Liệu Tham Khảo
+2025-05-07 00:34:11,133 - INFO - [GENERATE] Generating content...
+2025-05-07 00:34:11,134 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-07 00:34:55,639 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-07 00:34:55,642 - INFO - AFC remote call 1 is done.
+2025-05-07 00:34:55,652 - INFO - Saved conversation history to history\conversation_20250507_002649.json
+2025-05-07 00:34:55,654 - INFO - [SKIP] Skipping content polishing for this section (reason: last section)
+2025-05-07 00:34:55,654 - INFO - [SUCCESS] Section 6/6 completed
+2025-05-07 00:34:55,654 - INFO - 
+[COMPLETE] Report generation completed in 8.1 minutes
+2025-05-07 00:34:55,655 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-07 00:34:59,900 - INFO - HTTP Request: POST https://us-central1-aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/us-central1/publishers/google/models/gemini-2.5-pro-preview-05-06:generateContent "HTTP/1.1 200 OK"
+2025-05-07 00:34:59,910 - INFO - AFC remote call 1 is done.
+2025-05-07 00:34:59,917 - INFO - Saved conversation history to history\conversation_20250507_002649.json
+2025-05-07 00:34:59,917 - INFO - Extracted title: Dẫn Đầu Phân Khúc Thượng Lưu: Phân Tích So Sánh Thẻ Tín Dụng Cao Cấp và Định Hướng Chiến Lược cho Ngân Hàng Kookmin
+2025-05-07 00:34:59,918 - INFO - Extracted 6 sections from TOC
+2025-05-07 00:34:59,919 - INFO - 
+[FILE] Saving report: Dẫn Đầu Phân Khúc Thượng Lưu: Phân Tích So Sánh Thẻ Tín Dụng Cao Cấp và Định Hướng Chiến Lược cho Ngân Hàng Kookmin
+2025-05-07 00:34:59,923 - INFO - [SUCCESS] File saved: reports\credit_card_analysis_20250507_003455.md
+2025-05-07 00:34:59,925 - INFO - 🔄 Converting to HTML...
+2025-05-07 00:35:00,054 - INFO - [SUCCESS] File saved: reports\credit_card_analysis_20250507_003455.html
+2025-05-07 00:35:00,055 - INFO - 🔄 Converting to PDF...
+2025-05-07 00:35:00,819 - INFO - [SUCCESS] PDF generated: reports\credit_card_analysis_20250507_003455.pdf
+2025-05-07 00:35:00,821 - INFO - 
+[COMPLETE] Report generation complete!
+2025-05-07 00:35:00,821 - INFO - [FILE] Markdown file: reports\credit_card_analysis_20250507_003455.md
+2025-05-07 00:35:00,822 - INFO - [LANG] HTML file: reports\credit_card_analysis_20250507_003455.html
+2025-05-07 00:35:00,822 - INFO - [PDF] PDF file: reports\credit_card_analysis_20250507_003455.pdf

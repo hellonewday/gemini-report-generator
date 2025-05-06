@@ -39,4 +39,7 @@ reports/
 
 # Environment variables
 .env
-.env.local 
+.env.local
+
+# Demo reports
+demo_reports/

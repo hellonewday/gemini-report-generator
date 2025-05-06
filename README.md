@@ -88,30 +88,6 @@ generator = ReportGenerator()
 report, toc = generator.process_report(resume_from="20240325_123456")
 ```
 
-## Project Structure
-
-```
-gemini-report-generator/
-├── docs/                    # Documentation
-├── src/                     # Source code
-│   ├── __init__.py
-│   ├── config.py           # Configuration handling
-│   ├── generator.py        # Main report generator
-│   ├── pdf.py             # PDF generation
-│   ├── prompts.py         # Prompt templates
-│   └── utils.py           # Utility functions
-├── tests/                  # Test suite
-│   ├── __init__.py
-│   ├── test_generator.py
-│   └── test_pdf.py
-├── history/                # Conversation history
-├── reports/               # Generated reports
-├── .env                   # Environment variables
-├── .gitignore
-├── config.yaml           # Configuration file
-├── requirements.txt      # Python dependencies
-└── README.md            # This file
-```
 
 ## Contributing
 

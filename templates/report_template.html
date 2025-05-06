@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Card Comparison Report</title>
+    <style>
+        @page {
+            size: landscape;
+            margin: 2.5cm;
+        }
+
+        /* Reset & Base Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #2c3e50;
+            background-color: #fff;
+        }
+
+        a {
+            color: #1f618d;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Header */
+        header.header {
+            text-align: center;
+            padding: 0.8em 0;
+            background: linear-gradient(135deg, #0b3d0b 0%, #1b5e20 50%, #2e7d32 100%);
+            color: #e8f5e9;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            margin-bottom: 1.5em;
+            width: 100%;
+            border-bottom: 4px solid #1b5e20;
+        }
+
+        .company-name {
+            font-size: 0.9em;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #c8e6c9;
+        }
+
+        .report-title {
+            font-size: 1.8em;
+            margin: 0.3em 0;
+        }
+
+        .header-divider {
+            width: 50px;
+            height: 3px;
+            background: #81c784;
+            margin: 0.6em auto;
+            border-radius: 2px;
+        }
+
+        .header-date {
+            font-size: 0.85em;
+            color: #c8e6c9;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        main h1 {
+            text-align: center;
+            font-size: 2.2em;
+            color: #154360;
+            border-bottom: 4px solid #154360;
+            margin-bottom: 1.5em;
+            padding-bottom: 0.5em;
+        }
+
+        h2 {
+            font-size: 1.7em;
+            color: #1f618d;
+            border-left: 5px solid #1f618d;
+            padding-left: 0.5em;
+            margin-top: 2em;
+        }
+
+        h3 {
+            font-size: 1.3em;
+            color: #2980b9;
+            margin-top: 1.5em;
+        }
+
+        p {
+            text-align: justify;
+            margin-bottom: 1.2em;
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2em 0;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            page-break-inside: avoid;
+        }
+
+        th {
+            background-color: #154360;
+            color: #fff;
+            padding: 14px;
+            text-align: left;
+        }
+
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f4f6f7;
+        }
+
+        tr:hover {
+            background-color: #e5e8e8;
+        }
+
+        /* Table of Contents */
+        .toc {
+            padding: 1.5em;
+            margin: 2em 0;
+            border-left: 4px solid #154360;
+            border-radius: 4px;
+            background: #f9f9f9;
+            page-break-after: always;
+        }
+
+        .toc h2 {
+            margin-top: 0;
+        }
+
+        .toc ul {
+            list-style: none;
+            padding-left: 1em;
+        }
+
+        .toc li {
+            margin: 0.5em 0;
+        }
+
+        /* Quotes & Code */
+        blockquote {
+            border-left: 5px solid #2980b9;
+            background-color: #f0f3f4;
+            padding: 1em 1.5em;
+            font-style: italic;
+            margin: 2em 0;
+        }
+
+        code {
+            background: #f4f4f4;
+            padding: 0.2em 0.4em;
+            font-family: 'Courier New', monospace;
+            border-radius: 4px;
+        }
+
+        pre {
+            background: #f4f4f4;
+            padding: 1em;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+
+        /* Utilities */
+        .page-break {
+            page-break-after: always;
+        }
+
+        .footnotes {
+            font-size: 0.9em;
+            margin-top: 2em;
+            padding-top: 1em;
+            border-top: 1px solid #ccc;
+        }
+
+        img {
+            max-width: 100%;
+            margin: 2em auto;
+            display: block;
+            page-break-inside: avoid;
+        }
+
+        @media screen and (max-width: 768px) {
+            .report-title { font-size: 1.5em; }
+            main h1 { font-size: 1.8em; }
+            h2 { font-size: 1.5em; }
+            h3 { font-size: 1.2em; }
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        {content}
+    </main>
+</body>
+</html>

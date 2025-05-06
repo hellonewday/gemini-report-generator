@@ -32,6 +32,111 @@ DEFAULT_MARKERS = {
 
 SKIP_PARAPHRASING_SECTIONS = ['appendix', 'appendices', 'references']
 
+# Configuration
+DEFAULT_CONFIG = {
+    'max_retries': 3,
+    'retry_delay': 5,
+    'temperature': 0.3,
+    'top_p': 0.95,
+    'max_output_tokens': 65535,
+    'save_history': True,
+    'history_dir': 'history',
+    'reports_dir': 'reports',
+    'log_level': logging.INFO,
+    'model': "gemini-2.5-pro-preview-05-06",
+    'project_id': "nth-droplet-458903-p4",
+    'location': "us-central1",
+    'wkhtmltopdf_path': os.getenv('WKHTMLTOPDF_PATH', r"C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe"),
+    'template_dir': 'templates',
+    'language': 'Vietnamese',  # Default language
+    'primary_bank': 'Kookmin Bank',  # Primary target bank
+    'comparison_banks': ['Hana', 'Woori', 'Shinhan Bank'],  # Banks to compare against
+    
+    # Business-specific parameters
+    'report_type': 'Premium Credit Cards',  # Type of financial product being analyzed
+    'target_audience': ['Chief Financial Officer', 'Executive Leadership Team'],  # Target audience for the report
+    'analysis_focus': [  # Key areas to focus on in the analysis
+        'Product Features and Benefits',
+        'Fee Structure and Pricing',
+        'Rewards and Loyalty Programs',
+        'Digital Banking Experience',
+        'Target Customer Segments',
+        'Market Differentiation'
+    ],
+    'report_sections': [  # Customizable report structure
+        'Market Overview and Dynamics',
+        'Primary Bank Product Analysis',
+        'Competitive Landscape Analysis',
+        'Strategic Insights and Trends',
+        'Strategic Recommendations',
+        'References'
+    ],
+    'writing_style': {  # Customizable writing style parameters
+        'tone': 'Executive and Professional',
+        'formality_level': 'High',
+        'emphasis': ['Strategic Insights', 'Actionable Recommendations']
+    }
+}
+
+# Parameterized prompts
+PROMPT_TEMPLATES = {
+    'system_instruction': """
+    You are a senior financial research analyst and business writer in the executive strategy office of {primary_bank}. 
+    Your task is to produce highly professional, {target_audience}-ready report in {language} language that offers deep 
+    comparative analysis of {report_type} between {primary_bank} and its major competitors based on the latest data at the time of report.
+
+    Your audience includes {target_audience} of {primary_bank}. All reports must meet the highest standards of 
+    {writing_style[emphasis]}. The writing must adopt a {writing_style[tone]} tone with {writing_style[formality_level]} 
+    formality — while maintaining a smooth narrative flow with well-connected paragraphs and transitions.
+
+    Requirements:
+    1. Every factual statement, statistic, or data point must be cited using numbered citations [1], [2], etc.
+    2. Citations must be used for:
+       - Market statistics and figures
+       - Product features and specifications
+       - Fee structures and pricing information
+       - Customer data and demographics
+       - Industry trends and forecasts
+       - Competitor information
+       - Regulatory requirements
+       - Historical data and performance metrics
+    3. Citation Format:
+       - Use square brackets with numbers: [1], [2], [3]
+       - Place citations at the end of the relevant sentence
+       - Multiple citations can be combined: [1, 2]
+       - Citations should be sequential throughout the document
+    4. Source Requirements:
+       - Use only credible financial and banking sources
+       - Include a mix of primary and secondary sources
+       - Ensure sources are recent and relevant
+       - Prefer official bank documents, regulatory filings, and industry reports
+    5. Citation Placement:
+       - Place citations before punctuation marks
+       - Group related citations together
+       - Avoid excessive citations in a single sentence
+       - Ensure citations are properly linked to the References section
+
+    Key aspects to focus on:
+    {analysis_focus}
+    - Cultural and linguistic appropriateness for {language} banking and finance audience.
+    """,
+
+    'table_of_contents': """
+    Create a professional, concise Table of Contents for a strategic report titled with a creative and fitting name. 
+    The report compares {report_type} from {primary_bank}, {comparison_banks}, and is intended for {target_audience} 
+    at {primary_bank}.
+
+    The Table of Contents should follow a narrative structure, suitable for a business magazine or investor presentation, 
+    and use Roman numerals for main sections with clearly indented subsections.
+
+    The TOC must focus on these sections:
+    {report_sections}
+
+    Ensure the Table of Contents is logically organized, reader-friendly, and appropriate for executive-level decision-making. Do not add any introductory phrases or explanations to your response. 
+    Ensure cultural and linguistic appropriateness for a {language} banking and finance audience.
+    """
+}
+
 class ReportSection(NamedTuple):
     """Represents a section in the report."""
     title: str
@@ -42,49 +147,88 @@ class ReportGenerator:
 
     def __init__(self, config: Optional[Dict[str, Any]] = None) -> None:
         """Initialize the ReportGenerator with configuration."""
-        self.client = genai.Client(
-            vertexai=True,
-            project="nth-droplet-458903-p4",
-            location="global",
-        )
-        self.model = "gemini-2.5-pro-preview-03-25"
-        self.system_instruction = self._get_system_instruction()
-        self.config = self._get_default_config()
+        self.config = DEFAULT_CONFIG.copy()
         if config:
             self.config.update(config)
+        
+        self.client = genai.Client(
+            vertexai=True,
+            project=self.config['project_id'],
+            location=self.config['location'],
+        )
+        self.model = self.config['model']
+        self.system_instruction = self._get_system_instruction()
         
         self.conversation_history: List[types.Content] = []
         self.current_report_id: Optional[str] = None
         
         self.setup_logging()
         self.create_directories()
+        
+        # Log the selected language
+        language = self.config.get('language', 'English')
+        self.logger.info(f"🌐 Selected language: {language}")
 
     def _get_system_instruction(self) -> str:
         """Get the system instruction for the Gemini model."""
-        return """You are a senior financial research analyst and business writer in the executive strategy office of Kookmin Bank (KB) in Korea. Your task is to produce highly professional, CFO-ready reports that offer deep comparative analysis of premium credit card products between Kookmin Bank and its major competitors.
-
-        Your audience includes the CFO and C-level executives of Kookmin Bank. All reports must meet the highest standards of strategic clarity, analytical depth, and visual presentation. The writing must adopt an executive tone — formal, insight-driven, and fluent — while also maintaining a smooth narrative flow with well-connected paragraphs and transitions.
-
-        Key aspects to focus on:
-        - Strategic insights and actionable recommendations
-        - Clear comparative analysis with competitors
-        - Data-driven decision support
-        - Professional and engaging presentation
-        - Logical flow and narrative coherence"""
-
-    def _get_default_config(self) -> Dict[str, Any]:
-        """Get the default configuration for the report generator."""
-        return {
-            'max_retries': 3,
-            'retry_delay': 5,
-            'temperature': 0.3,
-            'top_p': 0.95,
-            'max_output_tokens': 65535,
-            'save_history': True,
-            'history_dir': 'history',
-            'reports_dir': 'reports',
-            'log_level': logging.INFO,
+        # Get all required parameters
+        params = {
+            'primary_bank': self.config.get('primary_bank', 'Kookmin Bank'),
+            'language': self.config.get('language', 'English'),
+            'report_type': self.config.get('report_type', 'premium_credit_cards'),
+            'target_audience': ', '.join(self.config.get('target_audience', ['CFO', 'C-level executives'])),
+            'writing_style': self.config.get('writing_style', {
+                'tone': 'executive',
+                'formality_level': 'high',
+                'emphasis': ['strategic_insights', 'actionable_recommendations']
+            }),
+            'analysis_focus': '\n'.join(f"- {focus}" for focus in self.config.get('analysis_focus', []))
         }
+        
+        # Format the template with parameters
+        return PROMPT_TEMPLATES['system_instruction'].format(**params)
+
+    def _handle_error(self, error: Exception, context: str, fallback_value: Any = None) -> Any:
+        """Centralized error handling with logging."""
+        self.logger.error(f"❌ Error in {context}: {str(error)}")
+        return fallback_value
+
+    def _get_pdf_configuration(self) -> pdfkit.configuration:
+        """Get PDF configuration with proper path handling."""
+        return pdfkit.configuration(wkhtmltopdf=self.config['wkhtmltopdf_path'])
+
+    def _get_pdf_options(self) -> Dict[str, Any]:
+        """Get PDF generation options."""
+        return {
+            'page-size': 'A4',
+            'orientation': 'Landscape',
+            'margin-top': '2.5cm',
+            'margin-right': '2.5cm',
+            'margin-bottom': '2.5cm',
+            'margin-left': '2.5cm',
+            'encoding': 'UTF-8',
+            'no-outline': None,
+            'enable-local-file-access': None,
+        }
+
+    def _save_file(self, content: str, filepath: Path, encoding: str = 'utf-8') -> None:
+        """Save content to file with error handling."""
+        try:
+            with open(filepath, 'w', encoding=encoding) as f:
+                f.write(content)
+            self.logger.info(f"✅ File saved: {filepath}")
+        except Exception as e:
+            self._handle_error(e, f"saving file {filepath}")
+            raise
+
+    def _load_file(self, filepath: Path, encoding: str = 'utf-8') -> Optional[str]:
+        """Load content from file with error handling."""
+        try:
+            with open(filepath, 'r', encoding=encoding) as f:
+                return f.read()
+        except Exception as e:
+            self._handle_error(e, f"loading file {filepath}")
+            return None
 
     def extract_content_between_markers(
         self,
@@ -113,14 +257,51 @@ class ReportGenerator:
 
     def setup_logging(self) -> None:
         """Setup logging configuration."""
+        # Define platform-specific emoji replacements
+        emoji_map = {
+            '📝': '[START]',
+            '📋': '[TOC]',
+            '🔍': '[ANALYZE]',
+            '📚': '[TITLE]',
+            '📑': '[SECTIONS]',
+            '📊': '[GENERATE]',
+            '✨': '[POLISH]',
+            '⏭️': '[SKIP]',
+            '✅': '[SUCCESS]',
+            '❌': '[ERROR]',
+            '⏳': '[WAIT]',
+            '🎉': '[COMPLETE]',
+            '📄': '[FILE]',
+            '🌐': '[HTML]',
+            '📑': '[PDF]',
+            '🌐': '[LANG]'
+        }
+
+        # Create a custom formatter that replaces emojis on Windows
+        class EmojiSafeFormatter(logging.Formatter):
+            def format(self, record):
+                if os.name == 'nt':  # Windows
+                    msg = record.msg
+                    for emoji, text in emoji_map.items():
+                        msg = msg.replace(emoji, text)
+                    record.msg = msg
+                return super().format(record)
+
+        # Setup logging with the custom formatter
         logging.basicConfig(
             level=self.config['log_level'],
             format='%(asctime)s - %(levelname)s - %(message)s',
             handlers=[
-                logging.FileHandler('report_generator.log'),
+                logging.FileHandler('report_generator.log', encoding='utf-8'),
                 logging.StreamHandler()
             ]
         )
+        
+        # Apply the custom formatter to all handlers
+        formatter = EmojiSafeFormatter('%(asctime)s - %(levelname)s - %(message)s')
+        for handler in logging.getLogger().handlers:
+            handler.setFormatter(formatter)
+            
         self.logger = logging.getLogger(__name__)
 
     def create_directories(self) -> None:
@@ -216,270 +397,41 @@ class ReportGenerator:
                     raise
 
     def _get_html_template(self, content: str) -> str:
-        """Get the HTML template with embedded CSS."""
-        return f"""
-        <!DOCTYPE html>
-        <html>
-        <head>
-            <meta charset="UTF-8">
-            <style>
-                @page {{
-                    size: landscape;
-                    margin: 2.5cm;
-                }}
-                
-                body {{
-                    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-                    font-size: 16px;
-                    line-height: 1.7;
-                    color: #2c3e50;
-                    margin: 0;
-                    padding: 0;
-                }}
-
-                /* Container for content */
-                .container {{
-                    max-width: 1200px;
-                    margin: 0 auto;
-                    padding: 0 2rem;
-                }}
-
-                /* Titles */
-                h1 {{
-                    color: #154360;
-                    font-size: 2.5em;
-                    text-align: center;
-                    margin-bottom: 1.2em;
-                    border-bottom: 4px solid #154360;
-                    padding-bottom: 0.5em;
-                    letter-spacing: 0.5px;
-                    page-break-after: always;
-                }}
-                
-                h2 {{
-                    color: #1f618d;
-                    font-size: 1.8em;
-                    margin-top: 2em;
-                    margin-bottom: 0.8em;
-                    padding-left: 0.5em;
-                    border-left: 5px solid #1f618d;
-                    padding: 0.3em 0.6em;
-                    page-break-before: always;
-                }}
-                
-                h3 {{
-                    color: #2980b9;
-                    font-size: 1.4em;
-                    margin-top: 1.5em;
-                    margin-bottom: 0.6em;
-                }}
-                
-                /* Paragraphs */
-                p {{
-                    text-align: justify;
-                    margin-bottom: 1.2em;
-                }}
-                
-                /* Tables */
-                table {{
-                    width: 100%;
-                    border-collapse: collapse;
-                    margin: 2em 0;
-                    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-                    border-radius: 6px;
-                    overflow: hidden;
-                    page-break-inside: avoid;
-                }}
-                
-                th {{
-                    background-color: #154360;
-                    color: white;
-                    padding: 14px;
-                    text-align: left;
-                    font-weight: bold;
-                }}
-                
-                td {{
-                    padding: 12px;
-                    border-bottom: 1px solid #ddd;
-                }}
-                
-                tr:nth-child(even) {{
-                    background-color: #f4f6f7;
-                }}
-                
-                tr:hover {{
-                    background-color: #e5e8e8;
-                }}
-                
-                /* TOC */
-                .toc {{
-                    padding: 1.5em;
-                    margin: 2em 0;
-                    border-left: 4px solid #154360;
-                    border-radius: 4px;
-                    page-break-after: always;
-                }}
-                
-                .toc h2 {{
-                    margin-top: 0;
-                    color: #154360;
-                }}
-                
-                .toc ul {{
-                    list-style-type: none;
-                    padding-left: 1em;
-                }}
-                
-                .toc li {{
-                    margin: 0.5em 0;
-                }}
-                
-                /* Links */
-                a {{
-                    color: #1f618d;
-                    text-decoration: none;
-                }}
-                a:hover {{
-                    text-decoration: underline;
-                }}
-                
-                /* Blockquote */
-                blockquote {{
-                    background-color: #f0f3f4;
-                    border-left: 5px solid #2980b9;
-                    padding: 1em 1.5em;
-                    font-style: italic;
-                    margin: 1.5em 0;
-                }}
-                
-                /* Code */
-                code {{
-                    background-color: #f0f0f0;
-                    padding: 0.2em 0.4em;
-                    font-family: 'Courier New', monospace;
-                    border-radius: 4px;
-                }}
-                
-                pre {{
-                    background-color: #f0f0f0;
-                    padding: 1em;
-                    border-radius: 4px;
-                    overflow-x: auto;
-                }}
-                
-                /* Images */
-                img {{
-                    max-width: 100%;
-                    height: auto;
-                    display: block;
-                    margin: 2em auto;
-                    page-break-inside: avoid;
-                }}
-
-                /* Lists */
-                ul, ol {{
-                    margin: 1em 0 1em 2em;
-                }}
-
-                li {{
-                    margin: 0.5em 0;
-                }}
-
-                /* Footnotes & References */
-                .footnotes {{
-                    margin-top: 2em;
-                    padding-top: 1em;
-                    border-top: 1px solid #ccc;
-                    font-size: 0.9em;
-                    page-break-before: always;
-                }}
-
-                .section {{
-                    margin-bottom: 2em;
-                }}
-
-                sup {{
-                    vertical-align: super;
-                    font-size: smaller;
-                }}
-
-                /* Page break */
-                .page-break {{
-                    page-break-after: always;
-                }}
-
-                /* Media Queries for Responsive Design */
-                @media screen and (max-width: 1200px) {{
-                    .container {{
-                        max-width: 100%;
-                        padding: 0 1.5rem;
-                    }}
-                }}
-
-                @media screen and (max-width: 768px) {{
-                    .container {{
-                        padding: 0 1rem;
-                    }}
-                    
-                    h1 {{
-                        font-size: 2em;
-                    }}
-                    
-                    h2 {{
-                        font-size: 1.6em;
-                    }}
-                    
-                    h3 {{
-                        font-size: 1.2em;
-                    }}
-                }}
-            </style>
-        </head>
-        <body>
-            <div class="container">
-                {content}
-            </div>
-        </body>
-        </html>
-        """
-
-    def _get_pdf_options(self) -> Dict[str, Any]:
-        """Get PDF generation options."""
-        return {
-            'page-size': 'A4',
-            'orientation': 'Landscape',
-            'margin-top': '2.5cm',
-            'margin-right': '2.5cm',
-            'margin-bottom': '2.5cm',
-            'margin-left': '2.5cm',
-            'encoding': 'UTF-8',
-            'no-outline': None,
-            'enable-local-file-access': None,
-        }
+        """Get the HTML template with embedded content."""
+        template_path = Path(self.config['template_dir']) / 'report_template.html'
+        try:
+            template = self._load_file(template_path)
+            if template is None:
+                raise FileNotFoundError(f"Template file not found: {template_path}")
+            # Double the curly braces in the CSS to escape them
+            template = template.replace('{', '{{').replace('}', '}}')
+            # Replace the content placeholder with a single set of braces
+            template = template.replace('{{content}}', '{content}')
+            # Add current date
+            current_date = datetime.now().strftime("%B %d, %Y")
+            return template.format(content=content, date=current_date)
+        except Exception as e:
+            self._handle_error(e, f"loading HTML template from {template_path}")
+            raise
 
     def generate_table_of_contents(self) -> str:
         """Generate and format the table of contents."""
-        toc_prompt = """
-        Create a professional, concise Table of Contents for a strategic report titled with a creative and fitting name. The report compares premium credit card offerings from KB Kookmin Bank, Hana, Woori, and Shinhan Bank, and is intended for executive readers at KB Kookmin Bank, including the CFO. 
-
-        The Table of Contents should follow a narrative structure, suitable for a business magazine or investor presentation, and use Roman numerals for main sections with clearly indented subsections.
-
-        The TOC must include:
-        - An introduction on market dynamics and the strategic importance of premium credit card competition.
-        - A focused analysis of KB Kookmin Bank's premium card offerings, emphasizing positioning and innovation.
-        - A comparative evaluation of Hana, Woori, and Shinhan's offerings, covering features, fees, rewards, digital experience, target customers, and differentiation.
-        - A synthesis of strategic insights including profitability, risks, and emerging market trends.
-        - Actionable recommendations for securing competitive advantage and driving growth.
-        - A references section.
-
-        Ensure the Table of Contents is logically organized, reader-friendly, and appropriate for executive-level decision-making. Do not add any introductory phrases or explanations to your response
-        """
+        # Get all required parameters
+        params = {
+            'primary_bank': self.config.get('primary_bank', 'Kookmin Bank'),
+            'comparison_banks': ', '.join(self.config.get('comparison_banks', ['Hana', 'Woori', 'Shinhan Bank'])),
+            'language': self.config.get('language', 'English'),
+            'report_type': self.config.get('report_type', 'premium_credit_cards'),
+            'target_audience': ', '.join(self.config.get('target_audience', ['CFO', 'C-level executives'])),
+            'report_sections': '\n'.join(f"- {section}" for section in self.config.get('report_sections', []))
+        }
         
+        # Format the template with parameters
+        toc_prompt = PROMPT_TEMPLATES['table_of_contents'].format(**params)
         toc_response = self.generate_content(toc_prompt)
         return self.extract_content_between_markers(toc_response)
 
-    def generate_section_content(self, section_title: str, previous_sections: Optional[List[ReportSection]] = None) -> str:
+    def generate_section_content(self, section_title: str, previous_sections: Optional[List[ReportSection]] = None, is_last_section: bool = False) -> str:
         """Generate content for a specific section."""
         try:
             # Create context from previous sections
@@ -493,75 +445,115 @@ class ReportGenerator:
             # Create anchor link from section title
             anchor_text = re.sub(r'[^a-z0-9]+', '-', section_title.lower()).strip('-')
             
-            section_prompt = f"""
-            {context}
+            language = self.config.get('language', 'English')
+            primary_bank = self.config.get('primary_bank', 'Kookmin Bank')
+            
+            # Check if this is the last section (References)
+            if is_last_section:
+                # Extract citations from previous sections
+                citations = set()
+                if previous_sections:
+                    for section in previous_sections:
+                        citations.update(re.findall(r'\[(\d+)\]', section.content))
+                
+                if not citations:
+                    return f"## {section_title}\n\nNo references cited in the report."
+                
+                section_prompt = f"""
+                {context}
+                
+                You are a financial research analyst at {primary_bank}. Generate a comprehensive References section for the report based on the following citation numbers: {sorted(citations)}.
 
-            Write a comprehensive and professionally worded section of our strategic report on the topic: **{section_title}**. The content should be tailored for KB Bank's executive audience, particularly the CFO and C-level executives.
+                Format Requirements:
+                1. Present each reference as a numbered list item
+                2. Start each reference with its citation number followed by a period
+                3. Format example:
+                   1. Author(s) or organization name. (Year). Title of the source. Source type. URL or publication details.
+                   2. Author(s) or organization name. (Year). Title of the source. Source type. URL or publication details.
 
-            Writing Style Requirements:
-            1. Use a flowing, narrative style with well-connected paragraphs
-            2. Focus on creating a compelling story that builds momentum
-            3. Use transition phrases to connect ideas and maintain flow
-            4. Incorporate strategic insights and actionable recommendations
-            5. Maintain a professional yet engaging tone
-            6. Use data and analysis to support key points
-            7. Include clear calls to action where appropriate
+                Content Requirements:
+                - Include author(s) or organization name
+                - Include publication year
+                - Include full title of the source
+                - Specify source type (e.g., Journal Article, Report, Website)
+                - Include URL or publication details
+                - Ensure all references are from credible sources relevant to the credit card industry analysis
+                - Format should be appropriate for {language} language
 
-            Content Structure:
-            1. Open with a strong introduction that sets the context and highlights the importance of the topic
-            2. Develop the core arguments through logically ordered paragraphs
-            3. Organize content using clear subheadings that support the narrative flow
-            4. Include relevant data and analysis to support arguments
-            5. Incorporate quantitative data or market evidence where applicable  
-            6. End with clear implications and next steps
+                Do not include introductory phrases, explanations, or commentary—only the numbered list of formatted references.
+                Ensure consistent formatting across all references.
+                """
+            else:
+                section_prompt = f"""
+                {context}
+                
+                Write a comprehensive and professionally worded section of our strategic report on the topic: **{section_title}**. The content should be tailored for {primary_bank}'s executive audience, particularly the CFO and C-level executives.
 
-            Data Presentation:
-            1. Use tables for structured data comparisons and detailed metrics
-            2. Format tables using markdown table syntax:
-               | Header 1 | Header 2 | Header 3 |
-               |----------|----------|----------|
-               | Data 1   | Data 2   | Data 3   |
-            3. Include table captions or explanatory text before/after tables
-            4. Use tables to present:
-               - Financial metrics comparisons
-               - Market share data
-               - Feature comparisons
-               - Performance metrics
-               - Cost structures
-            5. Ensure tables are properly integrated into the narrative flow
+                Writing Style Requirements:
+                1. Use a flowing, narrative style with well-connected paragraphs
+                2. Focus on creating a compelling story that builds momentum
+                3. Use transition phrases to connect ideas and maintain flow
+                4. Incorporate strategic insights and actionable recommendations
+                5. Maintain a professional yet engaging tone
+                6. Use data and analysis to support key points
+                7. Include clear calls to action where appropriate
+                8. Ensure cultural and linguistic appropriateness for a {language} banking and finance audience
+                
+                Content Structure:
+                1. Open with a strong introduction that sets the context and highlights the importance of the topic
+                2. Develop the core arguments through logically ordered paragraphs
+                3. Organize content using clear subheadings that support the narrative flow
+                4. Include relevant data and analysis to support arguments
+                5. Incorporate quantitative data or market evidence where applicable  
+                6. End with clear implications and next steps
 
-            Formatting Guidelines:
-            1. Use proper markdown heading levels:
-               - `##` for main sections
-               - `###` for subsections
-               - `####` for sub-subsections
-            2. Add one blank line before and after each heading
-            3. Format example: `## I. Section Title`
+                Data Presentation:
+                1. Use tables for structured data comparisons and detailed metrics
+                2. Format tables using markdown table syntax:
+                   | Header 1 | Header 2 | Header 3 |
+                   |----------|----------|----------|
+                   | Data 1   | Data 2   | Data 3   |
+                3. Include table captions or explanatory text before/after tables
+                4. Use tables to present:
+                   - Financial metrics comparisons
+                   - Market share data
+                   - Feature comparisons
+                   - Performance metrics
+                   - Cost structures
+                5. Ensure tables are properly integrated into the narrative flow
 
-            Writing Tips:
-            1. Transform bullet points into cohesive, flowing paragraphs
-            2. Avoid fragmented points; ensure ideas are clearly connected
-            3. Use active voice and strong verbs
-            4. Include specific examples and data points
-            5. End paragraphs with forward-looking statements
+                Formatting Guidelines:
+                1. Use proper markdown heading levels:
+                   - `##` for main sections
+                   - `###` for subsections
+                   - `####` for sub-subsections
+                2. Add one blank line before and after each heading
+                3. Format example: `## I. Section Title`
 
-            Content Requirements:
-            1. Start with a proper markdown heading that matches the table of contents format
-            2. Use a formal, smooth and professional tone throughout
-            3. Present data and analysis in a narrative format
-            4. Back all factual claims and statistics with numbered citations
-            5. Focus on strategic insights and actionable analysis
-            6. Structure the content with clear headings and subheadings
-            7. Ensure all headings are properly formatted with markdown anchor links
-            8. Do not add any introductory phrases, notes, or non-related explanations to your response
+                Writing Tips:
+                1. Transform bullet points into cohesive, flowing paragraphs
+                2. Avoid fragmented points; ensure ideas are clearly connected
+                3. Use active voice and strong verbs
+                4. Include specific examples and data points
+                5. End paragraphs with forward-looking statements
 
-            Layout Rules:
-            1. Maintain consistent spacing throughout
-            2. Do not use excessive blank lines
-            3. Do not use HTML tags
-            4. Do not use custom formatting or styles
-            5. Keep the layout clean and professional
-            """
+                Content Requirements:
+                1. Start with a proper markdown heading that matches the table of contents format
+                2. Use a formal, smooth and professional tone throughout
+                3. Present data and analysis in a narrative format
+                4. Back all factual claims and statistics with numbered citations
+                5. Focus on strategic insights and actionable analysis
+                6. Structure the content with clear headings and subheadings
+                7. Ensure all headings are properly formatted with markdown anchor links
+                8. Do not add any introductory phrases, notes, or non-related explanations to your response
+
+                Layout Rules:
+                1. Maintain consistent spacing throughout
+                2. Do not use excessive blank lines
+                3. Do not use HTML tags
+                4. Do not use custom formatting or styles
+                5. Keep the layout clean and professional
+                """
             
             section_response = self.generate_content(section_prompt)
             content = self.extract_content_between_markers(section_response)
@@ -664,6 +656,12 @@ class ReportGenerator:
         
         self.logger.info(f"📑 Found {len(section_titles)} sections to process")
         
+        # Log each section title with its number
+        self.logger.info("\n📋 Sections to be processed:")
+        for idx, title in enumerate(section_titles, 1):
+            self.logger.info(f"  {idx}. {title}")
+        self.logger.info("")  # Add a blank line for readability
+        
         # Generate content for each section
         processed_sections = []
         total_sections = len(section_titles)
@@ -685,13 +683,16 @@ class ReportGenerator:
                 self.logger.info("📊 Generating content...")
                 content = self.generate_section_content(
                     section_title,
-                    processed_sections  # Pass previous sections for context
+                    processed_sections,  # Pass previous sections for context
+                    i == total_sections  # Pass is_last_section flag
                 )
                 
-                # Skip polishing for specific sections
+                # Skip polishing for specific sections or if it's the last section
                 section_lower = section_title.lower()
-                if any(skip_section in section_lower for skip_section in SKIP_PARAPHRASING_SECTIONS):
-                    self.logger.info("⏭️ Skipping content polishing for this section")
+                is_last_section = i == total_sections
+                if any(skip_section in section_lower for skip_section in SKIP_PARAPHRASING_SECTIONS) or is_last_section:
+                    skip_reason = "last section" if is_last_section else "special section type"
+                    self.logger.info(f"⏭️ Skipping content polishing for this section (reason: {skip_reason})")
                     processed_sections.append(ReportSection(
                         title=section_title,
                         content=content
@@ -699,7 +700,7 @@ class ReportGenerator:
                 else:
                     # Polish the content
                     self.logger.info("✨ Polishing content...")
-                    polish_prompt = f"""You are a professional editor. Your task is to improve the following content by enhancing its narrative flow and transitions. Return ONLY the improved content without any introductory phrases or explanations.
+                    polish_prompt = f"""You are a professional editor. Your task is to improve the following content by enhancing its narrative flow and transitions while maintaining its original language and cultural context. Return ONLY the improved content without any introductory phrases or explanations.
 
                     Requirements:
                     - Make sentences flow more smoothly
@@ -710,6 +711,8 @@ class ReportGenerator:
                     - Focus on grammar, vocabulary, coherence, and readability
                     - Do not make any changes to the layout such as indentations, line breaks, transform into bullet points or paragraph breaks
                     - Do not add any introductory phrases or explanations to your response
+                    - Maintain the original language and cultural context of the content
+                    - Ensure the content remains appropriate for its target audience
 
                     Content to improve:
                     {content}"""
@@ -746,8 +749,9 @@ class ReportGenerator:
 
     def extract_sections_from_toc(self, toc: str) -> Tuple[str, List[str]]:
         """Extract report title and sections from the table of contents using LLM."""
+        language = self.config.get('language', 'English')
         prompt = f"""
-            Given the Table of Contents below, extract:
+            Given the Table of Contents in {language} language below, extract:
             1. The main report title (first line)
             2. All main sections marked with Roman numerals (e.g., I., II., III.)
 
@@ -800,85 +804,89 @@ class ReportGenerator:
         base_filename = f'credit_card_analysis_{timestamp}'
         md_filename = Path(self.config['reports_dir']) / f'{base_filename}.md'
         html_filename = Path(self.config['reports_dir']) / f'{base_filename}.html'
+        pdf_filename = Path(self.config['reports_dir']) / f'{base_filename}.pdf'
         
         try:
             # Extract report title and sections from TOC
             report_title, _ = self.extract_sections_from_toc(toc)
-            
             self.logger.info(f"\n📄 Saving report: {report_title}")
             
-            # Start with main title and TOC marker
-            md_content = f"# {report_title}\n\n[TOC]\n\n"
+            # Generate markdown content
+            md_content = self._generate_markdown_content(report_title, report)
+            self._save_file(md_content, md_filename)
             
-            # Add all sections
-            for section in report:
-                # Extract first line from content and use it as title
-                content_lines = section.content.split('\n')
-                if content_lines:
-                    section_title = content_lines[0].strip()
-                    # Remove the first line from content if it's a heading
-                    if section_title.startswith('#'):
-                        section_content = '\n'.join(content_lines[1:]).strip()
-                    else:
-                        section_content = section.content
-                else:
-                    section_title = section.title
-                    section_content = section.content
-                
-                # Add section with proper heading
-                md_content += f"{section_title}\n\n"
-                md_content += section_content
-                md_content += "\n\n---\n\n"
-            
-            # Generate and add references section
-            # self.logger.info("📚 Generating References section...")
-            # references_content = self.generate_references_section(report)
-            # md_content += "## References\n\n"
-            # md_content += references_content
-            
-            # Save markdown file
-            with open(md_filename, 'w', encoding='utf-8') as f:
-                f.write(md_content)
-            
-            self.logger.info(f"✅ Markdown file saved: {md_filename}")
-            
-            # Generate HTML
+            # Generate and save HTML
             self.logger.info("🔄 Converting to HTML...")
-            html_content = markdown(md_content, extensions=['tables', 'fenced_code', 'md_in_html', TocExtension(
-                marker='[TOC]',
-                title='Table of Contents',
-                anchorlink=False,
-                baselevel=1,
-                toc_depth=3
-            )])
-            
-            # Save HTML file
-            with open(html_filename, 'w', encoding='utf-8') as f:
-                f.write(self._get_html_template(html_content))
-            
-            self.logger.info(f"✅ HTML file saved: {html_filename}")
+            html_content = self._generate_html_content(md_content)
+            self._save_file(self._get_html_template(html_content), html_filename)
             
             # Generate PDF
-            pdf_filename = Path(self.config['reports_dir']) / f'{base_filename}.pdf'
             self.logger.info("🔄 Converting to PDF...")
-            
             try:
-                pdfkit.from_file(str(html_filename), pdf_filename, options=self._get_pdf_options())
+                pdfkit.from_file(
+                    str(html_filename),
+                    pdf_filename,
+                    options=self._get_pdf_options(),
+                    configuration=self._get_pdf_configuration()
+                )
                 self.logger.info(f"✅ PDF generated: {pdf_filename}")
             except Exception as e:
-                self.logger.error(f"❌ Error generating PDF: {str(e)}")
+                self._handle_error(e, "generating PDF")
                 raise
             
-            self.logger.info("\n🎉 Report generation complete!")
-            self.logger.info(f"📄 Markdown file: {md_filename}")
-            self.logger.info(f"🌐 HTML file: {html_filename}")
-            self.logger.info(f"📑 PDF file: {pdf_filename}")
-            
+            self._log_success(md_filename, html_filename, pdf_filename)
             return str(md_filename), str(html_filename), str(pdf_filename)
             
         except Exception as e:
-            self.logger.error(f"❌ Error saving report: {str(e)}")
+            self._handle_error(e, "saving report")
             raise
+
+    def _generate_markdown_content(self, report_title: str, report: List[ReportSection]) -> str:
+        """Generate markdown content from report sections."""
+        md_content = f"# {report_title}\n\n[TOC]\n\n"
+        
+        for section in report:
+            content_lines = section.content.split('\n')
+            if content_lines:
+                section_title = content_lines[0].strip()
+                if section_title.startswith('#'):
+                    section_content = '\n'.join(content_lines[1:]).strip()
+                else:
+                    section_content = section.content
+            else:
+                section_title = section.title
+                section_content = section.content
+            
+            md_content += f"{section_title}\n\n"
+            md_content += section_content
+            md_content += "\n\n---\n\n"
+        
+        return md_content
+
+    def _generate_html_content(self, md_content: str) -> str:
+        """Generate HTML content from markdown."""
+        return markdown(
+            md_content,
+            extensions=[
+                'tables',
+                'fenced_code',
+                'md_in_html',
+                TocExtension(
+                    marker='[TOC]',
+                    title='Table of Contents',
+                    anchorlink=False,
+                    baselevel=1,
+                    toc_depth=3
+                )
+            ]
+        )
+
+    def _log_success(self, md_file: Path, html_file: Path, pdf_file: Path) -> None:
+        """Log success messages for generated files."""
+        self.logger.info("\n🎉 Report generation complete!")
+        self.logger.info(f"📄 Markdown file: {md_file}")
+        self.logger.info(f"🌐 HTML file: {html_file}")
+        self.logger.info(f"📑 PDF file: {pdf_file}")
 
     def load_conversation_history(self, report_id: str) -> bool:
         """Load conversation history from a file."""
