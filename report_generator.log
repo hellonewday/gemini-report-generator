@@ -3092,3 +3092,18 @@ C. Glossary of Terms
 2025-05-06 19:28:05,619 - INFO - Saved conversation history to history/conversation_20250506_192607.json
 2025-05-06 19:28:05,619 - INFO - ✨ Polishing content...
 2025-05-06 19:28:05,621 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 19:28:50,775 - INFO - HTTP Request: POST https://aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/global/publishers/google/models/gemini-2.5-pro-preview-03-25:generateContent "HTTP/1.1 200 OK"
+2025-05-06 19:28:50,780 - INFO - AFC remote call 1 is done.
+2025-05-06 19:28:50,784 - INFO - Saved conversation history to history/conversation_20250506_192607.json
+2025-05-06 19:28:50,785 - INFO - ✅ Content polished successfully
+2025-05-06 19:28:50,785 - INFO - ✅ Section 2/6 completed
+2025-05-06 19:28:50,785 - INFO - 
+📝 Processing Section 3/6: III. The Contenders: Analyzing the Competitive Landscape
+2025-05-06 19:28:50,786 - INFO - ⏳ Estimated time remaining: 2.7 minutes
+2025-05-06 19:28:50,786 - INFO - 📊 Generating content...
+2025-05-06 19:28:50,787 - INFO - AFC is enabled with max remote calls: 10.
+2025-05-06 19:29:23,852 - INFO - HTTP Request: POST https://aiplatform.googleapis.com/v1beta1/projects/nth-droplet-458903-p4/locations/global/publishers/google/models/gemini-2.5-pro-preview-03-25:generateContent "HTTP/1.1 200 OK"
+2025-05-06 19:29:23,859 - INFO - AFC remote call 1 is done.
+2025-05-06 19:29:23,865 - INFO - Saved conversation history to history/conversation_20250506_192607.json
+2025-05-06 19:29:23,866 - INFO - ✨ Polishing content...
+2025-05-06 19:29:23,867 - INFO - AFC is enabled with max remote calls: 10.

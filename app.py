@@ -831,8 +831,8 @@ class ReportGenerator:
                 md_content += "\n\n---\n\n"
             
             # Generate and add references section
-            self.logger.info("📚 Generating References section...")
-            references_content = self.generate_references_section(report)
+            # self.logger.info("📚 Generating References section...")
+            # references_content = self.generate_references_section(report)
             # md_content += "## References\n\n"
             # md_content += references_content
             
