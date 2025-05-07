@@ -188,6 +188,31 @@
             border-top: 1px solid #ccc;
         }
 
+        /* References Grid Layout */
+        .references-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1em;
+            margin: 1em 0;
+        }
+
+        .reference-item {
+            font-size: 0.9em;
+            line-height: 1.4;
+            padding: 0.5em;
+            border-left: 3px solid #154360;
+            background-color: #f8f9fa;
+        }
+
+        .reference-item a {
+            color: #1f618d;
+            text-decoration: none;
+        }
+
+        .reference-item a:hover {
+            text-decoration: underline;
+        }
+
         img {
             max-width: 100%;
             margin: 2em auto;

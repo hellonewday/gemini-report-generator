@@ -17,7 +17,7 @@ DEFAULT_CONFIG: Dict[str, Any] = {
     'location': "us-central1",
     'wkhtmltopdf_path': os.getenv('WKHTMLTOPDF_PATH', r"C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe"),
     'template_dir': 'templates',
-    'language': 'Korean',  # Default language
+    'language': 'English',  # Default language
     'primary_bank': 'Kookmin Bank',  # Primary target bank
     'comparison_banks': ['Hana', 'Woori', 'Shinhan Bank'],  # Banks to compare against
     
