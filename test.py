@@ -56,7 +56,7 @@ You are a senior Korean financial analyst with 20 years of experience in the cre
    - Logical section progression
    - Clear section descriptions
    - Proper formatting and organization
-   - Comprehensive references
+   - Please do not include References section in the report
 
 5. WRITING STYLE:
    - Formal Korean business tone
@@ -110,8 +110,9 @@ def table_of_contents_prompt():
             * All section and subsection **titles and guidance** must be written in **formal Korean business language**.
             * Each section/subsection must include a **brief description in Korean** explaining the content and purpose.
             * Ensure the tone is suitable for a **C-level financial audience**—clear, concise, and strategic.
-            * Maintain cultural and linguistic appropriateness for a Korean banking/finance readership.
+            * Maintain cultural and linguistic appropriateness for a banking/finance readership.
 
+            Do not make hypothesis or assumptions on what should be included in the report.
             **IMPORTANT:** Use the **Google Search tool** to gather the most recent and relevant information to ensure the TOC supports accurate and updated content generation.
       """)     
     contents.append(Content(
