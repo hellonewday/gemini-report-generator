@@ -232,14 +232,23 @@ def main():
     # Generate sections
     sections_content = []
     global report_references
-    for section_number, section_title in enumerate(sections, 1):
-        content, section_references, response = generate_section_content(client, model_id, section_title, section_number, contents, system_prompt, google_search_tool)
-        log_token_metrics(response, f"Section {section_number}: {section_title}")
-        polished_content, polish_response = polish_content(client, flash_model_id, content, system_prompt)
-        log_token_metrics(polish_response, "Content Polishing")
-        sections_content.append(polished_content)
-        report_references.extend(section_references)
-        logger.info(f"✅ Section {section_number} completed: {section_title}")
+    # for section_number, section_title in enumerate(sections, 1):
+    #     content, section_references, response = generate_section_content(client, model_id, section_title, section_number, contents, system_prompt, google_search_tool)
+    #     log_token_metrics(response, f"Section {section_number}: {section_title}")
+    #     polished_content, polish_response = polish_content(client, flash_model_id, content, system_prompt)
+    #     log_token_metrics(polish_response, "Content Polishing")
+    #     sections_content.append(polished_content)
+    #     report_references.extend(section_references)
+    #     logger.info(f"✅ Section {section_number} completed: {section_title}")
+
+    # Demo with one section, for quick testing
+    content, section_references, response = generate_section_content(client, model_id, sections[1], 1, contents, system_prompt, google_search_tool)
+    log_token_metrics(response, f"Section Demo: {sections[1]}")
+    polished_content, polish_response = polish_content(client, flash_model_id, content, system_prompt)
+    log_token_metrics(polish_response, "Content Polishing")
+    sections_content.append(polished_content)
+    report_references.extend(section_references)
+    logger.info(f"✅ Section Demo completed")
 
     # Save files
     pdf_file = save_report_files(title, sections_content, report_references, current_request_id)
