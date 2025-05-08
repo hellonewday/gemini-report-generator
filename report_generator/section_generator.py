@@ -1,5 +1,6 @@
 import logging
 import re
+from typing import Tuple, List
 from google.genai.types import Part, Content, GenerateContentConfig
 from config import REPORT_CONFIG
 from utils import retry_with_backoff
@@ -7,13 +8,37 @@ from utils import retry_with_backoff
 logger = logging.getLogger(__name__)
 
 @retry_with_backoff(max_retries=3)
-def generate_section_content(client, model_id, section_title, section_number, contents, system_prompt, google_search_tool):
-    """Generate content for a specific report section."""
-    logger.info(f"📝 Generating content for section {section_number}: {section_title}")
+def generate_section_content(
+    client: 'genai.Client',
+    model_id: str,
+    section_title: str,
+    section_number: int,
+    contents: List[Content],
+    system_prompt: str,
+    google_search_tool: 'Tool'
+) -> Tuple[str, List[str], 'GenerateContentResponse']:
+    """Generate content for a specific report section.
+
+    Args:
+        client: The genai client instance.
+        model_id: The model ID to use for generation.
+        section_title: The title of the section.
+        section_number: The section number (1-based).
+        contents: The list of conversation contents.
+        system_prompt: The system prompt for the model.
+        google_search_tool: The Google Search tool instance.
+
+    Returns:
+        Tuple[str, List[str], GenerateContentResponse]: The generated text, list of references, and response object.
+
+    Raises:
+        Exception: If content generation fails after retries.
+    """
+    logger.info(f"Generating content for section {section_number}: {section_title}")
     user_prompt = Part.from_text(text=f"""
             Based on the guidance in the table of contents section, connect with the previous section, write a comprehensive and professionally worded section of our strategic report on the section {section_title}. 
             The content should be tailored for Kookmin Bank's {REPORT_CONFIG['language']}-speaking executive audience, including the CFO and other C-level stakeholders.
-            Even though the guidance is a very useful information to write the section, please do not include the guidance in the top of the section and sub-sections.
+            Even though the guidance is very useful information to write the section, do not include the guidance in the top of the section and sub-sections.
 
             CRITICAL LANGUAGE REQUIREMENTS:
             - Entire content must be in formal {REPORT_CONFIG['language']} with proper business terms
@@ -78,7 +103,7 @@ def generate_section_content(client, model_id, section_title, section_number, co
             5. Confirm all quotes and citations
 
             Remember: It's better to have fewer, well-verified points than many uncertain ones. Focus on depth of analysis for confirmed information rather than trying to cover everything.
-            """)
+    """)
     contents.append(Content(role="user", parts=[user_prompt]))
     response = client.models.generate_content(
         model=model_id,
@@ -100,7 +125,7 @@ def generate_section_content(client, model_id, section_title, section_number, co
     grounding_chunks = None if grounding_metadata is None else grounding_metadata.grounding_chunks
     grounding_supports = None if grounding_metadata is None else grounding_metadata.grounding_supports
     if grounding_supports and grounding_chunks:
-        logger.info(f"📚 Found {len(grounding_chunks)} grounding citations")
+        logger.info(f"Found {len(grounding_chunks)} grounding citations")
         sorted_supports = sorted(grounding_supports, key=lambda s: len(s.segment.text), reverse=True)
         for support in sorted_supports:
             segment_text = support.segment.text.strip()
@@ -132,6 +157,6 @@ def generate_section_content(client, model_id, section_title, section_number, co
         section_references += '</div>\n---\n\n'
         report_references.append(section_references)
     else:
-        logger.warning("⚠️ Agent decided not to use Google Search for this section")
-    logger.info(f"✅ Content generated for section {section_number}")
+        logger.warning("Agent decided not to use Google Search for this section")
+    logger.info(f"Content generated for section {section_number}")
     return text, report_references, response

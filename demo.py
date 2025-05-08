@@ -1,4 +1,4 @@
-
+import asyncio
 from google import genai
 from google.genai.types import Tool, GenerateContentConfig, GoogleSearch
 
@@ -13,7 +13,8 @@ google_search_tool = Tool(
       google_search = GoogleSearch()
 )
 
-response = client.models.generate_content(
+def generate():
+      res = await client.models.generate_content(
       model=model_id,
       contents="Research Nike SEA&I current promotion campaigns, with deep dive into the details. Avoid jargon and lacks substance.",
       config=GenerateContentConfig(
@@ -22,9 +23,9 @@ response = client.models.generate_content(
           tools=[google_search_tool],
           response_modalities=["TEXT"]
       )
+      
+
 )
 
-# for each in response.candidates[0].content.parts:
-#     print(each.text)
+response = asyncio.run(generate())
 
-print(response.text)

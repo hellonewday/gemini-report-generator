@@ -1,10 +1,11 @@
 import logging
+from typing import List, Tuple
 from google.genai.types import Part
 from config import REPORT_CONFIG
 from utils import initialize_request
 from report_generator.toc_generator import setup_client_and_tools, table_of_contents_prompt, extract_table_of_contents
 from report_generator.section_generator import generate_section_content
-from report_generator.polish_generator import polish_content
+from report_generator.content_polisher import polish_content
 from report_generator.file_output import save_report_files
 from report_generator.cloud_storage import upload_to_gcs
 
@@ -16,19 +17,26 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-# Global variables
-token_metrics = []
-contents = []
-report_references = []
-current_request_id = None
-LOGGING_CSV = "logging.csv"
+class ReportState:
+    """Manages state for report generation."""
+    def __init__(self):
+        self.token_metrics = []
+        self.contents = []
+        self.report_references = []
+        self.current_request_id = None
+        self.LOGGING_CSV = "logging.csv"
 
-def log_token_metrics(response, section_name=""):
-    """Log token usage metrics."""
-    global current_request_id
-    if not current_request_id:
-        logger.error("Request ID not initialized. This should not happen.")
-        raise ValueError("Request ID must be initialized before logging metrics")
+def log_token_metrics(state: ReportState, response: 'GenerateContentResponse', section_name: str = "") -> None:
+    """Log token usage metrics.
+
+    Args:
+        state: The report state object.
+        response: The response object from content generation.
+        section_name: The name of the section being logged.
+    """
+    if not state.current_request_id:
+        state.current_request_id = initialize_request()
+        logger.warning("Request ID was not initialized. Initialized now.")
         
     input_tokens = response.usage_metadata.prompt_token_count
     output_tokens = response.usage_metadata.candidates_token_count
@@ -43,7 +51,7 @@ def log_token_metrics(response, section_name=""):
     total_cost = round(input_cost + output_cost, 6)
     
     metric = {
-        "request_id": current_request_id,
+        "request_id": state.current_request_id,
         "timestamp": __import__('datetime').datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         "section": section_name,
         "model_version": model_name,
@@ -56,18 +64,18 @@ def log_token_metrics(response, section_name=""):
         "output_cost": output_cost,
         "total_cost": total_cost
     }
-    token_metrics.append(metric)
+    state.token_metrics.append(metric)
     
     import csv
     import os
-    file_exists = os.path.isfile(LOGGING_CSV)
+    file_exists = os.path.isfile(state.LOGGING_CSV)
     headers = [
         "Request ID", "Timestamp", "Section", "Model Version", "Input Tokens",
         "Output Tokens", "Total Tokens", "Cost per 1M Input ($)", "Cost per 1M Output ($)",
         "Input Cost ($)", "Output Cost ($)", "Total Cost ($)"
     ]
     try:
-        with open(LOGGING_CSV, 'a', newline='', encoding='utf-8') as f:
+        with open(state.LOGGING_CSV, 'a', newline='', encoding='utf-8') as f:
             writer = csv.DictWriter(f, fieldnames=headers)
             if not file_exists:
                 writer.writeheader()
@@ -86,14 +94,18 @@ def log_token_metrics(response, section_name=""):
                 "Total Cost ($)": metric["total_cost"]
             })
     except Exception as e:
-        logger.error(f"❌ Error appending to logging CSV: {str(e)}")
+        logger.error(f"Error appending to logging CSV: {str(e)}")
 
-def log_final_metrics():
-    """Log a summary of all token metrics."""
-    if not token_metrics:
+def log_final_metrics(state: ReportState) -> None:
+    """Log a summary of all token metrics.
+
+    Args:
+        state: The report state object.
+    """
+    if not state.token_metrics:
         return
     model_metrics = {}
-    for metric in token_metrics:
+    for metric in state.token_metrics:
         model = metric["model_version"]
         if model not in model_metrics:
             model_metrics[model] = {"input_tokens": 0, "output_tokens": 0, "total_tokens": 0, "sections": []}
@@ -102,21 +114,31 @@ def log_final_metrics():
         model_metrics[model]["total_tokens"] += metric["total_tokens"]
         model_metrics[model]["sections"].append(metric)
     
-    total_input = sum(m["input_tokens"] for m in token_metrics)
-    total_output = sum(m["output_tokens"] for m in token_metrics)
-    total_all = sum(m["total_tokens"] for m in token_metrics)
-    total_cost = sum(m["total_cost"] for m in token_metrics)
+    total_input = sum(m["input_tokens"] for m in state.token_metrics)
+    total_output = sum(m["output_tokens"] for m in state.token_metrics)
+    total_all = sum(m["total_tokens"] for m in state.token_metrics)
+    total_cost = sum(m["total_cost"] for m in state.token_metrics)
     
     logger.info("=" * 70)
-    logger.info("📊 Overall Total Usage:")
-    logger.info(f"   ├─ Total Input Tokens:  {total_input:,}")
-    logger.info(f"   ├─ Total Output Tokens: {total_output:,}")
-    logger.info(f"   └─ Total All Tokens:   {total_all:,}")
-    logger.info(f"   └─ Total Cost:         ${total_cost:.6f}")
+    logger.info("Overall Total Usage:")
+    logger.info(f"   Total Input Tokens: {total_input:,}")
+    logger.info(f"   Total Output Tokens: {total_output:,}")
+    logger.info(f"   Total All Tokens: {total_all:,}")
+    logger.info(f"   Total Cost: ${total_cost:.6f}")
     logger.info("=" * 70)
 
-def parse_table_of_contents(extracted_toc_text):
-    """Parse the extracted table of contents text."""
+def parse_table_of_contents(extracted_toc_text: str) -> Tuple[str, List[str]]:
+    """Parse the extracted table of contents text.
+
+    Args:
+        extracted_toc_text: The text containing the TOC.
+
+    Returns:
+        Tuple[str, List[str]]: The report title and list of section titles.
+
+    Raises:
+        ValueError: If the TOC format is invalid.
+    """
     parts = extracted_toc_text.split('SECTIONS:')
     if len(parts) != 2:
         raise ValueError("Invalid response format")
@@ -125,17 +147,13 @@ def parse_table_of_contents(extracted_toc_text):
     sections = [line.strip() for line in parts[1].split('\n') if line.strip()]
     return title, sections
 
-def main():
-    """Main function to orchestrate report generation."""
-    logger.info("🚀 Starting report generation process...")
-    global current_request_id
-    current_request_id = initialize_request()  # Initialize request_id once at the start
-    
-    # Setup
-    model_id = "gemini-2.5-pro-preview-05-06"
-    flash_model_id = "gemini-2.5-flash-preview-04-17"
-    client, google_search_tool = setup_client_and_tools()
-    system_prompt = f"""
+def get_system_prompt() -> str:
+    """Generate the system prompt for the report.
+
+    Returns:
+        str: The system prompt string.
+    """
+    return f"""
         You are a senior {REPORT_CONFIG['language']} financial analyst specializing in credit card products with 20 years of experience at {REPORT_CONFIG['primary_bank']}. Your expertise spans credit card market analysis, product comparison, and competitive intelligence.
         **PRIMARY OBJECTIVE:**
         Create a comprehensive comparison of premium credit card products between {REPORT_CONFIG['primary_bank']} and its key competitors ({', '.join(REPORT_CONFIG['comparison_banks'])}), focusing on concrete product features, pricing, and benefits that drive customer decisions.
@@ -151,14 +169,14 @@ def main():
         2. CREDIT CARD COMPARISON FOCUS:
         - Detailed analysis of specific credit card products and their features
         - Direct comparison of:
-            * Annual fees and charges
-            * Interest rates and APR
-            * Rewards programs and points structure
-            * Cashback rates and categories
-            * Travel benefits and insurance coverage
-            * Welcome bonuses and sign-up offers
-            * Foreign transaction fees
-            * Credit limits and eligibility criteria
+            - Annual fees and charges
+            - Interest rates and APR
+            - Rewards programs and points structure
+            - Cashback rates and categories
+            - Travel benefits and insurance coverage
+            - Welcome bonuses and sign-up offers
+            - Foreign transaction fees
+            - Credit limits and eligibility criteria
         - Clear presentation of pricing models and fee structures
         - Concrete benefits and value propositions
         - Digital features and mobile app capabilities
@@ -220,45 +238,55 @@ def main():
         You MUST use Google Search for EVERY main section and ensure ALL content is in {REPORT_CONFIG['language']}. Focus on providing detailed credit card product comparisons with concrete features, pricing, and benefits that would be valuable for {REPORT_CONFIG['language']}-speaking banking executives. Avoid abstract strategic analysis and focus on actionable, concrete product comparisons. Most importantly, ensure ALL data, examples, and market information are from the local market only - do not mix data from different regions.
     """
 
+def main():
+    """Orchestrate the report generation process."""
+    logger.info("Starting report generation process...")
+    state = ReportState()
+    state.current_request_id = initialize_request()
+    
+    # Setup
+    client, google_search_tool = setup_client_and_tools()
+    system_prompt = get_system_prompt()
+
     # Generate TOC
-    toc_prompt, toc_text, toc_response = table_of_contents_prompt(client, model_id, contents, system_prompt, google_search_tool)
-    log_token_metrics(toc_response, "Table of Contents Generation")
-    extracted_toc_prompt, extracted_toc_text, extracted_response = extract_table_of_contents(client, flash_model_id, toc_prompt, toc_text, system_prompt)
-    log_token_metrics(extracted_response, "Table of Contents Extraction")
+    toc_prompt, toc_text, toc_response =  table_of_contents_prompt(
+        client, REPORT_CONFIG['model_id'], state.contents, system_prompt, google_search_tool
+    )
+    log_token_metrics(state, toc_response, "Table of Contents Generation")
+    extracted_toc_prompt, extracted_toc_text, extracted_response =  extract_table_of_contents(
+        client, REPORT_CONFIG['flash_model_id'], toc_prompt, toc_text, system_prompt
+    )
+    log_token_metrics(state, extracted_response, "Table of Contents Extraction")
     title, sections = parse_table_of_contents(extracted_toc_text)
-    logger.info(f"📑 Report Title: {title}")
-    logger.info(f" Found {len(sections)} sections to process")
+    logger.info(f"Report Title: {title}")
+    logger.info(f"Found {len(sections)} sections to process")
 
     # Generate sections
     sections_content = []
-    global report_references
-    # for section_number, section_title in enumerate(sections, 1):
-    #     content, section_references, response = generate_section_content(client, model_id, section_title, section_number, contents, system_prompt, google_search_tool)
-    #     log_token_metrics(response, f"Section {section_number}: {section_title}")
-    #     polished_content, polish_response = polish_content(client, flash_model_id, content, system_prompt)
-    #     log_token_metrics(polish_response, "Content Polishing")
-    #     sections_content.append(polished_content)
-    #     report_references.extend(section_references)
-    #     logger.info(f"✅ Section {section_number} completed: {section_title}")
-
-    # Demo with one section, for quick testing
-    content, section_references, response = generate_section_content(client, model_id, sections[1], 1, contents, system_prompt, google_search_tool)
-    log_token_metrics(response, f"Section Demo: {sections[1]}")
-    polished_content, polish_response = polish_content(client, flash_model_id, content, system_prompt)
-    log_token_metrics(polish_response, "Content Polishing")
-    sections_content.append(polished_content)
-    report_references.extend(section_references)
-    logger.info(f"✅ Section Demo completed")
+    sections_to_generate = [sections[1]] if REPORT_CONFIG['demo_mode'] else sections
+    for section_number, section_title in enumerate(sections_to_generate, 1):
+        content, section_references, response =  generate_section_content(
+            client, REPORT_CONFIG['model_id'], section_title, section_number,
+            state.contents, system_prompt, google_search_tool
+        )
+        log_token_metrics(state, response, f"Section {section_number}: {section_title}")
+        polished_content, polish_response = polish_content(
+            client, REPORT_CONFIG['flash_model_id'], content, system_prompt
+        )
+        log_token_metrics(state, polish_response, "Content Polishing")
+        sections_content.append(polished_content)
+        state.report_references.extend(section_references)
+        logger.info(f"Section {section_number} completed: {section_title}")
 
     # Save files
-    pdf_file = save_report_files(title, sections_content, report_references, current_request_id)
+    pdf_file = save_report_files(title, sections_content, state.report_references, state.current_request_id)
     
     # Upload to GCS
-    upload_to_gcs(pdf_file, current_request_id)
+    upload_to_gcs(pdf_file, state.current_request_id)
     
     # Log final metrics
-    log_final_metrics()
-    logger.info("🎉 Report generation process completed!")
+    log_final_metrics(state)
+    logger.info("Report generation process completed!")
 
 if __name__ == "__main__":
     main()
