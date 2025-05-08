@@ -34,6 +34,22 @@ The system follows a modular architecture with the following key components:
    - Performance metrics
    - Error logging
 
+## Demo
+
+The system supports multiple languages and generates comprehensive reports with consistent quality across different languages. Here are some example reports:
+
+### Korean Report
+A detailed analysis of premium credit card market competition in Korean:
+[View Korean Report](https://hellonewday.github.io/gemini-report-generator/)
+
+### English Report
+The same analysis translated and adapted for English-speaking audiences:
+[View English Report](https://hellonewday.github.io/gemini-report-generator/english.html)
+
+### Vietnamese Report
+Vietnamese version of the analysis with localized content:
+[View Vietnamese Report](https://hellonewday.github.io/gemini-report-generator/vietnamese.html)
+
 ## Overview
 
 This system generates detailed financial reports by utilizing Google's Gemini AI models to analyze and compare credit card products across major banks. It's designed to produce executive-level reports with a focus on strategic insights and competitive analysis.
