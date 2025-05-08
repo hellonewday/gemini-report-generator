@@ -7,6 +7,65 @@ from markdown.extensions.toc import TocExtension
 import logging
 import time
 from functools import wraps
+import csv
+import uuid
+import os
+from datetime import datetime
+
+# Configuration parameters
+REPORT_CONFIG = {
+    # Core Business Parameters
+    'primary_bank': 'Kookmin Bank',
+    'comparison_banks': ['Hana', 'Woori', 'Shinhan Bank'],
+    'report_type': 'Premium Credit Cards',
+    'time_period': '2024 Q1',
+    'language': 'English',  # Can be changed to other languages like "Korean", "Japanese", etc.
+    
+    # Strategic Analysis Focus
+    'analysis_focus': [
+        'Market Share and Growth',
+        'Revenue and Profitability',
+        'Customer Acquisition Cost',
+        'Customer Lifetime Value',
+        'Digital Transformation Impact',
+        'Competitive Positioning'
+    ],
+    
+    # Key Performance Metrics
+    'performance_metrics': [
+        'Card Issuance Volume',
+        'Transaction Volume',
+        'Revenue per Card',
+        'Customer Retention Rate',
+        'Digital Adoption Rate',
+        'Market Share by Segment'
+    ],
+    
+    # Target Market Segments
+    'market_segments': [
+        'High Net Worth Individuals',
+        'Business Professionals',
+        'Digital-First Customers',
+        'Loyalty Program Members'
+    ],
+    
+    # Report Structure
+    'report_sections': [
+        'Executive Summary',
+        'Market Performance Analysis',
+        'Competitive Landscape',
+        'Strategic Opportunities',
+        'Risk Assessment',
+        'Actionable Recommendations'
+    ],
+    
+    # Writing Style
+    'writing_style': {
+        'tone': 'Executive and Strategic',
+        'formality_level': 'High',
+        'emphasis': ['Data-Driven Insights', 'Strategic Implications', 'ROI Impact']
+    }
+}
 
 # Configure logging
 logging.basicConfig(
@@ -16,61 +75,275 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+# Global variables
+token_metrics = []
+current_request_id = None
+LOGGING_CSV = "logging.csv"
+
+def initialize_request():
+    """Initialize a new request with a unique ID"""
+    global current_request_id, token_metrics
+    current_request_id = f"{datetime.now().strftime('%Y%m%d')}_{str(uuid.uuid4())[:8]}"
+    token_metrics = []
+    logger.info(f"🆕 Starting new request: {current_request_id}")
+    return current_request_id
+
+def log_token_metrics(response, section_name=""):
+    """Log token usage metrics in a beautiful format"""
+    if not current_request_id:
+        initialize_request()
+        
+    input_tokens = response.usage_metadata.prompt_token_count
+    output_tokens = response.usage_metadata.candidates_token_count
+    model_name = response.model_version
+    total_tokens = input_tokens + output_tokens
+    
+    # Set cost per 1M tokens based on model version
+    if "flash" in model_name.lower():
+        cost_per_1m_input = 0.15  # $0.15 per 1M tokens for input
+        cost_per_1m_output = 3.5  # $3.50 per 1M tokens for output
+    else:  # pro model
+        cost_per_1m_input = 1.25  # $1.25 per 1M tokens for input
+        cost_per_1m_output = 10.0  # $10.00 per 1M tokens for output
+    
+    # Calculate costs
+    input_cost = round(input_tokens * cost_per_1m_input / 1000000, 6)
+    output_cost = round(output_tokens * cost_per_1m_output / 1000000, 6)
+    total_cost = round(input_cost + output_cost, 6)
+    
+    # Store metrics for final summary
+    metric = {
+        "request_id": current_request_id,
+        "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "section": section_name,
+        "model_version": model_name,
+        "input_tokens": input_tokens,
+        "output_tokens": output_tokens,
+        "total_tokens": total_tokens,
+        "cost_per_1m_input": cost_per_1m_input,
+        "cost_per_1m_output": cost_per_1m_output,
+        "input_cost": input_cost,
+        "output_cost": output_cost,
+        "total_cost": total_cost
+    }
+    token_metrics.append(metric)
+    
+    # Append to CSV file
+    append_metric_to_csv(metric)
+    
+    logger.info(f"📊 Token Usage Metrics for {section_name} ({model_name}):")
+    logger.info(f"   ├─ Input Tokens:  {input_tokens:,}")
+    logger.info(f"   ├─ Output Tokens: {output_tokens:,}")
+    logger.info(f"   └─ Total Tokens:  {total_tokens:,}")
+    logger.info(f"   ├─ Input Cost:    ${input_cost:.6f}")
+    logger.info(f"   └─ Output Cost:   ${output_cost:.6f}")
+
+def append_metric_to_csv(metric):
+    """Append a single metric to the logging CSV file"""
+    file_exists = os.path.isfile(LOGGING_CSV)
+    
+    # Define CSV headers
+    headers = [
+        "Request ID",
+        "Timestamp",
+        "Section",
+        "Model Version",
+        "Input Tokens",
+        "Output Tokens",
+        "Total Tokens",
+        "Cost per 1M Input ($)",
+        "Cost per 1M Output ($)",
+        "Input Cost ($)",
+        "Output Cost ($)",
+        "Total Cost ($)"
+    ]
+    
+    try:
+        with open(LOGGING_CSV, 'a', newline='', encoding='utf-8') as f:
+            writer = csv.DictWriter(f, fieldnames=headers)
+            
+            # Write header if file is new
+            if not file_exists:
+                writer.writeheader()
+            
+            writer.writerow({
+                "Request ID": metric["request_id"],
+                "Timestamp": metric["timestamp"],
+                "Section": metric["section"],
+                "Model Version": metric["model_version"],
+                "Input Tokens": metric["input_tokens"],
+                "Output Tokens": metric["output_tokens"],
+                "Total Tokens": metric["total_tokens"],
+                "Cost per 1M Input ($)": metric["cost_per_1m_input"],
+                "Cost per 1M Output ($)": metric["cost_per_1m_output"],
+                "Input Cost ($)": metric["input_cost"],
+                "Output Cost ($)": metric["output_cost"],
+                "Total Cost ($)": metric["total_cost"]
+            })
+    except Exception as e:
+        logger.error(f"❌ Error appending to logging CSV: {str(e)}")
+
+def log_final_metrics():
+    """Log a summary of all token metrics at the end of report generation"""
+    if not token_metrics:
+        return
+        
+    # Group metrics by model version
+    model_metrics = {}
+    for metric in token_metrics:
+        model = metric["model_version"]
+        if model not in model_metrics:
+            model_metrics[model] = {
+                "input_tokens": 0,
+                "output_tokens": 0,
+                "total_tokens": 0,
+                "sections": []
+            }
+        model_metrics[model]["input_tokens"] += metric["input_tokens"]
+        model_metrics[model]["output_tokens"] += metric["output_tokens"]
+        model_metrics[model]["total_tokens"] += metric["total_tokens"]
+        model_metrics[model]["sections"].append(metric)
+    
+    # Calculate overall totals
+    total_input = sum(m["input_tokens"] for m in token_metrics)
+    total_output = sum(m["output_tokens"] for m in token_metrics)
+    total_all = sum(m["total_tokens"] for m in token_metrics)
+    total_cost = sum(m["total_cost"] for m in token_metrics)
+    
+    logger.info("\n📈 Final Token Usage Summary:")
+    logger.info("=" * 70)
+    logger.info(f"Request ID: {current_request_id}")
+    
+    # Log metrics for each model
+    for model, metrics in model_metrics.items():
+        logger.info(f"\n📊 Model: {model}")
+        logger.info("-" * 70)
+        
+        # Log individual sections for this model
+        for section in metrics["sections"]:
+            logger.info(f"  • {section['section']}:")
+            logger.info(f"    ├─ Input:  {section['input_tokens']:,}")
+            logger.info(f"    ├─ Output: {section['output_tokens']:,}")
+            logger.info(f"    └─ Total:  {section['total_tokens']:,}")
+        
+        # Log subtotal for this model
+        logger.info("-" * 70)
+        logger.info(f"  📊 Model Subtotal:")
+        logger.info(f"    ├─ Input:  {metrics['input_tokens']:,}")
+        logger.info(f"    ├─ Output: {metrics['output_tokens']:,}")
+        logger.info(f"    └─ Total:  {metrics['total_tokens']:,}")
+    
+    # Log overall totals
+    logger.info("=" * 70)
+    logger.info("📊 Overall Total Usage:")
+    logger.info(f"   ├─ Total Input Tokens:  {total_input:,}")
+    logger.info(f"   ├─ Total Output Tokens: {total_output:,}")
+    logger.info(f"   └─ Total All Tokens:   {total_all:,}")
+    logger.info(f"   └─ Total Cost:         ${total_cost:.6f}")
+    logger.info("=" * 70)
+
+# Language configuration
+LANGUAGE = REPORT_CONFIG['language']
+
 client = genai.Client(
             vertexai=True,
             project="nth-droplet-458903-p4",
             location="us-central1",
         )
 model_id = "gemini-2.5-pro-preview-05-06"
+flash_model_id = "gemini-2.5-flash-preview-04-17"
 
 google_search_tool = Tool(
       google_search = GoogleSearch()
 )
 
+system_prompt = f"""
+You are a senior {LANGUAGE} financial analyst specializing in credit card products with 20 years of experience at {REPORT_CONFIG['primary_bank']}. Your expertise spans credit card market analysis, product comparison, and competitive intelligence.
 
-system_prompt = """
-You are a senior Korean financial analyst with 20 years of experience in the credit card market at Kookmin Bank. Your expertise spans banking regulations, market trends, and consumer behavior.
+**PRIMARY OBJECTIVE:**
+Create a comprehensive comparison of premium credit card products between {REPORT_CONFIG['primary_bank']} and its key competitors ({', '.join(REPORT_CONFIG['comparison_banks'])}), focusing on strategic insights and business impact for executive decision-making.
 
 **CRITICAL REQUIREMENTS:**
 
 1. LANGUAGE:
-   - ALL content MUST be in Korean with no explaination in other languages
-   - Use formal Korean business language
-   - Format numbers, dates, currency, and percentages in Korean style
+   - ALL content MUST be in {LANGUAGE} with no explanation in other languages
+   - Use formal {LANGUAGE} business language
+   - Format numbers, dates, currency, and percentages in {LANGUAGE} style
 
-2. RESEARCH:
+2. CREDIT CARD COMPARISON FOCUS:
+   - Detailed analysis of premium credit card products
+   - Direct comparison of features, benefits, and pricing
+   - Market positioning and competitive advantages
+   - Customer value proposition analysis
+   - Digital capabilities and innovation
+   - Loyalty and rewards programs
+   - Fee structures and pricing models
+
+3. RESEARCH:
    - MUST use Google Search for EVERY section
    - Verify all information with multiple sources
    - Focus on financial news and official announcements
    - Ensure data is current and accurate
+   - Time period: {REPORT_CONFIG['time_period']}
 
-3. CONTENT QUALITY:
-   - Executive-level, magazine-style presentation
-   - Data-driven analysis with strategic insights
-   - Clear narrative flow from macro to micro
-   - Actionable recommendations
-   - Culturally appropriate for banking context
+4. STRATEGIC ANALYSIS FOCUS:
+   The analysis must cover these key areas:
+   {', '.join(REPORT_CONFIG['analysis_focus'])}
+   - Executive-level analysis with clear business impact
+   - Data-driven insights with ROI implications
+   - Market share and growth analysis
+   - Competitive positioning
+   - Digital transformation impact
+   - Risk assessment and mitigation
 
-4. STRUCTURE:
-   - Professional table of contents
-   - Logical section progression
-   - Clear section descriptions
-   - Proper formatting and organization
-   - Please do not include References section in the report
+5. KEY PERFORMANCE METRICS:
+   Track and analyze these specific metrics:
+   {', '.join(REPORT_CONFIG['performance_metrics'])}
+   - Card issuance and transaction volumes
+   - Revenue and profitability metrics
+   - Customer acquisition and retention
+   - Digital adoption rates
+   - Market share by segment
+   - Cost efficiency ratios
 
-5. WRITING STYLE:
-   - Formal Korean business tone
-   - Clear and concise language
-   - Professional terminology
-   - Proper data presentation
-   - Strategic focus
+6. TARGET MARKET SEGMENTS:
+   Focus analysis on these key segments:
+   {', '.join(REPORT_CONFIG['market_segments'])}
+   - Primary: {REPORT_CONFIG['primary_bank']} Executive Team
+   - Focus on strategic decision-making
+   - Emphasis on business impact
+   - Clear actionable recommendations
+   - Risk-reward analysis
+
+7. COMPETITIVE ANALYSIS:
+   - Comparison banks: {', '.join(REPORT_CONFIG['comparison_banks'])}
+   - Market positioning
+   - Product differentiation
+   - Pricing strategies
+   - Digital capabilities
+   - Customer experience
+
+8. REPORT STRUCTURE:
+   Following this report structure as a suggestion for the report, but you can change the structure if needed to provide strong and clear analysis.
+   {', '.join(REPORT_CONFIG['report_sections'])}
+
+
+9. WRITING STYLE:
+   - Tone: {REPORT_CONFIG['writing_style']['tone']}
+   - Formality: {REPORT_CONFIG['writing_style']['formality_level']}
+   - Emphasis: {', '.join(REPORT_CONFIG['writing_style']['emphasis'])}
+   - Clear executive summary
+   - Actionable insights
+   - Data visualization
 
 **FINAL REMINDER:**
-You MUST use Google Search for EVERY main section and ensure ALL content is in Korean. This is critical for the report's accuracy and value to Korean-speaking executives.
+You MUST use Google Search for EVERY main section and ensure ALL content is in {LANGUAGE}. Focus on providing detailed credit card product comparisons and strategic insights that would be valuable for {LANGUAGE}-speaking banking executives.
 """
 
 contents=[]
 report_references = []
+
+     
 
 def retry_with_backoff(max_retries=3, initial_delay=1, max_delay=10):
     """Decorator for retrying functions with exponential backoff"""
@@ -101,18 +374,19 @@ def retry_with_backoff(max_retries=3, initial_delay=1, max_delay=10):
 def table_of_contents_prompt():
     logger.info("🔄 Generating Table of Contents...")
     user_prompt = Part.from_text(text=f"""
-            Create a professional **Table of Contents** in **Korean** for an **executive-level strategic report** comparing **credit card products** from **KB Kookmin Bank**, **Hana SEB Bank**, and **Woori Bank**. This TOC will serve as a **planner for a language model** to generate the full report, so clarity, logical flow, and completeness are essential.
-            The report is for the **Excecutives of KB Kookmin Bank** and should follow a smooth, narrative-driven structure.
+            Create a professional **Table of Contents** in **{LANGUAGE}** for an **executive-level strategic report** comparing **credit card products** from **KB Kookmin Bank**, **Hana SEB Bank**, and **Woori Bank**. This TOC will serve as a **planner for a language model** to generate the full report, so clarity, logical flow, and completeness are essential.
+            The report is for the **Executives of KB Kookmin Bank** and should follow a smooth, narrative-driven structure.
 
             **Instructions:**
 
-            * Write a **Korean-only** report title that is compelling and relevant.
-            * All section and subsection **titles and guidance** must be written in **formal Korean business language**.
-            * Each section/subsection must include a **brief description in Korean** explaining the content and purpose.
+            * Write a **{LANGUAGE}-only** report title that is compelling and relevant.
+            * All section and subsection **titles and guidance** must be written in **formal {LANGUAGE} business language**.
+            * Each section/subsection must include a **brief description in {LANGUAGE}** explaining the content and purpose.
             * Ensure the tone is suitable for a **C-level financial audience**—clear, concise, and strategic.
             * Maintain cultural and linguistic appropriateness for a banking/finance readership.
+            * Do not include References and Appendices section in this Table of Contents.
 
-            Do not make hypothesis or assumptions on what should be included in the report.
+            Do not make hypothesis or assumptions on what should be included in the report. 
             **IMPORTANT:** Use the **Google Search tool** to gather the most recent and relevant information to ensure the TOC supports accurate and updated content generation.
       """)     
     contents.append(Content(
@@ -123,7 +397,7 @@ def table_of_contents_prompt():
           model=model_id,
           contents=contents,
           config=GenerateContentConfig(
-                temperature = 0.7,
+                temperature = 0.4,
                 max_output_tokens = 65535,
                 tools=[google_search_tool],
                 response_modalities=["TEXT"],
@@ -131,6 +405,7 @@ def table_of_contents_prompt():
           )
     )
     text = response.text
+    log_token_metrics(response, "Table of Contents Generation")
     contents.append(Content(
           role="model",
           parts=[Part.from_text(text=text)]
@@ -141,7 +416,7 @@ def table_of_contents_prompt():
 @retry_with_backoff(max_retries=3)
 def extract_table_of_contents(context_user_prompt, context_text):
     logger.info("📋 Extracting main sections from Table of Contents...")
-    user_prompt = Part.from_text(text="""From the detailed Table of Contents in Korean above, can you help me extract:
+    user_prompt = Part.from_text(text=f"""From the detailed Table of Contents in {LANGUAGE} above, can you help me extract:
           1. The main report title (first line)
           2. All main sections marked with Roman numerals (e.g., I., II., III.)
 
@@ -155,7 +430,7 @@ def extract_table_of_contents(context_user_prompt, context_text):
           Do not add any introductory phrases or explanations to your response.""")
     
     response = client.models.generate_content(
-          model=model_id,
+          model=flash_model_id,
           contents=[
                 Content(
                       role="user",
@@ -174,7 +449,6 @@ def extract_table_of_contents(context_user_prompt, context_text):
                 temperature = 0,
                 top_p = 0.95,
                 seed = 0,
-                max_output_tokens = 65535,
                 safety_settings = [SafetySetting(
                       category="HARM_CATEGORY_HATE_SPEECH",
                       threshold="OFF"
@@ -193,6 +467,7 @@ def extract_table_of_contents(context_user_prompt, context_text):
           )
     )
     text = response.text
+    log_token_metrics(response, "Table of Contents Extraction")
     logger.info("✅ Sections extracted successfully")
     return user_prompt, text 
 
@@ -236,13 +511,14 @@ def generate_section_content(section_title, section_number):
     logger.info(f"📝 Generating content for section {section_number}: {section_title}")
     user_prompt = Part.from_text(text=f"""
             Based on the guidance in the table of contents section, connect with the previous section, write a comprehensive and professionally worded section of our strategic report on the section {section_title}. 
-            The content should be tailored for Kookmin Bank's Korean-speaking executive audience, including the CFO and other C-level stakeholders.
+            The content should be tailored for Kookmin Bank's {LANGUAGE}-speaking executive audience, including the CFO and other C-level stakeholders.
             Even though the guidance is a very useful information to write the section, please do not include the guidance in the top of the section and sub-sections.
 
             CRITICAL LANGUAGE REQUIREMENTS:
-            - Entire content must be in formal Korean with proper business terms
-            - No English allowed
-            - Use Korean format for numbers, dates, currency, and percentages
+            - Entire content must be in formal {LANGUAGE} with proper business terms
+            - No other languages allowed
+            - Use {LANGUAGE} format for numbers, dates, currency, and percentages
+            - For bullet points, use hyphens (-) instead of asterisks (*) to ensure proper PDF rendering
 
             IMPORTANT: **Always combine with the provided Google Search tool** to gather the most recent, reliable, and relevant information on this section. 
             
@@ -264,8 +540,7 @@ def generate_section_content(section_title, section_number):
             **Writing Style Requirements:**
             - Use a flowing, narrative style with smooth transitions and a professional, engaging tone
             - Build a compelling story with insights, data, and clear calls to action
-            - Tailor content for a Korean-speaking audience, ensuring cultural and linguistic relevance
-
+            - Tailor content for a {LANGUAGE}-speaking audience, ensuring cultural and linguistic relevance
 
             **Data Presentation:**
             1. Use tables for structured data comparisons and detailed metrics
@@ -302,7 +577,7 @@ def generate_section_content(section_title, section_number):
             5. Confirm all quotes and citations
 
             Remember: It's better to have fewer, well-verified points than many uncertain ones. Focus on depth of analysis for confirmed information rather than trying to cover everything.
-            """)                  
+            """)
     contents.append(Content(
             role="user",
             parts=[user_prompt]
@@ -320,6 +595,7 @@ def generate_section_content(section_title, section_number):
     )
 
     text = response.text
+    log_token_metrics(response, f"Section {section_number}: {section_title}")
     contents.append(Content(
             role="model",
             parts=[Part.from_text(text=text)]
@@ -384,7 +660,7 @@ def generate_section_content(section_title, section_number):
 def polish_content(content):
     logger.info("✨ Polishing content for better flow and readability...")
     user_prompt = Part.from_text(text=f"""
-      You are a professional Korean editor with strong business writing experience. Improve the content’s narrative flow and transitions while preserving its language, tone, and cultural context. Return only the revised text—no introductions or explanations.
+      You are a professional {LANGUAGE} editor with strong business writing experience. Improve the content's narrative flow and transitions while preserving its language, tone, and cultural context. Return only the revised text—no introductions or explanations.
 
       Requirements:
       - Improve sentence flow, paragraph transitions, and overall readability
@@ -393,9 +669,9 @@ def polish_content(content):
       - Do not alter layout (indentation, line breaks, bulleting, paragraphing)
       - Do not add introductions or explanations, just return the content
       - Keep superscript references and all HTML tags intact
-      - Ensure suitability for a Korean-speaking audience
+      - Ensure suitability for a {LANGUAGE}-speaking audience
       - Maintain the original language and cultural context of the content
-      - Ensure the content remains appropriate for Korean-speaking audience
+      - Ensure the content remains appropriate for {LANGUAGE}-speaking audience
       - Keep all HTML tags intact, especially those related to references
 
     CRITICAL: Preserve ALL superscript references (e.g., <sup><a href="#ref-section-1-1">[1.1]</a></sup>) exactly as they appear, including their HTML tags and exact placement in the text
@@ -405,7 +681,7 @@ def polish_content(content):
     """)
     
     response = client.models.generate_content(
-        model=model_id,
+        model=flash_model_id,
         contents=[
             Content(
                 role="user",
@@ -414,7 +690,6 @@ def polish_content(content):
         ],
         config=GenerateContentConfig(
             temperature=0.7,
-            max_output_tokens=65535,
             response_modalities=["TEXT"],
             safety_settings = [
                   SafetySetting(
@@ -433,11 +708,14 @@ def polish_content(content):
         )
     )
     
+    text = response.text
+    log_token_metrics(response, "Content Polishing")
     logger.info("✅ Content polished successfully")
-    return response.text
+    return text
 
 # Main execution
 logger.info("🚀 Starting report generation process...")
+initialize_request()
 
 toc_prompt, toc_text = table_of_contents_prompt()
 extracted_toc_prompt, extracted_toc_text = extract_table_of_contents(toc_prompt, toc_text)
@@ -445,13 +723,19 @@ title, sections = parse_table_of_contents(extracted_toc_text)
 logger.info(f"📑 Report Title: {title}")
 logger.info(f"📚 Found {len(sections)} sections to process")
 
-# Generate content for all sections except the last one
 section_content = f"# {title}\n\n[TOC]\n\n"
-for i, section in enumerate(sections, 1):
-    content = generate_section_content(section, i)
+# Generate content for first section for demo
+# content = generate_section_content(sections[1], 1)
+# polished_content = polish_content(content)
+# section_content += polished_content + "\n\n"
+# logger.info(f"✅ Demo completed: {sections[1]}")
+
+# Generate content for all sections
+for section_number, section_title in enumerate(sections, 1):
+    content = generate_section_content(section_title, section_number)
     polished_content = polish_content(content)
     section_content += polished_content + "\n\n"
-    logger.info(f"✅ Section {i}/{len(sections)} completed: {section}")
+    logger.info(f"✅ Section {section_number} completed: {section_title}")
 
 report_references = "\n\n---\n" + f"## References" + "\n\n".join(report_references)
 section_content = section_content + report_references
@@ -510,6 +794,9 @@ try:
     logger.info("✅ PDF generated successfully")
 except Exception as e:
     logger.error(f"❌ Error generating PDF: {str(e)}")
+
+# Log final metrics summary
+log_final_metrics()
 
 logger.info("🎉 Report generation process completed!")
 

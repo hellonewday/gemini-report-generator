@@ -1,0 +1,29 @@
+Request ID,Timestamp,Section,Model Version,Input Tokens,Output Tokens,Total Tokens,Cost per 1M Input ($),Cost per 1M Output ($),Input Cost ($),Output Cost ($),Total Cost ($)
+20250508_aa82f318,2025-05-08 13:47:52,Table of Contents Generation,gemini-2.5-pro-preview-05-06,566,1785,2351,1.25,10.0,0.000708,0.01785,0.018558
+20250508_aa82f318,2025-05-08 13:47:54,Table of Contents Extraction,gemini-2.5-flash-preview-04-17,2456,112,2568,0.15,3.5,0.000368,0.000392,0.00076
+20250508_aa82f318,2025-05-08 13:48:09,Section 1: Executive Summary,gemini-2.5-pro-preview-05-06,3097,549,3646,1.25,10.0,0.003871,0.00549,0.009361
+20250508_aa82f318,2025-05-08 13:48:23,Content Polishing,gemini-2.5-flash-preview-04-17,1666,1175,2841,0.15,3.5,0.00025,0.004112,0.004362
+20250508_aa82f318,2025-05-08 13:48:44,Section 2: Introduction: The Evolving South Korean Credit Card Landscape,gemini-2.5-pro-preview-05-06,4400,1147,5547,1.25,10.0,0.0055,0.01147,0.01697
+20250508_aa82f318,2025-05-08 13:49:06,Content Polishing,gemini-2.5-flash-preview-04-17,2853,2414,5267,0.15,3.5,0.000428,0.008449,0.008877
+20250508_aa82f318,2025-05-08 13:49:36,Section 3: Macro-Environmental Analysis: Shaping Forces in the South Korean Credit Card Market,gemini-2.5-pro-preview-05-06,6305,2301,8606,1.25,10.0,0.007881,0.02301,0.030891
+20250508_aa82f318,2025-05-08 13:50:07,Content Polishing,gemini-2.5-flash-preview-04-17,2853,2341,5194,0.15,3.5,0.000428,0.008193,0.008621
+20250508_aa82f318,2025-05-08 13:50:39,Section 4: Competitive Landscape: Profiling Key Players,gemini-2.5-pro-preview-05-06,9356,2365,11721,1.25,10.0,0.011695,0.02365,0.035345
+20250508_aa82f318,2025-05-08 13:51:09,Content Polishing,gemini-2.5-flash-preview-04-17,4749,4463,9212,0.15,3.5,0.000712,0.015621,0.016333
+20250508_aa82f318,2025-05-08 13:52:01,Section 5: Comparative Product Analysis: Unveiling Competitive Differentiators,gemini-2.5-pro-preview-05-06,12474,3533,16007,1.25,10.0,0.015593,0.03533,0.050923
+20250508_aa82f318,2025-05-08 13:52:25,Content Polishing,gemini-2.5-flash-preview-04-17,4085,3651,7736,0.15,3.5,0.000613,0.012778,0.013391
+20250508_aa82f318,2025-05-08 13:52:56,Section 6: Financial Performance and Portfolio Health,gemini-2.5-pro-preview-05-06,16756,2542,19298,1.25,10.0,0.020945,0.02542,0.046365
+20250508_aa82f318,2025-05-08 13:53:18,Content Polishing,gemini-2.5-flash-preview-04-17,3094,2651,5745,0.15,3.5,0.000464,0.009279,0.009743
+20250508_aa82f318,2025-05-08 13:53:45,Section 7: Strategic SWOT Analysis for KB Kookmin Bank's Credit Card Division,gemini-2.5-pro-preview-05-06,20056,1842,21898,1.25,10.0,0.02507,0.01842,0.04349
+20250508_aa82f318,2025-05-08 13:54:00,Content Polishing,gemini-2.5-flash-preview-04-17,2394,1978,4372,0.15,3.5,0.000359,0.006923,0.007282
+20250508_aa82f318,2025-05-08 13:54:23,Section 8: Strategic Recommendations for KB Kookmin Bank,gemini-2.5-pro-preview-05-06,22650,1789,24439,1.25,10.0,0.028313,0.01789,0.046203
+20250508_aa82f318,2025-05-08 13:54:44,Content Polishing,gemini-2.5-flash-preview-04-17,2341,1984,4325,0.15,3.5,0.000351,0.006944,0.007295
+20250508_aa82f318,2025-05-08 13:54:58,Section 9: Conclusion: Charting a Course for Sustained Growth and Market Leadership,gemini-2.5-pro-preview-05-06,25196,809,26005,1.25,10.0,0.031495,0.00809,0.039585
+20250508_aa82f318,2025-05-08 13:55:10,Content Polishing,gemini-2.5-flash-preview-04-17,1361,863,2224,0.15,3.5,0.000204,0.003021,0.003225
+20250508_07d1a76f,2025-05-08 14:04:50,Table of Contents Generation,gemini-2.5-pro-preview-05-06,990,2765,3755,1.25,10.0,0.001238,0.02765,0.028888
+20250508_07d1a76f,2025-05-08 14:04:53,Table of Contents Extraction,gemini-2.5-flash-preview-04-17,3860,146,4006,0.15,3.5,0.000579,0.000511,0.00109
+20250508_07d1a76f,2025-05-08 14:05:20,Section 1: 1. Executive Summary,gemini-2.5-pro-preview-05-06,4504,991,5495,1.25,10.0,0.00563,0.00991,0.01554
+20250508_07d1a76f,2025-05-08 14:05:40,Content Polishing,gemini-2.5-flash-preview-04-17,2550,1612,4162,0.15,3.5,0.000382,0.005642,0.006024
+20250508_07d1a76f,2025-05-08 14:06:09,Section 2: 2. Introduction: Navigating the Premium Credit Card Landscape in South Korea,gemini-2.5-pro-preview-05-06,6254,991,7245,1.25,10.0,0.007817,0.00991,0.017727
+20250508_07d1a76f,2025-05-08 14:06:30,Content Polishing,gemini-2.5-flash-preview-04-17,2638,1690,4328,0.15,3.5,0.000396,0.005915,0.006311
+20250508_07d1a76f,2025-05-08 14:07:07,Section 3: 3. Market Performance Analysis (2024 Q1 Focus),gemini-2.5-pro-preview-05-06,8003,2149,10152,1.25,10.0,0.010004,0.02149,0.031494
+20250508_07d1a76f,2025-05-08 14:07:32,Content Polishing,gemini-2.5-flash-preview-04-17,4587,3830,8417,0.15,3.5,0.000688,0.013405,0.014093
