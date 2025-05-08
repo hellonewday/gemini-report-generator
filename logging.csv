@@ -27,3 +27,13 @@ Request ID,Timestamp,Section,Model Version,Input Tokens,Output Tokens,Total Toke
 20250508_07d1a76f,2025-05-08 14:06:30,Content Polishing,gemini-2.5-flash-preview-04-17,2638,1690,4328,0.15,3.5,0.000396,0.005915,0.006311
 20250508_07d1a76f,2025-05-08 14:07:07,Section 3: 3. Market Performance Analysis (2024 Q1 Focus),gemini-2.5-pro-preview-05-06,8003,2149,10152,1.25,10.0,0.010004,0.02149,0.031494
 20250508_07d1a76f,2025-05-08 14:07:32,Content Polishing,gemini-2.5-flash-preview-04-17,4587,3830,8417,0.15,3.5,0.000688,0.013405,0.014093
+20250508_07d1a76f,2025-05-08 14:08:13,"Section 4: 4. Competitive Landscape: KB Kookmin Bank vs. Key Competitors (Hana Bank, Woori Bank)",gemini-2.5-pro-preview-05-06,10918,3012,13930,1.25,10.0,0.013647,0.03012,0.043767
+20250508_07d1a76f,2025-05-08 14:08:37,Content Polishing,gemini-2.5-flash-preview-04-17,3971,3286,7257,0.15,3.5,0.000596,0.011501,0.012097
+20250508_07d1a76f,2025-05-08 14:09:12,Section 5: 5. Strategic Analysis: Implications for KB Kookmin Bank,gemini-2.5-pro-preview-05-06,14687,2399,17086,1.25,10.0,0.018359,0.02399,0.042349
+20250508_07d1a76f,2025-05-08 14:09:36,Content Polishing,gemini-2.5-flash-preview-04-17,3358,2688,6046,0.15,3.5,0.000504,0.009408,0.009912
+20250508_07d1a76f,2025-05-08 14:10:13,Section 6: 6. Key Performance Metrics (KPI) Dashboard,gemini-2.5-pro-preview-05-06,17840,2668,20508,1.25,10.0,0.0223,0.02668,0.04898
+20250508_07d1a76f,2025-05-08 14:10:41,Content Polishing,gemini-2.5-flash-preview-04-17,3627,2805,6432,0.15,3.5,0.000544,0.009817,0.010361
+20250508_07d1a76f,2025-05-08 14:11:14,Section 7: 7. Target Market Segment Analysis,gemini-2.5-pro-preview-05-06,21259,2587,23846,1.25,10.0,0.026574,0.02587,0.052444
+20250508_07d1a76f,2025-05-08 14:11:38,Content Polishing,gemini-2.5-flash-preview-04-17,3546,2789,6335,0.15,3.5,0.000532,0.009761,0.010293
+20250508_07d1a76f,2025-05-08 14:12:07,Section 8: 8. Strategic Opportunities for KB Kookmin Bank,gemini-2.5-pro-preview-05-06,24601,1827,26428,1.25,10.0,0.030751,0.01827,0.049021
+20250508_07d1a76f,2025-05-08 14:12:30,Content Polishing,gemini-2.5-flash-preview-04-17,2786,2044,4830,0.15,3.5,0.000418,0.007154,0.007572

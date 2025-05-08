@@ -59,6 +59,9 @@ REPORT_CONFIG = {
         'Actionable Recommendations'
     ],
     
+    # Structure Mode
+    'strict_structure': False,  # Set to True to enforce exact report structure
+    
     # Writing Style
     'writing_style': {
         'tone': 'Executive and Strategic',
@@ -324,9 +327,8 @@ Create a comprehensive comparison of premium credit card products between {REPOR
    - Customer experience
 
 8. REPORT STRUCTURE:
-   Following this report structure as a suggestion for the report, but you can change the structure if needed to provide strong and clear analysis.
+   {"Follow this exact section structure:" if REPORT_CONFIG['strict_structure'] else "Following this report structure as a suggestion for the report, but you can change the structure if needed to provide strong and clear analysis."}
    {', '.join(REPORT_CONFIG['report_sections'])}
-
 
 9. WRITING STYLE:
    - Tone: {REPORT_CONFIG['writing_style']['tone']}
