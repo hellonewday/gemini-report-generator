@@ -5,70 +5,13 @@ import re
 from google.genai.types import Tool, GenerateContentConfig, GoogleSearch, Part, Content, SafetySetting
 from markdown.extensions.toc import TocExtension
 import logging
-import time
-from functools import wraps
 import csv
-import uuid
 import os
 from datetime import datetime
+from google.cloud import storage
 
-# Configuration parameters
-REPORT_CONFIG = {
-    # Core Business Parameters
-    'primary_bank': 'Kookmin Bank',
-    'comparison_banks': ['Hana', 'Woori', 'Shinhan Bank'],
-    'report_type': 'Premium Credit Cards',
-    'time_period': '2024 Q1',
-    'language': 'English',  # Can be changed to other languages like "Korean", "Japanese", etc.
-    
-    # Strategic Analysis Focus
-    'analysis_focus': [
-        'Market Share and Growth',
-        'Revenue and Profitability',
-        'Customer Acquisition Cost',
-        'Customer Lifetime Value',
-        'Digital Transformation Impact',
-        'Competitive Positioning'
-    ],
-    
-    # Key Performance Metrics
-    'performance_metrics': [
-        'Card Issuance Volume',
-        'Transaction Volume',
-        'Revenue per Card',
-        'Customer Retention Rate',
-        'Digital Adoption Rate',
-        'Market Share by Segment'
-    ],
-    
-    # Target Market Segments
-    'market_segments': [
-        'High Net Worth Individuals',
-        'Business Professionals',
-        'Digital-First Customers',
-        'Loyalty Program Members'
-    ],
-    
-    # Report Structure
-    'report_sections': [
-        'Executive Summary',
-        'Market Performance Analysis',
-        'Competitive Landscape',
-        'Strategic Opportunities',
-        'Risk Assessment',
-        'Actionable Recommendations'
-    ],
-    
-    # Structure Mode
-    'strict_structure': False,  # Set to True to enforce exact report structure
-    
-    # Writing Style
-    'writing_style': {
-        'tone': 'Executive and Strategic',
-        'formality_level': 'High',
-        'emphasis': ['Data-Driven Insights', 'Strategic Implications', 'ROI Impact']
-    }
-}
+from config import REPORT_CONFIG
+from utils import retry_with_backoff, initialize_request
 
 # Configure logging
 logging.basicConfig(
@@ -80,16 +23,12 @@ logger = logging.getLogger(__name__)
 
 # Global variables
 token_metrics = []
+contents=[]
+report_references = []
+
 current_request_id = None
 LOGGING_CSV = "logging.csv"
 
-def initialize_request():
-    """Initialize a new request with a unique ID"""
-    global current_request_id, token_metrics
-    current_request_id = f"{datetime.now().strftime('%Y%m%d')}_{str(uuid.uuid4())[:8]}"
-    token_metrics = []
-    logger.info(f"🆕 Starting new request: {current_request_id}")
-    return current_request_id
 
 def log_token_metrics(response, section_name=""):
     """Log token usage metrics in a beautiful format"""
@@ -213,29 +152,6 @@ def log_final_metrics():
     total_all = sum(m["total_tokens"] for m in token_metrics)
     total_cost = sum(m["total_cost"] for m in token_metrics)
     
-    logger.info("\n📈 Final Token Usage Summary:")
-    logger.info("=" * 70)
-    logger.info(f"Request ID: {current_request_id}")
-    
-    # Log metrics for each model
-    for model, metrics in model_metrics.items():
-        logger.info(f"\n📊 Model: {model}")
-        logger.info("-" * 70)
-        
-        # Log individual sections for this model
-        for section in metrics["sections"]:
-            logger.info(f"  • {section['section']}:")
-            logger.info(f"    ├─ Input:  {section['input_tokens']:,}")
-            logger.info(f"    ├─ Output: {section['output_tokens']:,}")
-            logger.info(f"    └─ Total:  {section['total_tokens']:,}")
-        
-        # Log subtotal for this model
-        logger.info("-" * 70)
-        logger.info(f"  📊 Model Subtotal:")
-        logger.info(f"    ├─ Input:  {metrics['input_tokens']:,}")
-        logger.info(f"    ├─ Output: {metrics['output_tokens']:,}")
-        logger.info(f"    └─ Total:  {metrics['total_tokens']:,}")
-    
     # Log overall totals
     logger.info("=" * 70)
     logger.info("📊 Overall Total Usage:")
@@ -245,8 +161,6 @@ def log_final_metrics():
     logger.info(f"   └─ Total Cost:         ${total_cost:.6f}")
     logger.info("=" * 70)
 
-# Language configuration
-LANGUAGE = REPORT_CONFIG['language']
 
 client = genai.Client(
             vertexai=True,
@@ -261,132 +175,120 @@ google_search_tool = Tool(
 )
 
 system_prompt = f"""
-You are a senior {LANGUAGE} financial analyst specializing in credit card products with 20 years of experience at {REPORT_CONFIG['primary_bank']}. Your expertise spans credit card market analysis, product comparison, and competitive intelligence.
+    You are a senior {REPORT_CONFIG['language']} financial analyst specializing in credit card products with 20 years of experience at {REPORT_CONFIG['primary_bank']}. Your expertise spans credit card market analysis, product comparison, and competitive intelligence.
 
-**PRIMARY OBJECTIVE:**
-Create a comprehensive comparison of premium credit card products between {REPORT_CONFIG['primary_bank']} and its key competitors ({', '.join(REPORT_CONFIG['comparison_banks'])}), focusing on strategic insights and business impact for executive decision-making.
+    **PRIMARY OBJECTIVE:**
+    Create a comprehensive comparison of premium credit card products between {REPORT_CONFIG['primary_bank']} and its key competitors ({', '.join(REPORT_CONFIG['comparison_banks'])}), focusing on concrete product features, pricing, and benefits that drive customer decisions.
 
-**CRITICAL REQUIREMENTS:**
+    **CRITICAL REQUIREMENTS:**
 
-1. LANGUAGE:
-   - ALL content MUST be in {LANGUAGE} with no explanation in other languages
-   - Use formal {LANGUAGE} business language
-   - Format numbers, dates, currency, and percentages in {LANGUAGE} style
+    1. LANGUAGE AND LOCALIZATION:
+    - ALL content MUST be in {REPORT_CONFIG['language']} with no explanation in other languages
+    - Use formal {REPORT_CONFIG['language']} business language
+    - Format numbers, dates, currency, and percentages in {REPORT_CONFIG['language']}
+    - Focus EXCLUSIVELY on the local market context and data
+    - Do not mix data or information from different regions
+    - Ensure all market data, statistics, and examples are from the local market only
+    - Verify that all sources and references are from the local market
 
-2. CREDIT CARD COMPARISON FOCUS:
-   - Detailed analysis of premium credit card products
-   - Direct comparison of features, benefits, and pricing
-   - Market positioning and competitive advantages
-   - Customer value proposition analysis
-   - Digital capabilities and innovation
-   - Loyalty and rewards programs
-   - Fee structures and pricing models
+    2. CREDIT CARD COMPARISON FOCUS:
+    - Detailed analysis of specific credit card products and their features
+    - Direct comparison of:
+        * Annual fees and charges
+        * Interest rates and APR
+        * Rewards programs and points structure
+        * Cashback rates and categories
+        * Travel benefits and insurance coverage
+        * Welcome bonuses and sign-up offers
+        * Foreign transaction fees
+        * Credit limits and eligibility criteria
+    - Clear presentation of pricing models and fee structures
+    - Concrete benefits and value propositions
+    - Digital features and mobile app capabilities
+    - Customer service and support options
 
-3. RESEARCH:
-   - MUST use Google Search for EVERY section
-   - Verify all information with multiple sources
-   - Focus on financial news and official announcements
-   - Ensure data is current and accurate
-   - Time period: {REPORT_CONFIG['time_period']}
+    3. RESEARCH:
+    - MUST use Google Search for EVERY section
+    - Verify all information with multiple sources
+    - Focus on official bank websites and product pages
+    - Ensure data is current and accurate
+    - Prioritize local market sources and data
+    - Cross-reference information with local regulatory bodies and financial institutions
+    - Exclude any data or information from other regions
 
-4. STRATEGIC ANALYSIS FOCUS:
-   The analysis must cover these key areas:
-   {', '.join(REPORT_CONFIG['analysis_focus'])}
-   - Executive-level analysis with clear business impact
-   - Data-driven insights with ROI implications
-   - Market share and growth analysis
-   - Competitive positioning
-   - Digital transformation impact
-   - Risk assessment and mitigation
+    4. ANALYSIS FOCUS:
+    The analysis must cover these key areas:
+    - Product feature comparison
+    - Pricing and fee analysis
+    - Benefits and rewards comparison
+    - Digital capabilities
+    - Customer service offerings
+    - Market positioning based on concrete features
+    - All analysis must be grounded in local market context
 
-5. KEY PERFORMANCE METRICS:
-   Track and analyze these specific metrics:
-   {', '.join(REPORT_CONFIG['performance_metrics'])}
-   - Card issuance and transaction volumes
-   - Revenue and profitability metrics
-   - Customer acquisition and retention
-   - Digital adoption rates
-   - Market share by segment
-   - Cost efficiency ratios
+    5. KEY PERFORMANCE METRICS:
+    Track and analyze these specific metrics:
+    - Card issuance volume
+    - Transaction volume
+    - Revenue per card
+    - Customer retention rate
+    - Digital adoption rate
+    - Market share by segment
+    - All metrics must be from local market sources
 
-6. TARGET MARKET SEGMENTS:
-   Focus analysis on these key segments:
-   {', '.join(REPORT_CONFIG['market_segments'])}
-   - Primary: {REPORT_CONFIG['primary_bank']} Executive Team
-   - Focus on strategic decision-making
-   - Emphasis on business impact
-   - Clear actionable recommendations
-   - Risk-reward analysis
+    6. TARGET MARKET SEGMENTS:
+    Focus analysis on these key segments:
+    {', '.join(REPORT_CONFIG['market_segments'])}
+    - Primary: {REPORT_CONFIG['primary_bank']} Executive Team
+    - Focus on concrete product comparisons
+    - Emphasis on pricing and features
+    - Clear value propositions
+    - Direct competitive advantages
+    - All segment analysis must be based on local market data
 
-7. COMPETITIVE ANALYSIS:
-   - Comparison banks: {', '.join(REPORT_CONFIG['comparison_banks'])}
-   - Market positioning
-   - Product differentiation
-   - Pricing strategies
-   - Digital capabilities
-   - Customer experience
+    7. COMPETITIVE ANALYSIS:
+    - Comparison banks: {', '.join(REPORT_CONFIG['comparison_banks'])}
+    - Direct product feature comparison
+    - Pricing strategy analysis
+    - Benefits and rewards comparison
+    - Digital capabilities
+    - Customer experience
+    - All competitive analysis must be within the local market context
 
-8. REPORT STRUCTURE:
-   {"Follow this exact section structure:" if REPORT_CONFIG['strict_structure'] else "Following this report structure as a suggestion for the report, but you can change the structure if needed to provide strong and clear analysis."}
-   {', '.join(REPORT_CONFIG['report_sections'])}
+    8. REPORT STRUCTURE:
+    {"Follow this exact section structure:" if REPORT_CONFIG['strict_structure'] else "Following this report structure as a suggestion for the report, but you can change the structure if needed to provide strong and clear analysis."}
+    {', '.join(REPORT_CONFIG['report_sections'])}
 
-9. WRITING STYLE:
-   - Tone: {REPORT_CONFIG['writing_style']['tone']}
-   - Formality: {REPORT_CONFIG['writing_style']['formality_level']}
-   - Emphasis: {', '.join(REPORT_CONFIG['writing_style']['emphasis'])}
-   - Clear executive summary
-   - Actionable insights
-   - Data visualization
+    9. WRITING STYLE:
+    - Tone: {REPORT_CONFIG['writing_style']['tone']}
+    - Formality: {REPORT_CONFIG['writing_style']['formality_level']}
+    - Emphasis: {', '.join(REPORT_CONFIG['writing_style']['emphasis'])}
+    - Clear executive summary
+    - Actionable insights
+    - Data visualization
 
-**FINAL REMINDER:**
-You MUST use Google Search for EVERY main section and ensure ALL content is in {LANGUAGE}. Focus on providing detailed credit card product comparisons and strategic insights that would be valuable for {LANGUAGE}-speaking banking executives.
+    **FINAL REMINDER:**
+    You MUST use Google Search for EVERY main section and ensure ALL content is in {REPORT_CONFIG['language']}. Focus on providing detailed credit card product comparisons with concrete features, pricing, and benefits that would be valuable for {REPORT_CONFIG['language']}-speaking banking executives. Avoid abstract strategic analysis and focus on actionable, concrete product comparisons. Most importantly, ensure ALL data, examples, and market information are from the local market only - do not mix data from different regions.
 """
 
-contents=[]
-report_references = []
-
-     
-
-def retry_with_backoff(max_retries=3, initial_delay=1, max_delay=10):
-    """Decorator for retrying functions with exponential backoff"""
-    def decorator(func):
-        @wraps(func)
-        def wrapper(*args, **kwargs):
-            delay = initial_delay
-            last_exception = None
-            
-            for attempt in range(max_retries):
-                try:
-                    return func(*args, **kwargs)
-                except Exception as e:
-                    last_exception = e
-                    if attempt < max_retries - 1:
-                        logger.warning(f"Attempt {attempt + 1} failed: {str(e)}. Retrying in {delay} seconds...")
-                        time.sleep(delay)
-                        delay = min(delay * 2, max_delay)
-                    else:
-                        logger.error(f"All {max_retries} attempts failed. Last error: {str(e)}")
-                        raise last_exception
-            
-            return None
-        return wrapper
-    return decorator
 
 @retry_with_backoff(max_retries=3)
 def table_of_contents_prompt():
     logger.info("🔄 Generating Table of Contents...")
     user_prompt = Part.from_text(text=f"""
-            Create a professional **Table of Contents** in **{LANGUAGE}** for an **executive-level strategic report** comparing **credit card products** from **KB Kookmin Bank**, **Hana SEB Bank**, and **Woori Bank**. This TOC will serve as a **planner for a language model** to generate the full report, so clarity, logical flow, and completeness are essential.
+            Create a professional **Table of Contents** in **{REPORT_CONFIG['language']}** for an **executive-level strategic report** comparing **credit card products** from **KB Kookmin Bank**, **Hana SEB Bank**, and **Woori Bank**. This TOC will serve as a **planner for a language model** to generate the full report, so clarity, logical flow, and completeness are essential.
             The report is for the **Executives of KB Kookmin Bank** and should follow a smooth, narrative-driven structure.
 
             **Instructions:**
 
-            * Write a **{LANGUAGE}-only** report title that is compelling and relevant.
-            * All section and subsection **titles and guidance** must be written in **formal {LANGUAGE} business language**.
-            * Each section/subsection must include a **brief description in {LANGUAGE}** explaining the content and purpose.
+            * Write a **{REPORT_CONFIG['language']}-only** report title that is condense, aspiring, compelling and relevant
+            * All main sections marked with Roman numerals (e.g., I., II., III.)
+            * All section and subsection **titles and guidance** must be written in **formal {REPORT_CONFIG['language']} business language**.
+            * Each section/subsection must include a **brief description in {REPORT_CONFIG['language']}** explaining the content and purpose.
             * Ensure the tone is suitable for a **C-level financial audience**—clear, concise, and strategic.
             * Maintain cultural and linguistic appropriateness for a banking/finance readership.
             * Do not include References and Appendices section in this Table of Contents.
+            * **IMPORTANT:** Do not use parentheses () in section titles. Instead, use colons : or dashes - to separate additional information.
 
             Do not make hypothesis or assumptions on what should be included in the report. 
             **IMPORTANT:** Use the **Google Search tool** to gather the most recent and relevant information to ensure the TOC supports accurate and updated content generation.
@@ -418,7 +320,7 @@ def table_of_contents_prompt():
 @retry_with_backoff(max_retries=3)
 def extract_table_of_contents(context_user_prompt, context_text):
     logger.info("📋 Extracting main sections from Table of Contents...")
-    user_prompt = Part.from_text(text=f"""From the detailed Table of Contents in {LANGUAGE} above, can you help me extract:
+    user_prompt = Part.from_text(text=f"""From the detailed Table of Contents in {REPORT_CONFIG['language']} above, can you help me extract:
           1. The main report title (first line)
           2. All main sections marked with Roman numerals (e.g., I., II., III.)
 
@@ -513,13 +415,13 @@ def generate_section_content(section_title, section_number):
     logger.info(f"📝 Generating content for section {section_number}: {section_title}")
     user_prompt = Part.from_text(text=f"""
             Based on the guidance in the table of contents section, connect with the previous section, write a comprehensive and professionally worded section of our strategic report on the section {section_title}. 
-            The content should be tailored for Kookmin Bank's {LANGUAGE}-speaking executive audience, including the CFO and other C-level stakeholders.
+            The content should be tailored for Kookmin Bank's {REPORT_CONFIG['language']}-speaking executive audience, including the CFO and other C-level stakeholders.
             Even though the guidance is a very useful information to write the section, please do not include the guidance in the top of the section and sub-sections.
 
             CRITICAL LANGUAGE REQUIREMENTS:
-            - Entire content must be in formal {LANGUAGE} with proper business terms
+            - Entire content must be in formal {REPORT_CONFIG['language']} with proper business terms
             - No other languages allowed
-            - Use {LANGUAGE} format for numbers, dates, currency, and percentages
+            - Use {REPORT_CONFIG['language']} format for numbers, dates, currency, and percentages
             - For bullet points, use hyphens (-) instead of asterisks (*) to ensure proper PDF rendering
 
             IMPORTANT: **Always combine with the provided Google Search tool** to gather the most recent, reliable, and relevant information on this section. 
@@ -542,7 +444,7 @@ def generate_section_content(section_title, section_number):
             **Writing Style Requirements:**
             - Use a flowing, narrative style with smooth transitions and a professional, engaging tone
             - Build a compelling story with insights, data, and clear calls to action
-            - Tailor content for a {LANGUAGE}-speaking audience, ensuring cultural and linguistic relevance
+            - Tailor content for a {REPORT_CONFIG['language']}-speaking audience, ensuring cultural and linguistic relevance
 
             **Data Presentation:**
             1. Use tables for structured data comparisons and detailed metrics
@@ -639,7 +541,7 @@ def generate_section_content(section_title, section_number):
                   text = re.sub(pattern, replacement, text, count=1)
 
             # Print enriched text with sources
-            section_references = "\n\n---\n" + f"#### {section_title} \n\n"
+            section_references = "\n\n" + f"#### {section_title} \n\n"
             section_references += '<div class="references-grid">\n'
             
             for idx, chunk in enumerate(grounding_chunks):
@@ -654,7 +556,7 @@ def generate_section_content(section_title, section_number):
             section_references = section_references + "\n---\n\n"
             report_references.append(section_references)
     else:
-            logger.warning("⚠️ No grounding supports found for this section")
+            logger.warning("⚠️ Agent decides not to use Google Search to this section")
     logger.info(f"✅ Content generated for section {section_number}")
     return text;
 
@@ -662,21 +564,25 @@ def generate_section_content(section_title, section_number):
 def polish_content(content):
     logger.info("✨ Polishing content for better flow and readability...")
     user_prompt = Part.from_text(text=f"""
-      You are a professional {LANGUAGE} editor with strong business writing experience. Improve the content's narrative flow and transitions while preserving its language, tone, and cultural context. Return only the revised text—no introductions or explanations.
+      You are a professional {REPORT_CONFIG['language']} editor with strong business writing experience. Improve the content's narrative flow and transitions while preserving its language, tone, and cultural context. Return only the revised text—no introductions, explanations, or additional information.
 
       Requirements:
       - Improve sentence flow, paragraph transitions, and overall readability
       - Maintain a professional tone for banking and financial analysis
       - Preserve all key content, analysis, terms, data, and cultural context
       - Do not alter layout (indentation, line breaks, bulleting, paragraphing)
-      - Do not add introductions or explanations, just return the content
+      - Do not add introductions, explanations, or additional information
+      - Do not add any commentary or notes about the changes made
       - Keep superscript references and all HTML tags intact
-      - Ensure suitability for a {LANGUAGE}-speaking audience
+      - Ensure suitability for a {REPORT_CONFIG['language']}-speaking audience
       - Maintain the original language and cultural context of the content
-      - Ensure the content remains appropriate for {LANGUAGE}-speaking audience
+      - Ensure the content remains appropriate for {REPORT_CONFIG['language']}-speaking audience
       - Keep all HTML tags intact, especially those related to references
 
-    CRITICAL: Preserve ALL superscript references (e.g., <sup><a href="#ref-section-1-1">[1.1]</a></sup>) exactly as they appear, including their HTML tags and exact placement in the text
+    CRITICAL: 
+    - Preserve ALL superscript references (e.g., <sup><a href="#ref-section-1-1">[1.1]</a></sup>) exactly as they appear, including their HTML tags and exact placement in the text
+    - Return ONLY the polished content without any additional commentary or explanations
+    - Do not add any notes about what was changed or improved
 
     Content to improve:
     {content}
@@ -723,7 +629,7 @@ toc_prompt, toc_text = table_of_contents_prompt()
 extracted_toc_prompt, extracted_toc_text = extract_table_of_contents(toc_prompt, toc_text)
 title, sections = parse_table_of_contents(extracted_toc_text)
 logger.info(f"📑 Report Title: {title}")
-logger.info(f"📚 Found {len(sections)} sections to process")
+logger.info(f" Found {len(sections)} sections to process")
 
 section_content = f"# {title}\n\n[TOC]\n\n"
 # Generate content for first section for demo
@@ -742,11 +648,22 @@ for section_number, section_title in enumerate(sections, 1):
 report_references = "\n\n---\n" + f"## References" + "\n\n".join(report_references)
 section_content = section_content + report_references
 
+# Create reports directory if it doesn't exist
+reports_dir = 'reports'
+os.makedirs(reports_dir, exist_ok=True)
+
+# Generate unique filename using timestamp, request ID, and language
+timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+base_filename = f"{timestamp}_{current_request_id}_{REPORT_CONFIG['language'].lower()}"
+md_file = os.path.join(reports_dir, f"{base_filename}.md")
+html_file = os.path.join(reports_dir, f"{base_filename}.html")
+pdf_file = os.path.join(reports_dir, f"{base_filename}.pdf")
+
 # Save section content to markdown file
 logger.info("💾 Saving content to markdown file...")
-with open('section_content.md', 'w', encoding='utf-8') as f:
+with open(md_file, 'w', encoding='utf-8') as f:
     f.write(section_content)
-logger.info("✅ Markdown file saved successfully")
+logger.info(f"✅ Markdown file saved successfully: {md_file}")
 
 # Convert markdown to HTML
 logger.info("🔄 Converting markdown to HTML...")
@@ -763,6 +680,9 @@ html_content = markdown.markdown(section_content, extensions=[
     )
 ])
 
+# Add section breaks before each h2
+html_content = re.sub(r'<h2', '<div class="section-break"></div><h2', html_content)
+
 # Read and process template
 logger.info("📄 Processing HTML template...")
 with open('templates/report_template.html', 'r', encoding='utf-8') as f:
@@ -774,9 +694,9 @@ html_doc = template.format(content=html_content)
 
 # Save HTML file
 logger.info("💾 Saving HTML file...")
-with open('section_content.html', 'w', encoding='utf-8') as f:
+with open(html_file, 'w', encoding='utf-8') as f:
     f.write(html_doc)
-logger.info("✅ HTML file saved successfully")
+logger.info(f"✅ HTML file saved successfully: {html_file}")
 
 # Generate PDF
 logger.info("🔄 Generating PDF...")
@@ -792,14 +712,34 @@ pdf_options = {
 }
 
 try:
-    pdfkit.from_string(html_doc, 'section_content.pdf', options=pdf_options)
-    logger.info("✅ PDF generated successfully")
+    pdfkit.from_string(html_doc, pdf_file, options=pdf_options)
+    logger.info(f"✅ PDF generated successfully: {pdf_file}")
+    
+    # Upload to Google Cloud Storage
+    logger.info("📤 Uploading PDF to Google Cloud Storage...")
+    from google.cloud import storage
+    
+    # Initialize the client
+    storage_client = storage.Client(project="nth-droplet-458903-p4")
+    bucket = storage_client.bucket('credit-card-reports')
+    
+    # Upload PDF file to language-specific folder
+    language_folder = REPORT_CONFIG['language'].lower()
+    blob_name = f"{language_folder}/{os.path.basename(pdf_file)}"
+    blob = bucket.blob(blob_name)
+    blob.upload_from_filename(pdf_file, content_type='application/pdf')
+    blob.make_public()
+    
+    # Get the public URL
+    public_url = blob.public_url
+    logger.info(f"✅ PDF uploaded successfully to {language_folder} folder: {blob_name}")
+    logger.info(f"🔗 Public URL: {public_url}")
+    
 except Exception as e:
-    logger.error(f"❌ Error generating PDF: {str(e)}")
+    logger.error(f"❌ Error in PDF generation or upload: {str(e)}")
 
 # Log final metrics summary
 log_final_metrics()
-
 logger.info("🎉 Report generation process completed!")
 
 
