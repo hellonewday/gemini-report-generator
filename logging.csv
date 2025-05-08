@@ -37,3 +37,7 @@ Request ID,Timestamp,Section,Model Version,Input Tokens,Output Tokens,Total Toke
 20250508_07d1a76f,2025-05-08 14:11:38,Content Polishing,gemini-2.5-flash-preview-04-17,3546,2789,6335,0.15,3.5,0.000532,0.009761,0.010293
 20250508_07d1a76f,2025-05-08 14:12:07,Section 8: 8. Strategic Opportunities for KB Kookmin Bank,gemini-2.5-pro-preview-05-06,24601,1827,26428,1.25,10.0,0.030751,0.01827,0.049021
 20250508_07d1a76f,2025-05-08 14:12:30,Content Polishing,gemini-2.5-flash-preview-04-17,2786,2044,4830,0.15,3.5,0.000418,0.007154,0.007572
+20250508_07d1a76f,2025-05-08 14:12:55,Section 9: 9. Risk Assessment and Mitigation Strategies,gemini-2.5-pro-preview-05-06,27180,2088,29268,1.25,10.0,0.033975,0.02088,0.054855
+20250508_07d1a76f,2025-05-08 14:13:20,Content Polishing,gemini-2.5-flash-preview-04-17,3047,2281,5328,0.15,3.5,0.000457,0.007983,0.00844
+20250508_07d1a76f,2025-05-08 14:13:48,Section 10: 10. Actionable Recommendations and Roadmap,gemini-2.5-pro-preview-05-06,30021,2070,32091,1.25,10.0,0.037526,0.0207,0.058226
+20250508_07d1a76f,2025-05-08 14:14:11,Content Polishing,gemini-2.5-flash-preview-04-17,3029,2333,5362,0.15,3.5,0.000454,0.008165,0.008619

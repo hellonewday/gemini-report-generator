@@ -1,0 +1,18 @@
++------------------------+     +------------------------+     +------------------------+
+|                        |     |                        |     |                        |
+|  Configuration Layer   |---->|  Core Generation       |---->|  Content Processing    |
+|  - Report Config      |     |  - Gemini AI          |     |  - TOC Generation      |
+|  - Parameters         |     |  - Content Pipeline   |     |  - Section Creation    |
+|  - Environment Vars   |     |  - Retry Mechanism    |     |  - Content Polish      |
+|                        |     |                        |     |                        |
++------------------------+     +------------------------+     +------------------------+
+         |                              |                              |
+         v                              v                              v
++------------------------+     +------------------------+     +------------------------+
+|                        |     |                        |     |                        |
+|  Output Generation     |<----|  Monitoring & Logging  |<----|  Error Handling        |
+|  - Markdown           |     |  - Token Usage        |     |  - Retry Logic         |
+|  - HTML              |     |  - Cost Monitoring    |     |  - Error Logging       |
+|  - PDF               |     |  - Performance Metrics|     |  - Recovery            |
+|                        |     |                        |     |                        |
++------------------------+     +------------------------+     +------------------------+ 

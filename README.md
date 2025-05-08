@@ -2,6 +2,38 @@
 
 A sophisticated report generation system that leverages Google's Gemini AI to create comprehensive financial analysis reports, specifically focused on credit card products and market analysis.
 
+## Architecture
+
+![Architecture Diagram](architecture.png)
+
+The system follows a modular architecture with the following key components:
+
+1. **Configuration Layer**
+   - Report configuration management
+   - Parameter validation and defaults
+   - Environment variable handling
+
+2. **Core Generation Engine**
+   - Gemini AI model integration
+   - Content generation pipeline
+   - Retry mechanism with exponential backoff
+
+3. **Content Processing**
+   - Table of contents generation
+   - Section-by-section content creation
+   - Content polishing and refinement
+
+4. **Output Generation**
+   - Markdown conversion
+   - HTML template processing
+   - PDF generation
+
+5. **Monitoring & Logging**
+   - Token usage tracking
+   - Cost monitoring
+   - Performance metrics
+   - Error logging
+
 ## Overview
 
 This system generates detailed financial reports by utilizing Google's Gemini AI models to analyze and compare credit card products across major banks. It's designed to produce executive-level reports with a focus on strategic insights and competitive analysis.
