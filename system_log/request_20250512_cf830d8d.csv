@@ -1,0 +1,48 @@
+Timestamp,Status,Message
+2025-05-12 00:02:45,initialize,🚀 Starting report generation process...
+2025-05-12 00:02:45,initialize,🚀 Request created: 20250512_cf830d8d
+2025-05-12 00:02:45,config,🧱 Scanning configuration parameters
+2025-05-12 00:02:45,config,🌐 Report language: English
+2025-05-12 00:02:45,config,🏦 Your bank: Kookmin Bank
+2025-05-12 00:02:45,config,"🏢 You are comparing with: KEB Hana Bank, Woori Bank, Shinhan Bank"
+2025-05-12 00:02:45,config,"📊 The report will focus on: Market Share and Growth, Revenue and Profitability, Customer Acquisition Cost, Customer Lifetime Value, Digital Transformation Impact, Competitive Positioning"
+2025-05-12 00:02:45,config,"📈 The report will track these metrics: Card Issuance Volume, Transaction Volume, Revenue per Card, Customer Retention Rate, Digital Adoption Rate, Market Share by Segment"
+2025-05-12 00:02:45,config,"👥 The report will be tailored to these market segments: High Net Worth Individuals, Business Professionals, Digital-First Customers, Loyalty Program Members"
+2025-05-12 00:02:45,config,"📋 The report will have these sections: Executive Summary, Premium Credit Card Product Comparison, Pricing and Fee Analysis, Rewards and Benefits Comparison, Digital Features and Mobile Banking, Customer Service and Support, Market Performance Metrics, Recommendations and Next Steps, Conclusion"
+2025-05-12 00:02:45,config,📏 Strict structure: True
+2025-05-12 00:02:45,config,🧪 Experimental mode: True
+2025-05-12 00:02:45,config,📄 Report orientation: landscape
+2025-05-12 00:02:45,info,💲 You can view the cost metrics for this request at http://192.168.100.4:8000/api/metrics/20250512_cf830d8d
+2025-05-12 00:02:45,info,"ℹ️ To view the system log, please visit http://192.168.100.4:8000/api/logs/20250512_cf830d8d"
+2025-05-12 00:02:45,generating,💭 Report generation process started. This may take a while.
+2025-05-12 00:02:45,generating,📋 Generating Table of Contents...
+2025-05-12 00:02:45,generating,📋 Generating Table of Contents...
+2025-05-12 00:04:05,generating,✅ Table of Contents generated successfully
+2025-05-12 00:04:05,generating,📋 Extracting Table of Contents...
+2025-05-12 00:04:05,generating,📋 Extracting main sections from Table of Contents...
+2025-05-12 00:04:07,generating,✅ Sections extracted successfully
+2025-05-12 00:04:07,generating,📑 Report Title: Strategic Analysis of Premium Credit Card Offerings: Kookmin Bank vs. Key Competitors in the South Korean Market
+2025-05-12 00:04:07,generating,🔍 Found 9 sections to process
+2025-05-12 00:04:07,generating,"📝 Generating section 1: II. Premium Credit Card Product Comparison: Kookmin Bank vs. KEB Hana Bank, Woori Bank, and Shinhan Bank"
+2025-05-12 00:04:07,generating,"📝 Generating section 1: II. Premium Credit Card Product Comparison: Kookmin Bank vs. KEB Hana Bank, Woori Bank, and Shinhan Bank"
+2025-05-12 00:04:58,generating,✅ Section 1 content generated successfully
+2025-05-12 00:04:58,polishing,"✨ Polishing section 1: II. Premium Credit Card Product Comparison: Kookmin Bank vs. KEB Hana Bank, Woori Bank, and Shinhan Bank"
+2025-05-12 00:04:58,polishing,✨ Polishing content...
+2025-05-12 00:05:31,polishing,✅ Content polished successfully
+2025-05-12 00:05:31,generating,"✅ Section 1 completed: II. Premium Credit Card Product Comparison: Kookmin Bank vs. KEB Hana Bank, Woori Bank, and Shinhan Bank"
+2025-05-12 00:05:31,saving,💾 Saving report files with base name: strategic_analysis_of_premium_credit_card_offerings:_kookmin_bank_vs._key_competitors_in_the_south_korean_market_20250512_000531
+2025-05-12 00:05:31,saving,✅ Saved Markdown file: reports\english\strategic_analysis_of_premium_credit_card_offerings:_kookmin_bank_vs._key_competitors_in_the_south_korean_market_20250512_000531.md
+2025-05-12 00:05:31,saving,✅ Saved Markdown file: reports\20250512_000531_20250512_cf830d8d_english.md
+2025-05-12 00:05:31,saving,✅ Saved HTML file: reports\20250512_000531_20250512_cf830d8d_english.html
+2025-05-12 00:05:32,saving,✅ Saved PDF file: reports\20250512_000531_20250512_cf830d8d_english.pdf
+2025-05-12 00:05:32,uploading,📤 Uploading PDF to Google Cloud Storage...
+2025-05-12 00:05:35,uploading,✅ PDF uploaded successfully to english folder: english/20250512_000531_20250512_cf830d8d_english.pdf
+2025-05-12 00:05:35,url,🌐 Public URL: https://storage.googleapis.com/credit-card-reports/english/20250512_000531_20250512_cf830d8d_english.pdf
+2025-05-12 00:05:35,metrics,======================================================================
+2025-05-12 00:05:35,metrics,📊 Overall Total Usage:
+2025-05-12 00:05:35,metrics,"   ├─ Total Input Tokens:  14,769"
+2025-05-12 00:05:35,metrics,"   ├─ Total Output Tokens: 9,273"
+2025-05-12 00:05:35,metrics,"   └─ Total All Tokens:   24,042"
+2025-05-12 00:05:35,metrics,   └─ Total Cost:         $0.070557
+2025-05-12 00:05:35,metrics,======================================================================
+2025-05-12 00:05:35,completed,✅ Report generation process completed!

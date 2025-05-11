@@ -1,0 +1,26 @@
+Timestamp,Status,Message
+2025-05-09 14:41:54,initialize,🚀 Starting report generation process...
+2025-05-09 14:41:54,initialize,🚀 Request created: 20250509_d2193e78
+2025-05-09 14:41:54,info,💲 You can view the cost metrics for this request at http://192.168.100.4:8000/api/metrics?request_id=20250509_d2193e78
+2025-05-09 14:41:54,info,"ℹ️ To view the system log, please visit http://192.168.100.4:8000/api/logs?request_id=20250509_d2193e78"
+2025-05-09 14:41:54,generating,💭 Report generation process started. This may take a while.
+2025-05-09 14:41:54,generating,📋 Generating Table of Contents...
+2025-05-09 14:42:40,generating,📋 Extracting Table of Contents...
+2025-05-09 14:42:45,generating,📑 Report Title: 국내 프리미엄 신용카드 시장 선도를 위한 KB국민카드의 경쟁 우위 확보 전략: 주요 경쟁사 상품 심층 비교 분석
+2025-05-09 14:42:45,generating,📑 Found 9 sections to process
+2025-05-09 14:42:45,generating,📝 Generating section 1: II. 국내 프리미엄 신용카드 시장 환경 분석: 거시적 관점과 고객 트렌드 변화
+2025-05-09 14:43:16,polishing,✨ Polishing section 1: II. 국내 프리미엄 신용카드 시장 환경 분석: 거시적 관점과 고객 트렌드 변화
+2025-05-09 14:43:37,generating,✅ Section 1 completed: II. 국내 프리미엄 신용카드 시장 환경 분석: 거시적 관점과 고객 트렌드 변화
+2025-05-09 14:43:37,saving,💾 Saving report files...
+2025-05-09 14:43:38,saving,✅ PDF generated successfully: reports\20250509_144337_20250509_d2193e78_korean.pdf
+2025-05-09 14:43:38,uploading,📤 Uploading PDF to Google Cloud Storage...
+2025-05-09 14:43:41,uploading,✅ PDF uploaded successfully to korean folder: korean/20250509_144337_20250509_d2193e78_korean.pdf
+2025-05-09 14:43:41,url,Public URL: https://storage.googleapis.com/credit-card-reports/korean/20250509_144337_20250509_d2193e78_korean.pdf
+2025-05-09 14:43:41,metrics,======================================================================
+2025-05-09 14:43:41,metrics,📊 Overall Total Usage:
+2025-05-09 14:43:41,metrics,"   ├─ Total Input Tokens:  14,338"
+2025-05-09 14:43:41,metrics,"   ├─ Total Output Tokens: 8,620"
+2025-05-09 14:43:41,metrics,"   └─ Total All Tokens:   22,958"
+2025-05-09 14:43:41,metrics,   └─ Total Cost:         $0.069878
+2025-05-09 14:43:41,metrics,======================================================================
+2025-05-09 14:43:41,completed,✅ Report generation process completed!

@@ -1,0 +1,112 @@
+Timestamp,Status,Message
+2025-05-12 01:17:09,initialize,🚀 Starting report generation process...
+2025-05-12 01:17:09,initialize,🚀 Request created: 20250512_92027c46
+2025-05-12 01:17:09,config,🧱 Scanning configuration parameters
+2025-05-12 01:17:09,config,🌐 Report language: English
+2025-05-12 01:17:09,config,🏦 Your bank: Kookmin Bank
+2025-05-12 01:17:09,config,"🏢 You are comparing with: KEB Hana Bank, Woori Bank, Shinhan Bank"
+2025-05-12 01:17:09,config,"📊 The report will focus on: Market Share and Growth, Revenue and Profitability, Customer Acquisition Cost, Customer Lifetime Value, Digital Transformation Impact, Competitive Positioning"
+2025-05-12 01:17:09,config,"📈 The report will track these metrics: Card Issuance Volume, Transaction Volume, Revenue per Card, Customer Retention Rate, Digital Adoption Rate, Market Share by Segment"
+2025-05-12 01:17:09,config,"👥 The report will be tailored to these market segments: High Net Worth Individuals, Business Professionals, Digital-First Customers, Loyalty Program Members"
+2025-05-12 01:17:09,config,"📋 The report will have these sections: Executive Summary, Premium Credit Card Product Comparison, Pricing and Fee Analysis, Recommendations and Next Steps, Conclusion"
+2025-05-12 01:17:09,config,📏 Strict structure: False
+2025-05-12 01:17:09,config,🧪 Experimental mode: False
+2025-05-12 01:17:09,config,📄 Report orientation: landscape
+2025-05-12 01:17:09,info,💲 You can view the cost metrics for this request at http://192.168.100.4:8000/api/metrics/20250512_92027c46
+2025-05-12 01:17:09,info,"ℹ️ To view the system log, please visit http://192.168.100.4:8000/api/logs/20250512_92027c46"
+2025-05-12 01:17:09,generating,💭 Report generation process started. This may take a while.
+2025-05-12 01:17:09,generating,📋 Generating Table of Contents...
+2025-05-12 01:17:09,generating,📋 Generating Table of Contents...
+2025-05-12 01:17:51,generating,✅ Table of Contents generated successfully
+2025-05-12 01:17:51,generating,📋 Extracting Table of Contents...
+2025-05-12 01:17:51,generating,📋 Extracting main sections from Table of Contents...
+2025-05-12 01:17:53,generating,✅ Sections extracted successfully
+2025-05-12 01:17:53,generating,📑 Report Title: Strategic Analysis of Premium Credit Card Portfolios: A Competitive Review for Kookmin Bank
+2025-05-12 01:17:53,generating,🔍 Found 12 sections to process
+2025-05-12 01:17:53,generating,📝 Generating section 1: I. Executive Summary
+2025-05-12 01:18:12,generating,✅ Section 1 content generated successfully
+2025-05-12 01:18:13,polishing,✨ Polishing section 1: I. Executive Summary
+2025-05-12 01:18:13,polishing,✨ Polishing content...
+2025-05-12 01:18:51,polishing,✅ Content polished successfully
+2025-05-12 01:18:51,generating,✅ Section 1 completed: I. Executive Summary
+2025-05-12 01:18:51,generating,📝 Generating section 2: II. Introduction and Market Overview
+2025-05-12 01:19:26,generating,✅ Section 2 content generated successfully
+2025-05-12 01:19:26,polishing,✨ Polishing section 2: II. Introduction and Market Overview
+2025-05-12 01:19:26,polishing,✨ Polishing content...
+2025-05-12 01:19:47,polishing,✅ Content polished successfully
+2025-05-12 01:19:47,generating,✅ Section 2 completed: II. Introduction and Market Overview
+2025-05-12 01:19:47,generating,📝 Generating section 3: III. Kookmin Bank: Premium Credit Card Portfolio Analysis
+2025-05-12 01:20:29,generating,✅ Section 3 content generated successfully
+2025-05-12 01:20:29,polishing,✨ Polishing section 3: III. Kookmin Bank: Premium Credit Card Portfolio Analysis
+2025-05-12 01:20:29,polishing,✨ Polishing content...
+2025-05-12 01:20:47,polishing,✅ Content polished successfully
+2025-05-12 01:20:47,generating,✅ Section 3 completed: III. Kookmin Bank: Premium Credit Card Portfolio Analysis
+2025-05-12 01:20:47,generating,📝 Generating section 4: IV. Competitive Benchmarking: KEB Hana Bank
+2025-05-12 01:21:15,generating,✅ Section 4 content generated successfully
+2025-05-12 01:21:15,polishing,✨ Polishing section 4: IV. Competitive Benchmarking: KEB Hana Bank
+2025-05-12 01:21:15,polishing,✨ Polishing content...
+2025-05-12 01:21:32,polishing,✅ Content polished successfully
+2025-05-12 01:21:32,generating,✅ Section 4 completed: IV. Competitive Benchmarking: KEB Hana Bank
+2025-05-12 01:21:32,generating,📝 Generating section 5: V. Competitive Benchmarking: Woori Bank
+2025-05-12 01:21:58,generating,✅ Section 5 content generated successfully
+2025-05-12 01:21:58,polishing,✨ Polishing section 5: V. Competitive Benchmarking: Woori Bank
+2025-05-12 01:21:58,polishing,✨ Polishing content...
+2025-05-12 01:22:22,polishing,✅ Content polished successfully
+2025-05-12 01:22:22,generating,✅ Section 5 completed: V. Competitive Benchmarking: Woori Bank
+2025-05-12 01:22:22,generating,📝 Generating section 6: VI. Competitive Benchmarking: Shinhan Bank
+2025-05-12 01:22:50,generating,✅ Section 6 content generated successfully
+2025-05-12 01:22:50,polishing,✨ Polishing section 6: VI. Competitive Benchmarking: Shinhan Bank
+2025-05-12 01:22:50,polishing,✨ Polishing content...
+2025-05-12 01:23:10,polishing,✅ Content polished successfully
+2025-05-12 01:23:10,generating,✅ Section 6 completed: VI. Competitive Benchmarking: Shinhan Bank
+2025-05-12 01:23:10,generating,📝 Generating section 7: VII. Comparative Analysis: Product Features and User Benefits
+2025-05-12 01:23:48,generating,✅ Section 7 content generated successfully
+2025-05-12 01:23:48,polishing,✨ Polishing section 7: VII. Comparative Analysis: Product Features and User Benefits
+2025-05-12 01:23:48,polishing,✨ Polishing content...
+2025-05-12 01:24:12,polishing,✅ Content polished successfully
+2025-05-12 01:24:12,generating,✅ Section 7 completed: VII. Comparative Analysis: Product Features and User Benefits
+2025-05-12 01:24:12,generating,📝 Generating section 8: VIII. Pricing and Fee Analysis
+2025-05-12 01:24:41,generating,✅ Section 8 content generated successfully
+2025-05-12 01:24:41,polishing,✨ Polishing section 8: VIII. Pricing and Fee Analysis
+2025-05-12 01:24:41,polishing,✨ Polishing content...
+2025-05-12 01:25:05,polishing,✅ Content polished successfully
+2025-05-12 01:25:05,generating,✅ Section 8 completed: VIII. Pricing and Fee Analysis
+2025-05-12 01:25:05,generating,📝 Generating section 9: IX. Market Positioning and Differentiation Strategies
+2025-05-12 01:25:31,generating,✅ Section 9 content generated successfully
+2025-05-12 01:25:31,polishing,✨ Polishing section 9: IX. Market Positioning and Differentiation Strategies
+2025-05-12 01:25:31,polishing,✨ Polishing content...
+2025-05-12 01:25:55,polishing,✅ Content polished successfully
+2025-05-12 01:25:55,generating,✅ Section 9 completed: IX. Market Positioning and Differentiation Strategies
+2025-05-12 01:25:55,generating,📝 Generating section 10: X. Key Performance Indicators and Market Trends
+2025-05-12 01:26:17,generating,✅ Section 10 content generated successfully
+2025-05-12 01:26:17,polishing,✨ Polishing section 10: X. Key Performance Indicators and Market Trends
+2025-05-12 01:26:17,polishing,✨ Polishing content...
+2025-05-12 01:26:36,polishing,✅ Content polished successfully
+2025-05-12 01:26:36,generating,✅ Section 10 completed: X. Key Performance Indicators and Market Trends
+2025-05-12 01:26:36,generating,📝 Generating section 11: XI. Strategic Recommendations for Kookmin Bank
+2025-05-12 01:27:06,generating,✅ Section 11 content generated successfully
+2025-05-12 01:27:06,polishing,✨ Polishing section 11: XI. Strategic Recommendations for Kookmin Bank
+2025-05-12 01:27:06,polishing,✨ Polishing content...
+2025-05-12 01:27:20,polishing,✅ Content polished successfully
+2025-05-12 01:27:20,generating,✅ Section 11 completed: XI. Strategic Recommendations for Kookmin Bank
+2025-05-12 01:27:20,generating,📝 Generating section 12: XII. Conclusion
+2025-05-12 01:27:30,generating,✅ Section 12 content generated successfully
+2025-05-12 01:27:30,polishing,✨ Polishing section 12: XII. Conclusion
+2025-05-12 01:27:30,polishing,✨ Polishing content...
+2025-05-12 01:27:47,polishing,✅ Content polished successfully
+2025-05-12 01:27:47,generating,✅ Section 12 completed: XII. Conclusion
+2025-05-12 01:27:47,saving,💾 Saving report files with base name: strategic_analysis_of_premium_credit_card_portfolios:_a_competitive_review_for_kookmin_bank_20250512_012747
+2025-05-12 01:27:47,saving,✅ Saved Markdown file: reports\20250512_012747_20250512_92027c46_english.md
+2025-05-12 01:27:47,saving,✅ Saved HTML file: reports\20250512_012747_20250512_92027c46_english.html
+2025-05-12 01:27:48,saving,✅ Saved PDF file: reports\20250512_012747_20250512_92027c46_english.pdf
+2025-05-12 01:27:48,uploading,📤 Uploading PDF to Google Cloud Storage...
+2025-05-12 01:27:52,uploading,✅ PDF uploaded successfully to english folder: english/20250512_012747_20250512_92027c46_english.pdf
+2025-05-12 01:27:52,url,🌐 Public URL: https://storage.googleapis.com/credit-card-reports/english/20250512_012747_20250512_92027c46_english.pdf
+2025-05-12 01:27:52,metrics,======================================================================
+2025-05-12 01:27:52,metrics,📊 Overall Total Usage:
+2025-05-12 01:27:52,metrics,"   ├─ Total Input Tokens:  269,445"
+2025-05-12 01:27:52,metrics,"   ├─ Total Output Tokens: 47,707"
+2025-05-12 01:27:52,metrics,"   └─ Total All Tokens:   317,152"
+2025-05-12 01:27:52,metrics,   └─ Total Cost:         $0.615329
+2025-05-12 01:27:52,metrics,======================================================================
+2025-05-12 01:27:52,completed,✅ Report generation process completed!

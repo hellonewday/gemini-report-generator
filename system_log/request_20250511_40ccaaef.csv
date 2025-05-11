@@ -1,0 +1,79 @@
+Timestamp,Status,Message
+2025-05-11 15:29:08,initialize,🚀 Starting report generation process...
+2025-05-11 15:29:08,initialize,🚀 Request created: 20250511_40ccaaef
+2025-05-11 15:29:08,config,🧱 Scanning configuration parameters
+2025-05-11 15:29:08,config,🌐 Report language: English
+2025-05-11 15:29:08,config,🏦 Your bank: Chase Bank
+2025-05-11 15:29:08,config,"🏢 You are comparing with: Bank of America, Wells Fargo, Citibank"
+2025-05-11 15:29:08,config,"📊 The report will focus on: Market Share and Growth, Revenue and Profitability, Customer Acquisition Cost"
+2025-05-11 15:29:08,config,"📈 The report will track these metrics: Card Issuance Volume, Transaction Volume, Revenue per Card"
+2025-05-11 15:29:08,config,"👥 The report will be tailored to these market segments: High Net Worth Individuals, Business Professionals"
+2025-05-11 15:29:08,config,"📋 The report will have these sections: Executive Summary, Premium Credit Card Product Comparison, Pricing and Fee Analysis"
+2025-05-11 15:29:08,config,📏 Strict structure: True
+2025-05-11 15:29:08,config,🧪 Experimental mode: False
+2025-05-11 15:29:08,info,💲 You can view the cost metrics for this request at http://192.168.100.4:8000/api/metrics/20250511_40ccaaef
+2025-05-11 15:29:08,info,"ℹ️ To view the system log, please visit http://192.168.100.4:8000/api/logs/20250511_40ccaaef"
+2025-05-11 15:29:08,generating,💭 Report generation process started. This may take a while.
+2025-05-11 15:29:08,generating,📋 Generating Table of Contents...
+2025-05-11 15:29:08,generating,📋 Generating Table of Contents...
+2025-05-11 15:30:15,generating,✅ Table of Contents generated successfully
+2025-05-11 15:30:15,generating,📋 Extracting Table of Contents...
+2025-05-11 15:30:15,generating,📋 Extracting main sections from Table of Contents...
+2025-05-11 15:30:17,generating,✅ Sections extracted successfully
+2025-05-11 15:30:17,generating,📑 Report Title: Ascendancy in Affluence: A Competitive Analysis of Premium Credit Card Portfolios for Sustained Market Leadership
+2025-05-11 15:30:17,generating,🔍 Found 10 sections to process
+2025-05-11 15:30:17,generating,📝 Generating section 1: I. Executive Summary
+2025-05-11 15:30:17,generating,📝 Generating section 1: I. Executive Summary
+2025-05-11 15:30:39,generating,✅ Section 1 content generated successfully
+2025-05-11 15:30:39,polishing,✨ Polishing section 1: I. Executive Summary
+2025-05-11 15:30:39,polishing,✨ Polishing content...
+2025-05-11 15:30:56,polishing,✅ Content polished successfully
+2025-05-11 15:30:56,generating,✅ Section 1 completed: I. Executive Summary
+2025-05-11 15:30:56,generating,📝 Generating section 2: II. Introduction: The Evolving Premium Credit Card Landscape
+2025-05-11 15:30:56,generating,📝 Generating section 2: II. Introduction: The Evolving Premium Credit Card Landscape
+2025-05-11 15:31:12,generating,✅ Section 2 content generated successfully
+2025-05-11 15:31:12,polishing,✨ Polishing section 2: II. Introduction: The Evolving Premium Credit Card Landscape
+2025-05-11 15:31:12,polishing,✨ Polishing content...
+2025-05-11 15:31:27,polishing,✅ Content polished successfully
+2025-05-11 15:31:27,generating,✅ Section 2 completed: II. Introduction: The Evolving Premium Credit Card Landscape
+2025-05-11 15:31:27,generating,📝 Generating section 3: III. Market Overview: Premium Credit Card Dynamics
+2025-05-11 15:31:27,generating,📝 Generating section 3: III. Market Overview: Premium Credit Card Dynamics
+2025-05-11 15:32:01,generating,✅ Section 3 content generated successfully
+2025-05-11 15:32:01,polishing,✨ Polishing section 3: III. Market Overview: Premium Credit Card Dynamics
+2025-05-11 15:32:01,polishing,✨ Polishing content...
+2025-05-11 15:32:19,polishing,✅ Content polished successfully
+2025-05-11 15:32:19,generating,✅ Section 3 completed: III. Market Overview: Premium Credit Card Dynamics
+2025-05-11 15:32:19,generating,📝 Generating section 4: IV. Competitive Landscape: Premium Credit Card Product Portfolios
+2025-05-11 15:32:19,generating,📝 Generating section 4: IV. Competitive Landscape: Premium Credit Card Product Portfolios
+2025-05-11 15:32:55,generating,✅ Section 4 content generated successfully
+2025-05-11 15:32:55,polishing,✨ Polishing section 4: IV. Competitive Landscape: Premium Credit Card Product Portfolios
+2025-05-11 15:32:55,polishing,✨ Polishing content...
+2025-05-11 15:33:16,polishing,✅ Content polished successfully
+2025-05-11 15:33:16,generating,✅ Section 4 completed: IV. Competitive Landscape: Premium Credit Card Product Portfolios
+2025-05-11 15:33:16,generating,📝 Generating section 5: V. Feature-by-Feature Competitive Analysis: Consumer Premium Cards
+2025-05-11 15:33:16,generating,📝 Generating section 5: V. Feature-by-Feature Competitive Analysis: Consumer Premium Cards
+2025-05-11 15:35:03,generating,✅ Section 5 content generated successfully
+2025-05-11 15:35:03,polishing,✨ Polishing section 5: V. Feature-by-Feature Competitive Analysis: Consumer Premium Cards
+2025-05-11 15:35:03,polishing,✨ Polishing content...
+2025-05-11 15:35:29,polishing,✅ Content polished successfully
+2025-05-11 15:35:29,generating,✅ Section 5 completed: V. Feature-by-Feature Competitive Analysis: Consumer Premium Cards
+2025-05-11 15:35:29,generating,📝 Generating section 6: VI. Feature-by-Feature Competitive Analysis: Business Premium Cards
+2025-05-11 15:35:29,generating,📝 Generating section 6: VI. Feature-by-Feature Competitive Analysis: Business Premium Cards
+2025-05-11 15:43:03,generating,✅ Section 6 content generated successfully
+2025-05-11 15:43:03,polishing,✨ Polishing section 6: VI. Feature-by-Feature Competitive Analysis: Business Premium Cards
+2025-05-11 15:43:03,polishing,✨ Polishing content...
+2025-05-11 15:43:23,polishing,✅ Content polished successfully
+2025-05-11 15:43:23,generating,✅ Section 6 completed: VI. Feature-by-Feature Competitive Analysis: Business Premium Cards
+2025-05-11 15:43:23,generating,📝 Generating section 7: VII. Pricing and Fee Analysis: A Comparative Overview
+2025-05-11 15:43:23,generating,📝 Generating section 7: VII. Pricing and Fee Analysis: A Comparative Overview
+2025-05-11 15:50:56,generating,✅ Section 7 content generated successfully
+2025-05-11 15:50:56,polishing,✨ Polishing section 7: VII. Pricing and Fee Analysis: A Comparative Overview
+2025-05-11 15:50:56,polishing,✨ Polishing content...
+2025-05-11 15:51:37,polishing,✅ Content polished successfully
+2025-05-11 15:51:37,generating,✅ Section 7 completed: VII. Pricing and Fee Analysis: A Comparative Overview
+2025-05-11 15:51:37,generating,📝 Generating section 8: VIII. Benefits and Rewards Comparison: Value Proposition to Target Segments
+2025-05-11 15:51:37,generating,📝 Generating section 8: VIII. Benefits and Rewards Comparison: Value Proposition to Target Segments
+2025-05-11 15:55:16,generating,✅ Section 8 content generated successfully
+2025-05-11 15:55:16,polishing,✨ Polishing section 8: VIII. Benefits and Rewards Comparison: Value Proposition to Target Segments
+2025-05-11 15:55:16,polishing,✨ Polishing content...
+2025-05-11 15:55:35,polishing,✅ Content polished successfully

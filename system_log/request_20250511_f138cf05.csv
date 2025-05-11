@@ -1,0 +1,47 @@
+Timestamp,Status,Message
+2025-05-11 14:41:28,initialize,🚀 Starting report generation process...
+2025-05-11 14:41:28,initialize,🚀 Request created: 20250511_f138cf05
+2025-05-11 14:41:28,config,📝 Report Configuration:
+2025-05-11 14:41:28,config,🌐 Language: English
+2025-05-11 14:41:28,config,🏦 Primary Bank: Chase Bank
+2025-05-11 14:41:28,config,"🏢 Comparison Banks: Bank of America, Wells Fargo, Citibank"
+2025-05-11 14:41:28,config,"📊 Analysis Focus: Market Share and Growth, Revenue and Profitability, Customer Acquisition Cost"
+2025-05-11 14:41:28,config,"📈 Performance Metrics: Card Issuance Volume, Transaction Volume, Revenue per Card"
+2025-05-11 14:41:28,config,"👥 Market Segments: High Net Worth Individuals, Business Professionals"
+2025-05-11 14:41:28,config,"📋 Report Sections: Executive Summary, Premium Credit Card Product Comparison, Pricing and Fee Analysis"
+2025-05-11 14:41:28,config,📏 Strict Structure: True
+2025-05-11 14:41:28,config,🧪 Demo Mode: True
+2025-05-11 14:41:28,config,"✍️ Writing Style: Tone: Professional and Analytical, Formality: High, Emphasis: Data-Driven Insights, Strategic Implications"
+2025-05-11 14:41:28,info,💲 You can view the cost metrics for this request at http://192.168.100.4:8000/api/metrics/20250511_f138cf05
+2025-05-11 14:41:28,info,"ℹ️ To view the system log, please visit http://192.168.100.4:8000/api/logs/20250511_f138cf05"
+2025-05-11 14:41:28,generating,💭 Report generation process started. This may take a while.
+2025-05-11 14:41:28,generating,📋 Generating Table of Contents...
+2025-05-11 14:41:28,generating,📋 Generating Table of Contents...
+2025-05-11 14:42:23,generating,✅ Table of Contents generated successfully
+2025-05-11 14:42:23,generating,📋 Extracting Table of Contents...
+2025-05-11 14:42:23,generating,📋 Extracting main sections from Table of Contents...
+2025-05-11 14:42:25,generating,✅ Sections extracted successfully
+2025-05-11 14:42:25,generating,📑 Report Title: Ascendancy in Affluence: A Strategic Blueprint for Dominance in the Premium Credit Card Market
+2025-05-11 14:42:25,generating,🔍 Found 10 sections to process
+2025-05-11 14:42:25,generating,📝 Generating section 1: II. Introduction: Strategic Context and Report Objectives
+2025-05-11 14:42:25,generating,📝 Generating section 1: II. Introduction: Strategic Context and Report Objectives
+2025-05-11 14:42:51,generating,✅ Section 1 content generated successfully
+2025-05-11 14:42:51,polishing,✨ Polishing section 1: II. Introduction: Strategic Context and Report Objectives
+2025-05-11 14:42:51,polishing,✨ Polishing content...
+2025-05-11 14:43:05,polishing,✅ Content polished successfully
+2025-05-11 14:43:05,generating,✅ Section 1 completed: II. Introduction: Strategic Context and Report Objectives
+2025-05-11 14:43:05,saving,💾 Saving report files with base name: ascendancy_in_affluence:_a_strategic_blueprint_for_dominance_in_the_premium_credit_card_market_20250511_144305
+2025-05-11 14:43:05,saving,✅ Saved Markdown file: reports\english\ascendancy_in_affluence:_a_strategic_blueprint_for_dominance_in_the_premium_credit_card_market_20250511_144305.md
+2025-05-11 14:43:05,saving,✅ Saved HTML file: reports\english\ascendancy_in_affluence:_a_strategic_blueprint_for_dominance_in_the_premium_credit_card_market_20250511_144305.html
+2025-05-11 14:43:06,saving,✅ Saved PDF file: reports\english\ascendancy_in_affluence:_a_strategic_blueprint_for_dominance_in_the_premium_credit_card_market_20250511_144305.pdf
+2025-05-11 14:43:06,uploading,📤 Uploading PDF to Google Cloud Storage...
+2025-05-11 14:43:09,uploading,✅ PDF uploaded successfully to english folder: english/ascendancy_in_affluence:_a_strategic_blueprint_for_dominance_in_the_premium_credit_card_market_20250511_144305.pdf
+2025-05-11 14:43:09,url,🌐 Public URL: https://storage.googleapis.com/credit-card-reports/english/ascendancy_in_affluence%3A_a_strategic_blueprint_for_dominance_in_the_premium_credit_card_market_20250511_144305.pdf
+2025-05-11 14:43:09,metrics,======================================================================
+2025-05-11 14:43:09,metrics,📊 Overall Total Usage:
+2025-05-11 14:43:09,metrics,"   ├─ Total Input Tokens:  12,224"
+2025-05-11 14:43:09,metrics,"   ├─ Total Output Tokens: 5,722"
+2025-05-11 14:43:09,metrics,"   └─ Total All Tokens:   17,946"
+2025-05-11 14:43:09,metrics,   └─ Total Cost:         $0.049682
+2025-05-11 14:43:09,metrics,======================================================================
+2025-05-11 14:43:09,completed,✅ Report generation process completed!

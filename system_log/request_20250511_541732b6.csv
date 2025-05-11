@@ -1,0 +1,47 @@
+Timestamp,Status,Message
+2025-05-11 19:10:42,initialize,🚀 Starting report generation process...
+2025-05-11 19:10:42,initialize,🚀 Request created: 20250511_541732b6
+2025-05-11 19:10:42,config,🧱 Scanning configuration parameters
+2025-05-11 19:10:42,config,🌐 Report language: English
+2025-05-11 19:10:42,config,🏦 Your bank: Chase Bank
+2025-05-11 19:10:42,config,"🏢 You are comparing with: Bank of America, Wells Fargo, Citibank"
+2025-05-11 19:10:42,config,"📊 The report will focus on: Market Share and Growth, Revenue and Profitability, Customer Acquisition Cost"
+2025-05-11 19:10:42,config,"📈 The report will track these metrics: Card Issuance Volume, Transaction Volume, Revenue per Card"
+2025-05-11 19:10:42,config,"👥 The report will be tailored to these market segments: High Net Worth Individuals, Business Professionals"
+2025-05-11 19:10:42,config,"📋 The report will have these sections: Executive Summary, Premium Credit Card Product Comparison, Pricing and Fee Analysis"
+2025-05-11 19:10:42,config,📏 Strict structure: True
+2025-05-11 19:10:42,config,🧪 Experimental mode: True
+2025-05-11 19:10:42,info,💲 You can view the cost metrics for this request at http://192.168.100.4:8000/api/metrics/20250511_541732b6
+2025-05-11 19:10:42,info,"ℹ️ To view the system log, please visit http://192.168.100.4:8000/api/logs/20250511_541732b6"
+2025-05-11 19:10:43,generating,💭 Report generation process started. This may take a while.
+2025-05-11 19:10:43,generating,📋 Generating Table of Contents...
+2025-05-11 19:10:43,generating,📋 Generating Table of Contents...
+2025-05-11 19:11:40,generating,✅ Table of Contents generated successfully
+2025-05-11 19:11:40,generating,📋 Extracting Table of Contents...
+2025-05-11 19:11:40,generating,📋 Extracting main sections from Table of Contents...
+2025-05-11 19:11:42,generating,✅ Sections extracted successfully
+2025-05-11 19:11:42,generating,📑 Report Title: Elevating Excellence: A Comparative Analysis of Premium Credit Card Portfolios for Enhanced Market Leadership
+2025-05-11 19:11:42,generating,🔍 Found 3 sections to process
+2025-05-11 19:11:42,generating,📝 Generating section 1: II. Premium Credit Card Product Comparison
+2025-05-11 19:11:42,generating,📝 Generating section 1: II. Premium Credit Card Product Comparison
+2025-05-11 19:13:32,generating,✅ Section 1 content generated successfully
+2025-05-11 19:13:32,polishing,✨ Polishing section 1: II. Premium Credit Card Product Comparison
+2025-05-11 19:13:32,polishing,✨ Polishing content...
+2025-05-11 19:14:47,polishing,✅ Content polished successfully
+2025-05-11 19:14:47,generating,✅ Section 1 completed: II. Premium Credit Card Product Comparison
+2025-05-11 19:14:47,saving,💾 Saving report files with base name: elevating_excellence:_a_comparative_analysis_of_premium_credit_card_portfolios_for_enhanced_market_leadership_20250511_191447
+2025-05-11 19:14:47,saving,✅ Saved Markdown file: reports\english\elevating_excellence:_a_comparative_analysis_of_premium_credit_card_portfolios_for_enhanced_market_leadership_20250511_191447.md
+2025-05-11 19:14:47,saving,✅ Saved Markdown file: reports\20250511_191447_20250511_541732b6_english.md
+2025-05-11 19:14:47,saving,✅ Saved HTML file: reports\20250511_191447_20250511_541732b6_english.html
+2025-05-11 19:14:48,saving,✅ Saved PDF file: reports\20250511_191447_20250511_541732b6_english.pdf
+2025-05-11 19:14:48,uploading,📤 Uploading PDF to Google Cloud Storage...
+2025-05-11 19:14:52,uploading,✅ PDF uploaded successfully to english folder: english/20250511_191447_20250511_541732b6_english.pdf
+2025-05-11 19:14:52,url,🌐 Public URL: https://storage.googleapis.com/credit-card-reports/english/20250511_191447_20250511_541732b6_english.pdf
+2025-05-11 19:14:52,metrics,======================================================================
+2025-05-11 19:14:52,metrics,📊 Overall Total Usage:
+2025-05-11 19:14:52,metrics,"   ├─ Total Input Tokens:  33,904"
+2025-05-11 19:14:52,metrics,"   ├─ Total Output Tokens: 30,516"
+2025-05-11 19:14:52,metrics,"   └─ Total All Tokens:   64,420"
+2025-05-11 19:14:52,metrics,   └─ Total Cost:         $0.237815
+2025-05-11 19:14:52,metrics,======================================================================
+2025-05-11 19:14:52,completed,✅ Report generation process completed!

@@ -1,0 +1,7 @@
+Timestamp,Status,Message
+2025-05-09 15:26:38,initialize,🚀 Starting report generation process...
+2025-05-09 15:26:38,initialize,🚀 Request created: 20250509_63a7706e
+2025-05-09 15:26:38,info,💲 You can view the cost metrics for this request at http://192.168.100.4:8000/api/metrics/20250509_63a7706e
+2025-05-09 15:26:38,info,"ℹ️ To view the system log, please visit http://192.168.100.4:8000/api/logs/20250509_63a7706e"
+2025-05-09 15:26:39,generating,💭 Report generation process started. This may take a while.
+2025-05-09 15:26:39,generating,📋 Generating Table of Contents...

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Card Comparison Report</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
+    <div class="bg-white shadow-xl rounded-lg p-6 max-w-7xl w-full">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">Credit Card Comparison Report</h2>
+        <div class="flex flex-col sm:flex-row items-center gap-3 mb-4">
+            <input 
+                id="transactionId" 
+                class="flex-1 border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500" 
+                type="text" 
+                placeholder="Enter transaction ID (optional)" 
+                aria-label="Transaction ID"
+            />
+            <div class="flex gap-2 w-full sm:w-auto">
+                <button 
+                    id="startButton" 
+                    onclick="startReportAndStream()" 
+                    class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition disabled:bg-gray-400 disabled:cursor-not-allowed"
+                    aria-label="Start report and stream logs"
+                >
+                    Start Report
+                </button>
+                <button 
+                    id="downloadButton" 
+                    onclick="downloadLog()" 
+                    class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition disabled:bg-gray-400 disabled:cursor-not-allowed"
+                    aria-label="Download log file"
+                    disabled
+                >
+                    Download
+                </button>
+                <button 
+                    id="clearButton" 
+                    onclick="clearLogs()" 
+                    class="bg-gray-500 text-white px-4 py-2 rounded-md hover:bg-gray-600 transition"
+                    aria-label="Clear log output"
+                >
+                    Clear
+                </button>
+            </div>
+        </div>
+        <div id="loading" class="flex items-center gap-2 text-gray-600 text-sm mb-4 hidden">
+            <svg class="animate-spin h-5 w-5 text-blue-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+            Loading logs...
+        </div>
+        <div id="error" class="bg-red-100 border border-red-400 text-red-700 px-4 py-2 rounded-md mb-4 hidden"></div>
+        <textarea 
+            id="logOutput" 
+            readonly 
+            class="w-full h-96 bg-gray-50 border border-gray-300 rounded-md p-3 font-mono text-sm resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 mb-4"
+            aria-label="Log output"
+        ></textarea>
+        <div id="tableLoading" class="flex items-center gap-2 text-gray-600 text-sm mb-4 hidden">
+            <svg class="animate-spin h-5 w-5 text-blue-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+            Loading table data...
+        </div>
+        <div class="overflow-x-auto">
+            <table id="logsTable" class="w-full border-collapse hidden">
+                <thead>
+                    <tr class="bg-gray-200">
+                        <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Request ID</th>
+                        <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Timestamp</th>
+                        <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Section</th>
+                        <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Model Version</th>
+                        <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Input Tokens</th>
+                        <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Output Tokens</th>
+                        <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Total Tokens</th>
+                        <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Cost/1M Input ($)</th>
+                        <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Cost/1M Output ($)</th>
+                        <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Input Cost ($)</th>
+                        <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Output Cost ($)</th>
+                        <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Total Cost ($)</th>
+                    </tr>
+                </thead>
+                <tbody id="logsTableBody" class="bg-white"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        let controller;
+        let pollingControllers = new Map(); // Track polling tasks for cancellation
+        const startButton = document.getElementById('startButton');
+        const downloadButton = document.getElementById('downloadButton');
+        const clearButton = document.getElementById('clearButton');
+        const transactionIdInput = document.getElementById('transactionId');
+        const logOutput = document.getElementById('logOutput');
+        const errorDiv = document.getElementById('error');
+        const loadingDiv = document.getElementById('loading');
+        const logsTable = document.getElementById('logsTable');
+        const logsTableBody = document.getElementById('logsTableBody');
+        const tableLoadingDiv = document.getElementById('tableLoading');
+
+        function showError(message) {
+            errorDiv.textContent = message;
+            errorDiv.classList.remove('hidden');
+            setTimeout(() => errorDiv.classList.add('hidden'), 5000);
+        }
+
+        function setLoading(isLoading) {
+            startButton.disabled = isLoading;
+            downloadButton.disabled = isLoading || !transactionIdInput.value.trim();
+            loadingDiv.classList.toggle('hidden', !isLoading);
+            errorDiv.classList.add('hidden');
+        }
+
+        function setTableLoading(isLoading) {
+            tableLoadingDiv.classList.toggle('hidden', !isLoading);
+        }
+
+        function clearLogs() {
+            logOutput.value = '';
+            downloadButton.disabled = true;
+            transactionIdInput.value = '';
+            logsTableBody.innerHTML = '';
+            logsTable.classList.add('hidden');
+            tableLoadingDiv.classList.add('hidden');
+            // Cancel all polling tasks
+            pollingControllers.forEach(controller => controller.abort());
+            pollingControllers.clear();
+            transactionIdInput.focus();
+        }
+
+        function downloadLog() {
+            const txId = transactionIdInput.value.trim();
+            if (!txId) {
+                showError('Please enter a transaction ID');
+                return;
+            }
+            window.location.href = `/download/${txId}`;
+        }
+
+        function populateLogsTable(logs) {
+            logsTableBody.innerHTML = '';
+            if (logs.length === 0) {
+                logsTable.classList.add('hidden');
+                return;
+            }
+
+            logs.forEach(log => {
+                const row = document.createElement('tr');
+                row.className = 'border-t border-gray-200';
+                row.innerHTML = `
+                    <td class="px-4 py-2 text-sm text-gray-600">${log['Request ID'] || ''}</td>
+                    <td class="px-4 py-2 text-sm text-gray-600">${log['Timestamp'] || ''}</td>
+                    <td class="px-4 py-2 text-sm text-gray-600">${log['Section'] || ''}</td>
+                    <td class="px-4 py-2 text-sm text-gray-600">${log['Model Version'] || ''}</td>
+                    <td class="px-4 py-2 text-sm text-gray-600">${log['Input Tokens'] || ''}</td>
+                    <td class="px-4 py-2 text-sm text-gray-600">${log['Output Tokens'] || ''}</td>
+                    <td class="px-4 py-2 text-sm text-gray-600">${log['Total Tokens'] || ''}</td>
+                    <td class="px-4 py-2 text-sm text-gray-600">${log['Cost per 1M Input ($)'] || ''}</td>
+                    <td class="px-4 py-2 text-sm text-gray-600">${log['Cost per 1M Output ($)'] || ''}</td>
+                    <td class="px-4 py-2 text-sm text-gray-600">${log['Input Cost ($)'] || ''}</td>
+                    <td class="px-4 py-2 text-sm text-gray-600">${log['Output Cost ($)'] || ''}</td>
+                    <td class="px-4 py-2 text-sm text-gray-600">${log['Total Cost ($)'] || ''}</td>
+                `;
+                logsTableBody.appendChild(row);
+            });
+            logsTable.classList.remove('hidden');
+        }
+
+        async function pollLogs(request_id, interval = 10000) {
+            const controller = new AbortController();
+            pollingControllers.set(request_id, controller);
+            setTableLoading(true);
+
+            while (true) {
+                try {
+                    const response = await fetch(`/api/logs?request_id=${request_id}`, { signal: controller.signal });
+                    if (response.ok) {
+                        const data = await response.json();
+                        if (data.length > 0) {
+                            populateLogsTable(data);
+                        }
+                    }
+                } catch (err) {
+                    if (err.name === 'AbortError') {
+                        console.log(`Polling aborted for request_id: ${request_id}`);
+                        setTableLoading(false);
+                        return;
+                    }
+                    console.error('Error fetching logs:', err);
+                }
+                await new Promise(resolve => setTimeout(resolve, interval));
+            }
+        }
+
+
+        async function finalLogFetch(request_id) {
+            try {
+                const response = await fetch(`/api/logs?request_id=${request_id}`);
+                if (response.ok) {
+                    const data = await response.json();
+                    if (data.length > 0) {
+                        populateLogsTable(data);
+                    }
+                }
+            } catch (err) {
+                console.error('Error in final log fetch:', err);
+            }
+        }
+
+        function startReportAndStream() {
+            const txId = transactionIdInput.value.trim() || null;
+            if (!txId) {
+                // Start a new report if no transaction ID is provided
+                fetch('/start-report', { method: 'POST' })
+                    .then(response => response.json())
+                    .then(data => {
+                        transactionIdInput.value = data.transaction_id;
+                        startLogStream(data.transaction_id);
+                    })
+                    .catch(err => {
+                        console.error('Error starting report:', err);
+                        showError('Failed to start report');
+                    });
+            } else {
+                // Stream existing transaction ID
+                startLogStream(txId);
+            }
+        }
+
+        function startLogStream(txId) {
+            if (!txId) {
+                showError('Please enter a transaction ID');
+                return;
+            }
+
+            logOutput.value = '';
+            downloadButton.disabled = false;
+            setLoading(true);
+
+            fetch(`/logs/${txId}`).then(response => {
+                if (!response.ok) {
+                    throw new Error('Failed to fetch logs');
+                }
+                const reader = response.body.getReader();
+                const decoder = new TextDecoder();
+                let currentRequestId = null;
+
+                function pump() {
+                    reader.read().then(({ done, value }) => {
+                        if (done) {
+                            console.log('Stream closed');
+                            setLoading(false);
+                            return;
+                        }
+                        const text = decoder.decode(value, { stream: true });
+                        const lines = text.split('\n');
+                        lines.forEach(line => {
+                            if (line.includes('Report generation process completed')) {
+                                if (currentRequestId) {
+                                    // Make one final fetch to ensure all logs are captured
+                                    finalLogFetch(currentRequestId);
+                                    // Cancel polling for the current request_id
+                                    const controller = pollingControllers.get(currentRequestId);
+                                    if (controller) {
+                                        controller.abort();
+                                        pollingControllers.delete(currentRequestId);
+                                    }
+                                }
+                                reader.cancel().then(() => {
+                                    console.log('Stream closed due to report completion');
+                                    setLoading(false);
+                                    setTableLoading(false);
+                                });
+                                return;
+                            }
+                            if (line.includes('Starting new request')) {
+                                let request_id = line.split('Starting new request: ')[1]?.trim();
+                                if (request_id) {
+                                    currentRequestId = request_id;
+                                    pollLogs(request_id);
+                                }
+                            }
+                            logOutput.value += line + '\n';
+                        });
+                        logOutput.scrollTop = logOutput.scrollHeight;
+                        if (!lines.some(line => line.includes('Report generation process completed'))) {
+                            pump();
+                        }
+                    }).catch(err => {
+                        console.error('Stream error:', err);
+                        showError('Lost connection to stream');
+                        setLoading(false);
+                        setTableLoading(false);
+                    });
+                }
+
+                pump();
+            }).catch(err => {
+                console.error('Fetch error:', err);
+                showError('Failed to start log stream');
+                setLoading(false);
+                setTableLoading(false);
+            });
+        }
+
+        // Allow starting report with Enter key
+        transactionIdInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                startReportAndStream();
+            }
+        });
+
+        // Clear logs with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                clearLogs();
+            }
+        });
+
+        // Enable/disable download button based on input
+        transactionIdInput.addEventListener('input', () => {
+            downloadButton.disabled = !transactionIdInput.value.trim();
+        });
+    </script>
+</body>
+</html>

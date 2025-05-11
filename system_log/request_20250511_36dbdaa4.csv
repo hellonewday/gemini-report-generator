@@ -1,0 +1,110 @@
+Timestamp,Status,Message
+2025-05-11 14:04:45,initialize,🚀 Starting report generation process...
+2025-05-11 14:04:45,initialize,🚀 Request created: 20250511_36dbdaa4
+2025-05-11 14:04:45,config,📝 Report Configuration:
+2025-05-11 14:04:45,config,🌐 Language: English
+2025-05-11 14:04:45,config,🏦 Primary Bank: Chase Bank
+2025-05-11 14:04:45,config,"🏢 Comparison Banks: Bank of America, Wells Fargo, Citibank"
+2025-05-11 14:04:45,config,"📊 Analysis Focus: Market Share and Growth, Revenue and Profitability, Customer Acquisition Cost"
+2025-05-11 14:04:45,config,"📈 Performance Metrics: Card Issuance Volume, Transaction Volume, Revenue per Card"
+2025-05-11 14:04:45,config,"👥 Market Segments: High Net Worth Individuals, Business Professionals"
+2025-05-11 14:04:45,config,"📋 Report Sections: Executive Summary, Premium Credit Card Product Comparison, Pricing and Fee Analysis"
+2025-05-11 14:04:45,config,📏 Strict Structure: False
+2025-05-11 14:04:45,config,🧪 Demo Mode: False
+2025-05-11 14:04:45,config,"✍️ Writing Style: Tone: Professional and Analytical, Formality: High, Emphasis: Data-Driven Insights, Strategic Implications"
+2025-05-11 14:04:45,info,💲 You can view the cost metrics for this request at http://192.168.100.4:8000/api/metrics/20250511_36dbdaa4
+2025-05-11 14:04:45,info,"ℹ️ To view the system log, please visit http://192.168.100.4:8000/api/logs/20250511_36dbdaa4"
+2025-05-11 14:04:45,generating,💭 Report generation process started. This may take a while.
+2025-05-11 14:04:45,generating,📋 Generating Table of Contents...
+2025-05-11 14:04:45,generating,📋 Generating Table of Contents...
+2025-05-11 14:05:22,generating,✅ Table of Contents generated successfully
+2025-05-11 14:05:22,generating,📋 Extracting Table of Contents...
+2025-05-11 14:05:22,generating,📋 Extracting main sections from Table of Contents...
+2025-05-11 14:05:24,generating,✅ Sections extracted successfully
+2025-05-11 14:05:24,generating,📑 Report Title: Elevating Market Leadership: A Strategic Analysis of Premium Credit Card Offerings for Enhanced Competitiveness and Growth
+2025-05-11 14:05:24,generating,🔍 Found 10 sections to process
+2025-05-11 14:05:24,generating,📝 Generating section 1: I. Executive Summary
+2025-05-11 14:05:24,generating,📝 Generating section 1: I. Executive Summary
+2025-05-11 14:05:52,generating,✅ Section 1 content generated successfully
+2025-05-11 14:05:52,polishing,✨ Polishing section 1: I. Executive Summary
+2025-05-11 14:05:52,polishing,✨ Polishing content...
+2025-05-11 14:06:05,polishing,✅ Content polished successfully
+2025-05-11 14:06:05,generating,✅ Section 1 completed: I. Executive Summary
+2025-05-11 14:06:05,generating,📝 Generating section 2: II. Introduction: The Evolving Landscape of Premium Credit Cards
+2025-05-11 14:06:05,generating,📝 Generating section 2: II. Introduction: The Evolving Landscape of Premium Credit Cards
+2025-05-11 14:06:24,generating,✅ Section 2 content generated successfully
+2025-05-11 14:06:24,polishing,✨ Polishing section 2: II. Introduction: The Evolving Landscape of Premium Credit Cards
+2025-05-11 14:06:24,polishing,✨ Polishing content...
+2025-05-11 14:06:41,polishing,✅ Content polished successfully
+2025-05-11 14:06:41,generating,✅ Section 2 completed: II. Introduction: The Evolving Landscape of Premium Credit Cards
+2025-05-11 14:06:41,generating,📝 Generating section 3: III. Market Overview and Competitive Landscape
+2025-05-11 14:06:41,generating,📝 Generating section 3: III. Market Overview and Competitive Landscape
+2025-05-11 14:07:16,generating,✅ Section 3 content generated successfully
+2025-05-11 14:07:16,polishing,✨ Polishing section 3: III. Market Overview and Competitive Landscape
+2025-05-11 14:07:16,polishing,✨ Polishing content...
+2025-05-11 14:07:40,polishing,✅ Content polished successfully
+2025-05-11 14:07:40,generating,✅ Section 3 completed: III. Market Overview and Competitive Landscape
+2025-05-11 14:07:40,generating,📝 Generating section 4: IV. Target Market Segment Analysis: High Net Worth Individuals and Business Professionals
+2025-05-11 14:07:40,generating,📝 Generating section 4: IV. Target Market Segment Analysis: High Net Worth Individuals and Business Professionals
+2025-05-11 14:08:01,generating,✅ Section 4 content generated successfully
+2025-05-11 14:08:01,polishing,✨ Polishing section 4: IV. Target Market Segment Analysis: High Net Worth Individuals and Business Professionals
+2025-05-11 14:08:01,polishing,✨ Polishing content...
+2025-05-11 14:08:18,polishing,✅ Content polished successfully
+2025-05-11 14:08:18,generating,✅ Section 4 completed: IV. Target Market Segment Analysis: High Net Worth Individuals and Business Professionals
+2025-05-11 14:08:18,generating,📝 Generating section 5: V. Comparative Analysis of Premium Credit Card Products
+2025-05-11 14:08:18,generating,📝 Generating section 5: V. Comparative Analysis of Premium Credit Card Products
+2025-05-11 14:08:52,generating,✅ Section 5 content generated successfully
+2025-05-11 14:08:52,polishing,✨ Polishing section 5: V. Comparative Analysis of Premium Credit Card Products
+2025-05-11 14:08:52,polishing,✨ Polishing content...
+2025-05-11 14:09:15,polishing,✅ Content polished successfully
+2025-05-11 14:09:15,generating,✅ Section 5 completed: V. Comparative Analysis of Premium Credit Card Products
+2025-05-11 14:09:15,generating,📝 Generating section 6: VI. Pricing and Fee Structure Analysis
+2025-05-11 14:09:15,generating,📝 Generating section 6: VI. Pricing and Fee Structure Analysis
+2025-05-11 14:09:51,generating,✅ Section 6 content generated successfully
+2025-05-11 14:09:51,polishing,✨ Polishing section 6: VI. Pricing and Fee Structure Analysis
+2025-05-11 14:09:51,polishing,✨ Polishing content...
+2025-05-11 14:10:11,polishing,✅ Content polished successfully
+2025-05-11 14:10:11,generating,✅ Section 6 completed: VI. Pricing and Fee Structure Analysis
+2025-05-11 14:10:11,generating,📝 Generating section 7: VII. Rewards Programs and Benefits Deep Dive
+2025-05-11 14:10:11,generating,📝 Generating section 7: VII. Rewards Programs and Benefits Deep Dive
+2025-05-11 14:10:47,generating,✅ Section 7 content generated successfully
+2025-05-11 14:10:47,polishing,✨ Polishing section 7: VII. Rewards Programs and Benefits Deep Dive
+2025-05-11 14:10:47,polishing,✨ Polishing content...
+2025-05-11 14:11:14,polishing,✅ Content polished successfully
+2025-05-11 14:11:14,generating,✅ Section 7 completed: VII. Rewards Programs and Benefits Deep Dive
+2025-05-11 14:11:14,generating,📝 Generating section 8: VIII. Digital Capabilities and Customer Experience
+2025-05-11 14:11:14,generating,📝 Generating section 8: VIII. Digital Capabilities and Customer Experience
+2025-05-11 14:11:49,generating,✅ Section 8 content generated successfully
+2025-05-11 14:11:49,polishing,✨ Polishing section 8: VIII. Digital Capabilities and Customer Experience
+2025-05-11 14:11:49,polishing,✨ Polishing content...
+2025-05-11 14:12:04,polishing,✅ Content polished successfully
+2025-05-11 14:12:04,generating,✅ Section 8 completed: VIII. Digital Capabilities and Customer Experience
+2025-05-11 14:12:04,generating,📝 Generating section 9: IX. Strategic Implications and Recommendations for Chase Bank
+2025-05-11 14:12:04,generating,📝 Generating section 9: IX. Strategic Implications and Recommendations for Chase Bank
+2025-05-11 14:12:44,generating,✅ Section 9 content generated successfully
+2025-05-11 14:12:44,polishing,✨ Polishing section 9: IX. Strategic Implications and Recommendations for Chase Bank
+2025-05-11 14:12:44,polishing,✨ Polishing content...
+2025-05-11 14:13:09,polishing,✅ Content polished successfully
+2025-05-11 14:13:09,generating,✅ Section 9 completed: IX. Strategic Implications and Recommendations for Chase Bank
+2025-05-11 14:13:09,generating,📝 Generating section 10: X. Conclusion
+2025-05-11 14:13:09,generating,📝 Generating section 10: X. Conclusion
+2025-05-11 14:13:20,generating,✅ Section 10 content generated successfully
+2025-05-11 14:13:20,polishing,✨ Polishing section 10: X. Conclusion
+2025-05-11 14:13:20,polishing,✨ Polishing content...
+2025-05-11 14:13:32,polishing,✅ Content polished successfully
+2025-05-11 14:13:32,generating,✅ Section 10 completed: X. Conclusion
+2025-05-11 14:13:32,saving,💾 Saving report files with base name: elevating_market_leadership:_a_strategic_analysis_of_premium_credit_card_offerings_for_enhanced_competitiveness_and_growth_20250511_141332
+2025-05-11 14:13:32,saving,✅ Saved Markdown file: reports\english\elevating_market_leadership:_a_strategic_analysis_of_premium_credit_card_offerings_for_enhanced_competitiveness_and_growth_20250511_141332.md
+2025-05-11 14:13:32,saving,✅ Saved HTML file: reports\english\elevating_market_leadership:_a_strategic_analysis_of_premium_credit_card_offerings_for_enhanced_competitiveness_and_growth_20250511_141332.html
+2025-05-11 14:13:33,saving,✅ Saved PDF file: reports\english\elevating_market_leadership:_a_strategic_analysis_of_premium_credit_card_offerings_for_enhanced_competitiveness_and_growth_20250511_141332.pdf
+2025-05-11 14:13:33,uploading,📤 Uploading PDF to Google Cloud Storage...
+2025-05-11 14:13:36,uploading,✅ PDF uploaded successfully to english folder: english/elevating_market_leadership:_a_strategic_analysis_of_premium_credit_card_offerings_for_enhanced_competitiveness_and_growth_20250511_141332.pdf
+2025-05-11 14:13:36,url,🌐 Public URL: https://storage.googleapis.com/credit-card-reports/english/elevating_market_leadership%3A_a_strategic_analysis_of_premium_credit_card_offerings_for_enhanced_competitiveness_and_growth_20250511_141332.pdf
+2025-05-11 14:13:36,metrics,======================================================================
+2025-05-11 14:13:36,metrics,📊 Overall Total Usage:
+2025-05-11 14:13:36,metrics,"   ├─ Total Input Tokens:  189,189"
+2025-05-11 14:13:36,metrics,"   ├─ Total Output Tokens: 42,369"
+2025-05-11 14:13:36,metrics,"   └─ Total All Tokens:   231,558"
+2025-05-11 14:13:36,metrics,   └─ Total Cost:         $0.475696
+2025-05-11 14:13:36,metrics,======================================================================
+2025-05-11 14:13:36,completed,✅ Report generation process completed!

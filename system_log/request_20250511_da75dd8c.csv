@@ -1,0 +1,117 @@
+Timestamp,Status,Message
+2025-05-11 14:56:12,initialize,🚀 Starting report generation process...
+2025-05-11 14:56:12,initialize,🚀 Request created: 20250511_da75dd8c
+2025-05-11 14:56:12,config,🧱 Scanning configuration parameters
+2025-05-11 14:56:12,config,🌐 Report language: English
+2025-05-11 14:56:12,config,🏦 Your bank: Chase Bank
+2025-05-11 14:56:12,config,"🏢 You are comparing with: Bank of America, Wells Fargo, Citibank"
+2025-05-11 14:56:12,config,"📊 The report will focus on: Market Share and Growth, Revenue and Profitability, Customer Acquisition Cost"
+2025-05-11 14:56:12,config,"📈 The report will track these metrics: Card Issuance Volume, Transaction Volume, Revenue per Card"
+2025-05-11 14:56:12,config,"👥 The report will be tailored to these market segments: High Net Worth Individuals, Business Professionals"
+2025-05-11 14:56:12,config,"📋 The report will have these sections: Executive Summary, Premium Credit Card Product Comparison, Pricing and Fee Analysis"
+2025-05-11 14:56:12,config,📏 Strict structure: True
+2025-05-11 14:56:12,config,🧪 Experimental mode: False
+2025-05-11 14:56:12,info,💲 You can view the cost metrics for this request at http://192.168.100.4:8000/api/metrics/20250511_da75dd8c
+2025-05-11 14:56:12,info,"ℹ️ To view the system log, please visit http://192.168.100.4:8000/api/logs/20250511_da75dd8c"
+2025-05-11 14:56:12,generating,💭 Report generation process started. This may take a while.
+2025-05-11 14:56:12,generating,📋 Generating Table of Contents...
+2025-05-11 14:56:12,generating,📋 Generating Table of Contents...
+2025-05-11 14:57:10,generating,✅ Table of Contents generated successfully
+2025-05-11 14:57:10,generating,📋 Extracting Table of Contents...
+2025-05-11 14:57:10,generating,📋 Extracting main sections from Table of Contents...
+2025-05-11 14:57:15,generating,✅ Sections extracted successfully
+2025-05-11 14:57:15,generating,📑 Report Title: Securing Market Leadership: A Comparative Analysis of Premium Credit Card Offerings for High Net Worth Individuals and Business Professionals
+2025-05-11 14:57:15,generating,🔍 Found 11 sections to process
+2025-05-11 14:57:15,generating,📝 Generating section 1: Executive Summary
+2025-05-11 14:57:15,generating,📝 Generating section 1: Executive Summary
+2025-05-11 14:57:43,generating,✅ Section 1 content generated successfully
+2025-05-11 14:57:43,polishing,✨ Polishing section 1: Executive Summary
+2025-05-11 14:57:43,polishing,✨ Polishing content...
+2025-05-11 14:58:19,polishing,✅ Content polished successfully
+2025-05-11 14:58:19,generating,✅ Section 1 completed: Executive Summary
+2025-05-11 14:58:19,generating,📝 Generating section 2: Introduction: The Evolving Premium Credit Card Market
+2025-05-11 14:58:19,generating,📝 Generating section 2: Introduction: The Evolving Premium Credit Card Market
+2025-05-11 14:58:37,generating,✅ Section 2 content generated successfully
+2025-05-11 14:58:37,polishing,✨ Polishing section 2: Introduction: The Evolving Premium Credit Card Market
+2025-05-11 14:58:37,polishing,✨ Polishing content...
+2025-05-11 14:58:48,polishing,✅ Content polished successfully
+2025-05-11 14:58:48,generating,✅ Section 2 completed: Introduction: The Evolving Premium Credit Card Market
+2025-05-11 14:58:48,generating,📝 Generating section 3: Market Share and Growth Analysis
+2025-05-11 14:58:48,generating,📝 Generating section 3: Market Share and Growth Analysis
+2025-05-11 14:59:24,generating,✅ Section 3 content generated successfully
+2025-05-11 14:59:24,polishing,✨ Polishing section 3: Market Share and Growth Analysis
+2025-05-11 14:59:24,polishing,✨ Polishing content...
+2025-05-11 14:59:54,polishing,✅ Content polished successfully
+2025-05-11 14:59:54,generating,✅ Section 3 completed: Market Share and Growth Analysis
+2025-05-11 14:59:54,generating,📝 Generating section 4: Revenue and Profitability Analysis
+2025-05-11 14:59:54,generating,📝 Generating section 4: Revenue and Profitability Analysis
+2025-05-11 15:00:29,generating,✅ Section 4 content generated successfully
+2025-05-11 15:00:29,polishing,✨ Polishing section 4: Revenue and Profitability Analysis
+2025-05-11 15:00:29,polishing,✨ Polishing content...
+2025-05-11 15:00:50,polishing,✅ Content polished successfully
+2025-05-11 15:00:50,generating,✅ Section 4 completed: Revenue and Profitability Analysis
+2025-05-11 15:00:50,generating,📝 Generating section 5: Customer Acquisition Cost Analysis
+2025-05-11 15:00:50,generating,📝 Generating section 5: Customer Acquisition Cost Analysis
+2025-05-11 15:01:16,generating,✅ Section 5 content generated successfully
+2025-05-11 15:01:16,polishing,✨ Polishing section 5: Customer Acquisition Cost Analysis
+2025-05-11 15:01:16,polishing,✨ Polishing content...
+2025-05-11 15:01:29,polishing,✅ Content polished successfully
+2025-05-11 15:01:29,generating,✅ Section 5 completed: Customer Acquisition Cost Analysis
+2025-05-11 15:01:29,generating,📝 Generating section 6: Premium Credit Card Product Comparison: Chase vs. Competitors
+2025-05-11 15:01:29,generating,📝 Generating section 6: Premium Credit Card Product Comparison: Chase vs. Competitors
+2025-05-11 15:02:22,generating,✅ Section 6 content generated successfully
+2025-05-11 15:02:22,polishing,✨ Polishing section 6: Premium Credit Card Product Comparison: Chase vs. Competitors
+2025-05-11 15:02:22,polishing,✨ Polishing content...
+2025-05-11 15:03:00,polishing,✅ Content polished successfully
+2025-05-11 15:03:00,generating,✅ Section 6 completed: Premium Credit Card Product Comparison: Chase vs. Competitors
+2025-05-11 15:03:00,generating,📝 Generating section 7: Comparative Analysis: Head-to-Head
+2025-05-11 15:03:00,generating,📝 Generating section 7: Comparative Analysis: Head-to-Head
+2025-05-11 15:03:52,generating,✅ Section 7 content generated successfully
+2025-05-11 15:03:52,polishing,✨ Polishing section 7: Comparative Analysis: Head-to-Head
+2025-05-11 15:03:52,polishing,✨ Polishing content...
+2025-05-11 15:04:20,polishing,✅ Content polished successfully
+2025-05-11 15:04:20,generating,✅ Section 7 completed: Comparative Analysis: Head-to-Head
+2025-05-11 15:04:20,generating,📝 Generating section 8: Digital Capabilities and Customer Experience
+2025-05-11 15:04:20,generating,📝 Generating section 8: Digital Capabilities and Customer Experience
+2025-05-11 15:04:49,generating,✅ Section 8 content generated successfully
+2025-05-11 15:04:49,polishing,✨ Polishing section 8: Digital Capabilities and Customer Experience
+2025-05-11 15:04:49,polishing,✨ Polishing content...
+2025-05-11 15:05:08,polishing,✅ Content polished successfully
+2025-05-11 15:05:08,generating,✅ Section 8 completed: Digital Capabilities and Customer Experience
+2025-05-11 15:05:08,generating,📝 Generating section 9: Market Positioning and Value Proposition
+2025-05-11 15:05:08,generating,📝 Generating section 9: Market Positioning and Value Proposition
+2025-05-11 15:05:36,generating,✅ Section 9 content generated successfully
+2025-05-11 15:05:36,polishing,✨ Polishing section 9: Market Positioning and Value Proposition
+2025-05-11 15:05:36,polishing,✨ Polishing content...
+2025-05-11 15:05:59,polishing,✅ Content polished successfully
+2025-05-11 15:05:59,generating,✅ Section 9 completed: Market Positioning and Value Proposition
+2025-05-11 15:05:59,generating,📝 Generating section 10: Strategic Recommendations for Chase Bank
+2025-05-11 15:05:59,generating,📝 Generating section 10: Strategic Recommendations for Chase Bank
+2025-05-11 15:06:28,generating,✅ Section 10 content generated successfully
+2025-05-11 15:06:28,polishing,✨ Polishing section 10: Strategic Recommendations for Chase Bank
+2025-05-11 15:06:28,polishing,✨ Polishing content...
+2025-05-11 15:06:48,polishing,✅ Content polished successfully
+2025-05-11 15:06:48,generating,✅ Section 10 completed: Strategic Recommendations for Chase Bank
+2025-05-11 15:06:48,generating,📝 Generating section 11: Conclusion
+2025-05-11 15:06:48,generating,📝 Generating section 11: Conclusion
+2025-05-11 15:07:00,generating,✅ Section 11 content generated successfully
+2025-05-11 15:07:00,polishing,✨ Polishing section 11: Conclusion
+2025-05-11 15:07:00,polishing,✨ Polishing content...
+2025-05-11 15:07:06,polishing,✅ Content polished successfully
+2025-05-11 15:07:06,generating,✅ Section 11 completed: Conclusion
+2025-05-11 15:07:06,saving,💾 Saving report files with base name: securing_market_leadership:_a_comparative_analysis_of_premium_credit_card_offerings_for_high_net_worth_individuals_and_business_professionals_20250511_150706
+2025-05-11 15:07:06,saving,✅ Saved Markdown file: reports\english\securing_market_leadership:_a_comparative_analysis_of_premium_credit_card_offerings_for_high_net_worth_individuals_and_business_professionals_20250511_150706.md
+2025-05-11 15:07:06,saving,✅ Saved Markdown file: reports\20250511_150706_20250511_da75dd8c_english.md
+2025-05-11 15:07:06,saving,✅ Saved HTML file: reports\20250511_150706_20250511_da75dd8c_english.html
+2025-05-11 15:07:08,saving,✅ Saved PDF file: reports\20250511_150706_20250511_da75dd8c_english.pdf
+2025-05-11 15:07:08,uploading,📤 Uploading PDF to Google Cloud Storage...
+2025-05-11 15:07:12,uploading,✅ PDF uploaded successfully to english folder: english/20250511_150706_20250511_da75dd8c_english.pdf
+2025-05-11 15:07:12,url,🌐 Public URL: https://storage.googleapis.com/credit-card-reports/english/20250511_150706_20250511_da75dd8c_english.pdf
+2025-05-11 15:07:12,metrics,======================================================================
+2025-05-11 15:07:12,metrics,📊 Overall Total Usage:
+2025-05-11 15:07:12,metrics,"   ├─ Total Input Tokens:  246,122"
+2025-05-11 15:07:12,metrics,"   ├─ Total Output Tokens: 51,923"
+2025-05-11 15:07:12,metrics,"   └─ Total All Tokens:   298,045"
+2025-05-11 15:07:12,metrics,   └─ Total Cost:         $0.610534
+2025-05-11 15:07:12,metrics,======================================================================
+2025-05-11 15:07:12,completed,✅ Report generation process completed!

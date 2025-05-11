@@ -1,0 +1,47 @@
+Timestamp,Status,Message
+2025-05-11 14:02:31,initialize,🚀 Starting report generation process...
+2025-05-11 14:02:31,initialize,🚀 Request created: 20250511_c6af7bef
+2025-05-11 14:02:31,config,📝 Report Configuration:
+2025-05-11 14:02:31,config,🌐 Language: English
+2025-05-11 14:02:31,config,🏦 Primary Bank: Chase Bank
+2025-05-11 14:02:31,config,"🏢 Comparison Banks: Bank of America, Wells Fargo, Citibank"
+2025-05-11 14:02:31,config,"📊 Analysis Focus: Market Share and Growth, Revenue and Profitability, Customer Acquisition Cost"
+2025-05-11 14:02:31,config,"📈 Performance Metrics: Card Issuance Volume, Transaction Volume, Revenue per Card"
+2025-05-11 14:02:31,config,"👥 Market Segments: High Net Worth Individuals, Business Professionals"
+2025-05-11 14:02:31,config,"📋 Report Sections: Executive Summary, Premium Credit Card Product Comparison, Pricing and Fee Analysis"
+2025-05-11 14:02:31,config,📏 Strict Structure: True
+2025-05-11 14:02:31,config,🧪 Demo Mode: True
+2025-05-11 14:02:31,config,"✍️ Writing Style: Tone: Professional and Analytical, Formality: High, Emphasis: Data-Driven Insights, Strategic Implications"
+2025-05-11 14:02:31,info,💲 You can view the cost metrics for this request at http://192.168.100.4:8000/api/metrics/20250511_c6af7bef
+2025-05-11 14:02:31,info,"ℹ️ To view the system log, please visit http://192.168.100.4:8000/api/logs/20250511_c6af7bef"
+2025-05-11 14:02:31,generating,💭 Report generation process started. This may take a while.
+2025-05-11 14:02:31,generating,📋 Generating Table of Contents...
+2025-05-11 14:02:31,generating,📋 Generating Table of Contents...
+2025-05-11 14:03:36,generating,✅ Table of Contents generated successfully
+2025-05-11 14:03:36,generating,📋 Extracting Table of Contents...
+2025-05-11 14:03:36,generating,📋 Extracting main sections from Table of Contents...
+2025-05-11 14:03:38,generating,✅ Sections extracted successfully
+2025-05-11 14:03:38,generating,📑 Report Title: Securing Market Leadership: A Strategic Analysis of Chase Bank's Premium Credit Card Portfolio Against Key Competitors
+2025-05-11 14:03:38,generating,🔍 Found 9 sections to process
+2025-05-11 14:03:38,generating,📝 Generating section 1: II. Introduction and Strategic Context
+2025-05-11 14:03:38,generating,📝 Generating section 1: II. Introduction and Strategic Context
+2025-05-11 14:04:12,generating,✅ Section 1 content generated successfully
+2025-05-11 14:04:12,polishing,✨ Polishing section 1: II. Introduction and Strategic Context
+2025-05-11 14:04:12,polishing,✨ Polishing content...
+2025-05-11 14:04:33,polishing,✅ Content polished successfully
+2025-05-11 14:04:33,generating,✅ Section 1 completed: II. Introduction and Strategic Context
+2025-05-11 14:04:33,saving,💾 Saving report files with base name: securing_market_leadership:_a_strategic_analysis_of_chase_bank's_premium_credit_card_portfolio_against_key_competitors_20250511_140433
+2025-05-11 14:04:33,saving,✅ Saved Markdown file: reports\english\securing_market_leadership:_a_strategic_analysis_of_chase_bank's_premium_credit_card_portfolio_against_key_competitors_20250511_140433.md
+2025-05-11 14:04:33,saving,✅ Saved HTML file: reports\english\securing_market_leadership:_a_strategic_analysis_of_chase_bank's_premium_credit_card_portfolio_against_key_competitors_20250511_140433.html
+2025-05-11 14:04:34,saving,✅ Saved PDF file: reports\english\securing_market_leadership:_a_strategic_analysis_of_chase_bank's_premium_credit_card_portfolio_against_key_competitors_20250511_140433.pdf
+2025-05-11 14:04:34,uploading,📤 Uploading PDF to Google Cloud Storage...
+2025-05-11 14:04:37,uploading,✅ PDF uploaded successfully to english folder: english/securing_market_leadership:_a_strategic_analysis_of_chase_bank's_premium_credit_card_portfolio_against_key_competitors_20250511_140433.pdf
+2025-05-11 14:04:37,url,🌐 Public URL: https://storage.googleapis.com/credit-card-reports/english/securing_market_leadership%3A_a_strategic_analysis_of_chase_bank%27s_premium_credit_card_portfolio_against_key_competitors_20250511_140433.pdf
+2025-05-11 14:04:37,metrics,======================================================================
+2025-05-11 14:04:37,metrics,📊 Overall Total Usage:
+2025-05-11 14:04:37,metrics,"   ├─ Total Input Tokens:  14,117"
+2025-05-11 14:04:37,metrics,"   ├─ Total Output Tokens: 6,882"
+2025-05-11 14:04:37,metrics,"   └─ Total All Tokens:   20,999"
+2025-05-11 14:04:37,metrics,   └─ Total Cost:         $0.060543
+2025-05-11 14:04:37,metrics,======================================================================
+2025-05-11 14:04:37,completed,✅ Report generation process completed!

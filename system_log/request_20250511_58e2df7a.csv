@@ -1,0 +1,47 @@
+Timestamp,Status,Message
+2025-05-11 12:25:20,initialize,🚀 Starting report generation process...
+2025-05-11 12:25:20,initialize,🚀 Request created: 20250511_58e2df7a
+2025-05-11 12:25:20,config,📝 Report Configuration:
+2025-05-11 12:25:20,config,🌐 Language: English
+2025-05-11 12:25:20,config,🏦 Primary Bank: Chase Bank
+2025-05-11 12:25:20,config,"🏢 Comparison Banks: Bank of America, Wells Fargo, Citibank"
+2025-05-11 12:25:20,config,"📊 Analysis Focus: Market Share and Growth, Revenue and Profitability, Customer Acquisition Cost"
+2025-05-11 12:25:20,config,"📈 Performance Metrics: Card Issuance Volume, Transaction Volume, Revenue per Card"
+2025-05-11 12:25:20,config,"👥 Market Segments: High Net Worth Individuals, Business Professionals"
+2025-05-11 12:25:20,config,"📋 Report Sections: Executive Summary, Premium Credit Card Product Comparison, Pricing and Fee Analysis"
+2025-05-11 12:25:20,config,📏 Strict Structure: True
+2025-05-11 12:25:20,config,🧪 Demo Mode: True
+2025-05-11 12:25:20,config,"✍️ Writing Style: Tone: Professional and Analytical, Formality: High, Emphasis: Data-Driven Insights, Strategic Implications"
+2025-05-11 12:25:20,info,💲 You can view the cost metrics for this request at http://192.168.100.4:8000/api/metrics/20250511_58e2df7a
+2025-05-11 12:25:20,info,"ℹ️ To view the system log, please visit http://192.168.100.4:8000/api/logs/20250511_58e2df7a"
+2025-05-11 12:25:20,generating,💭 Report generation process started. This may take a while.
+2025-05-11 12:25:20,generating,📋 Generating Table of Contents...
+2025-05-11 12:25:20,generating,📋 Generating Table of Contents...
+2025-05-11 12:26:48,generating,✅ Table of Contents generated successfully
+2025-05-11 12:26:48,generating,📋 Extracting Table of Contents...
+2025-05-11 12:26:48,generating,📋 Extracting main sections from Table of Contents...
+2025-05-11 12:26:51,generating,✅ Sections extracted successfully
+2025-05-11 12:26:51,generating,📑 Report Title: Ascendancy in Affluence: A Strategic Analysis of Premium Credit Card Portfolios for Enhanced Market Leadership
+2025-05-11 12:26:51,generating,🔍 Found 11 sections to process
+2025-05-11 12:26:51,generating,📝 Generating section 1: II. Introduction: The Evolving Premium Credit Card Landscape
+2025-05-11 12:26:51,generating,📝 Generating section 1: II. Introduction: The Evolving Premium Credit Card Landscape
+2025-05-11 12:27:17,generating,✅ Section 1 content generated successfully
+2025-05-11 12:27:17,polishing,✨ Polishing section 1: II. Introduction: The Evolving Premium Credit Card Landscape
+2025-05-11 12:27:17,polishing,✨ Polishing content...
+2025-05-11 12:27:37,polishing,✅ Content polished successfully
+2025-05-11 12:27:37,generating,✅ Section 1 completed: II. Introduction: The Evolving Premium Credit Card Landscape
+2025-05-11 12:27:37,saving,💾 Saving report files with base name: ascendancy_in_affluence:_a_strategic_analysis_of_premium_credit_card_portfolios_for_enhanced_market_leadership_20250511_122737
+2025-05-11 12:27:37,saving,✅ Saved Markdown file: reports\english\ascendancy_in_affluence:_a_strategic_analysis_of_premium_credit_card_portfolios_for_enhanced_market_leadership_20250511_122737.md
+2025-05-11 12:27:37,saving,✅ Saved HTML file: reports\english\ascendancy_in_affluence:_a_strategic_analysis_of_premium_credit_card_portfolios_for_enhanced_market_leadership_20250511_122737.html
+2025-05-11 12:27:38,saving,✅ Saved PDF file: reports\english\ascendancy_in_affluence:_a_strategic_analysis_of_premium_credit_card_portfolios_for_enhanced_market_leadership_20250511_122737.pdf
+2025-05-11 12:27:38,uploading,📤 Uploading PDF to Google Cloud Storage...
+2025-05-11 12:27:40,uploading,✅ PDF uploaded successfully to english folder: english/ascendancy_in_affluence:_a_strategic_analysis_of_premium_credit_card_portfolios_for_enhanced_market_leadership_20250511_122737.pdf
+2025-05-11 12:27:40,url,🌐 Public URL: https://storage.googleapis.com/credit-card-reports/english/ascendancy_in_affluence%3A_a_strategic_analysis_of_premium_credit_card_portfolios_for_enhanced_market_leadership_20250511_122737.pdf
+2025-05-11 12:27:40,metrics,======================================================================
+2025-05-11 12:27:40,metrics,📊 Overall Total Usage:
+2025-05-11 12:27:40,metrics,"   ├─ Total Input Tokens:  13,515"
+2025-05-11 12:27:40,metrics,"   ├─ Total Output Tokens: 6,444"
+2025-05-11 12:27:40,metrics,"   └─ Total All Tokens:   19,959"
+2025-05-11 12:27:40,metrics,   └─ Total Cost:         $0.056134
+2025-05-11 12:27:40,metrics,======================================================================
+2025-05-11 12:27:40,completed,✅ Report generation process completed!

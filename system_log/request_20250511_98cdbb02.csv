@@ -1,0 +1,28 @@
+Timestamp,Status,Message
+2025-05-11 11:56:47,initialize,🚀 Starting report generation process...
+2025-05-11 11:56:47,initialize,🚀 Request created: 20250511_98cdbb02
+2025-05-11 11:56:47,info,💲 You can view the cost metrics for this request at http://192.168.100.4:8000/api/metrics/20250511_98cdbb02
+2025-05-11 11:56:47,info,"ℹ️ To view the system log, please visit http://192.168.100.4:8000/api/logs/20250511_98cdbb02"
+2025-05-11 11:56:47,generating,💭 Report generation process started. This may take a while.
+2025-05-11 11:56:47,generating,📋 Generating Table of Contents...
+2025-05-11 11:56:47,generating,📋 Generating Table of Contents...
+2025-05-11 11:57:30,generating,✅ Table of Contents generated successfully
+2025-05-11 11:57:30,generating,📋 Extracting Table of Contents...
+2025-05-11 11:57:30,generating,📋 Extracting main sections from Table of Contents...
+2025-05-11 11:57:31,generating,✅ Sections extracted successfully
+2025-05-11 11:57:31,generating,📑 Report Title: Charting the Course to Market Leadership: A Comparative Analysis of Premium Credit Card Offerings for KB Kookmin Bank Executives
+2025-05-11 11:57:31,generating,🔍 Found 10 sections to process
+2025-05-11 11:57:31,generating,📝 Generating section 1: II. Introduction: The South Korean Premium Credit Card Landscape
+2025-05-11 11:57:31,generating,📝 Generating section 1: II. Introduction: The South Korean Premium Credit Card Landscape
+2025-05-11 11:58:09,generating,✅ Section 1 content generated successfully
+2025-05-11 11:58:09,polishing,✨ Polishing section 1: II. Introduction: The South Korean Premium Credit Card Landscape
+2025-05-11 11:58:09,polishing,✨ Polishing content...
+2025-05-11 11:58:39,polishing,✅ Content polished successfully
+2025-05-11 11:58:39,generating,✅ Section 1 completed: II. Introduction: The South Korean Premium Credit Card Landscape
+2025-05-11 11:58:39,saving,💾 Saving report files with base name: charting_the_course_to_market_leadership:_a_comparative_analysis_of_premium_credit_card_offerings_for_kb_kookmin_bank_executives_20250511_115839
+2025-05-11 11:58:39,saving,✅ Saved Markdown file: reports\english\charting_the_course_to_market_leadership:_a_comparative_analysis_of_premium_credit_card_offerings_for_kb_kookmin_bank_executives_20250511_115839.md
+2025-05-11 11:58:39,saving,✅ Saved HTML file: reports\english\charting_the_course_to_market_leadership:_a_comparative_analysis_of_premium_credit_card_offerings_for_kb_kookmin_bank_executives_20250511_115839.html
+2025-05-11 11:58:39,error,"❌ Error generating PDF: No wkhtmltopdf executable found: ""b''""
+If this file exists please check that this process can read it or you can pass path to it manually in method call, check README. Otherwise please install wkhtmltopdf - https://github.com/JazzCore/python-pdfkit/wiki/Installing-wkhtmltopdf"
+2025-05-11 11:58:39,uploading,📤 Uploading PDF to Google Cloud Storage...
+2025-05-11 11:58:40,error,❌ Error in PDF upload: [Errno 2] No such file or directory: 'reports\\english\\charting_the_course_to_market_leadership:_a_comparative_analysis_of_premium_credit_card_offerings_for_kb_kookmin_bank_executives_20250511_115839.pdf'

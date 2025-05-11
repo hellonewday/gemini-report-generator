@@ -683,10 +683,26 @@ html_content = markdown.markdown(section_content, extensions=[
 # Add section breaks before each h2
 html_content = re.sub(r'<h2', '<div class="section-break"></div><h2', html_content)
 
+# Get orientation from config with validation
+orientation = REPORT_CONFIG.get('orientation', 'landscape').lower()
+if orientation not in ['landscape', 'portrait']:
+    logger.warning(f"⚠️ Invalid orientation: {orientation}. Defaulting to landscape.")
+    orientation = 'landscape'
+
+# Select template based on orientation
+template_file = f"report_template{'_portrait' if orientation == 'portrait' else ''}.html"
+template_path = f'templates/{template_file}'
+
 # Read and process template
-logger.info("📄 Processing HTML template...")
-with open('templates/report_template.html', 'r', encoding='utf-8') as f:
-    template = f.read()
+logger.info(f"📄 Processing HTML template for {orientation} orientation: {template_path}")
+try:
+    with open(template_path, 'r', encoding='utf-8') as f:
+        template = f.read()
+except FileNotFoundError:
+    logger.error(f"❌ Template file '{template_path}' not found. Falling back to default template.")
+    template_path = 'templates/report_template.html'
+    with open(template_path, 'r', encoding='utf-8') as f:
+        template = f.read()
 
 template = template.replace('{', '{{').replace('}', '}}')
 template = template.replace('{{content}}', '{content}')
@@ -702,7 +718,7 @@ logger.info(f"✅ HTML file saved successfully: {html_file}")
 logger.info("🔄 Generating PDF...")
 pdf_options = {
     'page-size': 'A4',
-    'orientation': 'Landscape',
+    'orientation': orientation.capitalize(),
     'margin-top': '25mm',
     'margin-right': '25mm',
     'margin-bottom': '25mm',
@@ -712,6 +728,7 @@ pdf_options = {
 }
 
 try:
+
     pdfkit.from_string(html_doc, pdf_file, options=pdf_options)
     logger.info(f"✅ PDF generated successfully: {pdf_file}")
     

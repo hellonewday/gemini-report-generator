@@ -1,0 +1,13 @@
+Timestamp,Status,Message
+2025-05-09 14:15:34,initialize,🚀 Starting report generation process...
+2025-05-09 14:15:34,initialize,🚀 Request created: 20250509_41c62126
+2025-05-09 14:15:34,info,💲 You can view the cost metrics for this request at http://192.168.100.4:8000/api/logs?request_id=20250509_41c62126
+2025-05-09 14:15:34,generating,💭 Report generation process started. This may take a while.
+2025-05-09 14:15:34,generating,📋 Generating Table of Contents...
+2025-05-09 14:16:25,generating,📋 Extracting Table of Contents...
+2025-05-09 14:16:30,generating,"📑 Report Title: KB국민카드, 프리미엄 시장 리더십 강화를 위한 경쟁사 상품 심층 분석 및 핵심 성공 전략"
+2025-05-09 14:16:30,generating,📑 Found 10 sections to process
+2025-05-09 14:16:30,generating,📝 Generating section 1: 국내 프리미엄 신용카드 시장 환경 분석
+2025-05-09 14:16:56,polishing,✨ Polishing section 1: 국내 프리미엄 신용카드 시장 환경 분석
+2025-05-09 14:17:35,generating,✅ Section 1 completed: 국내 프리미엄 신용카드 시장 환경 분석
+2025-05-09 14:17:39,completed,✅ Report generation process completed!

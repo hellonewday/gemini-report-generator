@@ -1,0 +1,12 @@
+Timestamp,Status,Message
+2025-05-09 14:44:19,initialize,🚀 Starting report generation process...
+2025-05-09 14:44:19,initialize,🚀 Request created: 20250509_e7802576
+2025-05-09 14:44:19,info,💲 You can view the cost metrics for this request at http://192.168.100.4:8000/api/metrics?request_id=20250509_e7802576
+2025-05-09 14:44:19,info,"ℹ️ To view the system log, please visit http://192.168.100.4:8000/api/logs?request_id=20250509_e7802576"
+2025-05-09 14:44:19,generating,💭 Report generation process started. This may take a while.
+2025-05-09 14:44:19,generating,📋 Generating Table of Contents...
+2025-05-09 14:45:00,generating,📋 Extracting Table of Contents...
+2025-05-09 14:45:04,generating,📑 Report Title: KB국민은행 프리미엄 신용카드 경쟁력 강화 전략: 주요 경쟁사 상품 심층 비교 분석
+2025-05-09 14:45:04,generating,📑 Found 8 sections to process
+2025-05-09 14:45:04,generating,📝 Generating section 1: II. 프리미엄 신용카드 상품 비교 분석: KB국민카드 vs 주요 경쟁사
+2025-05-09 14:45:54,polishing,✨ Polishing section 1: II. 프리미엄 신용카드 상품 비교 분석: KB국민카드 vs 주요 경쟁사

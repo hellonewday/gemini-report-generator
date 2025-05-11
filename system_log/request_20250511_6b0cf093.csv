@@ -1,0 +1,117 @@
+Timestamp,Status,Message
+2025-05-11 21:14:59,initialize,🚀 Starting report generation process...
+2025-05-11 21:14:59,initialize,🚀 Request created: 20250511_6b0cf093
+2025-05-11 21:14:59,config,🧱 Scanning configuration parameters
+2025-05-11 21:14:59,config,🌐 Report language: English
+2025-05-11 21:14:59,config,🏦 Your bank: Kookmin Bank
+2025-05-11 21:14:59,config,"🏢 You are comparing with: KEB Hana Bank, Woori Bank, Shinhan Bank"
+2025-05-11 21:14:59,config,"📊 The report will focus on: Market Share and Growth, Revenue and Profitability, Customer Acquisition Cost, Customer Lifetime Value, Digital Transformation Impact, Competitive Positioning"
+2025-05-11 21:14:59,config,"📈 The report will track these metrics: Card Issuance Volume, Transaction Volume, Revenue per Card, Customer Retention Rate, Digital Adoption Rate, Market Share by Segment"
+2025-05-11 21:14:59,config,"👥 The report will be tailored to these market segments: High Net Worth Individuals, Business Professionals, Digital-First Customers, Loyalty Program Members"
+2025-05-11 21:14:59,config,"📋 The report will have these sections: Executive Summary, Premium Credit Card Product Comparison, Pricing and Fee Analysis, Rewards and Benefits Comparison, Digital Features and Mobile Banking, Customer Service and Support, Market Performance Metrics, Recommendations and Next Steps, Conclusion"
+2025-05-11 21:14:59,config,📏 Strict structure: False
+2025-05-11 21:14:59,config,🧪 Experimental mode: False
+2025-05-11 21:14:59,info,💲 You can view the cost metrics for this request at http://192.168.100.4:8000/api/metrics/20250511_6b0cf093
+2025-05-11 21:14:59,info,"ℹ️ To view the system log, please visit http://192.168.100.4:8000/api/logs/20250511_6b0cf093"
+2025-05-11 21:14:59,generating,💭 Report generation process started. This may take a while.
+2025-05-11 21:14:59,generating,📋 Generating Table of Contents...
+2025-05-11 21:14:59,generating,📋 Generating Table of Contents...
+2025-05-11 21:15:51,generating,✅ Table of Contents generated successfully
+2025-05-11 21:15:51,generating,📋 Extracting Table of Contents...
+2025-05-11 21:15:51,generating,📋 Extracting main sections from Table of Contents...
+2025-05-11 21:15:53,generating,✅ Sections extracted successfully
+2025-05-11 21:15:53,generating,📑 Report Title: Elevating the Premium Card Proposition: A Competitive Analysis and Strategic Roadmap for Kookmin Bank
+2025-05-11 21:15:53,generating,🔍 Found 11 sections to process
+2025-05-11 21:15:53,generating,📝 Generating section 1: I. Executive Summary
+2025-05-11 21:15:53,generating,📝 Generating section 1: I. Executive Summary
+2025-05-11 21:16:13,generating,✅ Section 1 content generated successfully
+2025-05-11 21:16:13,polishing,✨ Polishing section 1: I. Executive Summary
+2025-05-11 21:16:13,polishing,✨ Polishing content...
+2025-05-11 21:16:29,polishing,✅ Content polished successfully
+2025-05-11 21:16:29,generating,✅ Section 1 completed: I. Executive Summary
+2025-05-11 21:16:29,generating,📝 Generating section 2: II. Introduction: The South Korean Premium Credit Card Market Landscape
+2025-05-11 21:16:29,generating,📝 Generating section 2: II. Introduction: The South Korean Premium Credit Card Market Landscape
+2025-05-11 21:16:45,generating,✅ Section 2 content generated successfully
+2025-05-11 21:16:45,polishing,✨ Polishing section 2: II. Introduction: The South Korean Premium Credit Card Market Landscape
+2025-05-11 21:16:45,polishing,✨ Polishing content...
+2025-05-11 21:16:54,polishing,✅ Content polished successfully
+2025-05-11 21:16:54,generating,✅ Section 2 completed: II. Introduction: The South Korean Premium Credit Card Market Landscape
+2025-05-11 21:16:54,generating,📝 Generating section 3: III. Kookmin Bank Premium Credit Card Portfolio: Current Standing
+2025-05-11 21:16:54,generating,📝 Generating section 3: III. Kookmin Bank Premium Credit Card Portfolio: Current Standing
+2025-05-11 21:17:26,generating,✅ Section 3 content generated successfully
+2025-05-11 21:17:26,polishing,✨ Polishing section 3: III. Kookmin Bank Premium Credit Card Portfolio: Current Standing
+2025-05-11 21:17:26,polishing,✨ Polishing content...
+2025-05-11 21:17:49,polishing,✅ Content polished successfully
+2025-05-11 21:17:49,generating,✅ Section 3 completed: III. Kookmin Bank Premium Credit Card Portfolio: Current Standing
+2025-05-11 21:17:49,generating,📝 Generating section 4: IV. Competitive Landscape Analysis: Key Competitors and Their Premium Offerings
+2025-05-11 21:17:49,generating,📝 Generating section 4: IV. Competitive Landscape Analysis: Key Competitors and Their Premium Offerings
+2025-05-11 21:18:24,generating,✅ Section 4 content generated successfully
+2025-05-11 21:18:24,polishing,✨ Polishing section 4: IV. Competitive Landscape Analysis: Key Competitors and Their Premium Offerings
+2025-05-11 21:18:24,polishing,✨ Polishing content...
+2025-05-11 21:18:46,polishing,✅ Content polished successfully
+2025-05-11 21:18:46,generating,✅ Section 4 completed: IV. Competitive Landscape Analysis: Key Competitors and Their Premium Offerings
+2025-05-11 21:18:46,generating,📝 Generating section 5: V. Comparative Analysis: Product Features and Value Propositions
+2025-05-11 21:18:46,generating,📝 Generating section 5: V. Comparative Analysis: Product Features and Value Propositions
+2025-05-11 21:20:04,generating,✅ Section 5 content generated successfully
+2025-05-11 21:20:04,polishing,✨ Polishing section 5: V. Comparative Analysis: Product Features and Value Propositions
+2025-05-11 21:20:04,polishing,✨ Polishing content...
+2025-05-11 21:20:46,polishing,✅ Content polished successfully
+2025-05-11 21:20:46,generating,✅ Section 5 completed: V. Comparative Analysis: Product Features and Value Propositions
+2025-05-11 21:20:46,generating,📝 Generating section 6: VI. Digital Features and Mobile Banking Capabilities
+2025-05-11 21:20:46,generating,📝 Generating section 6: VI. Digital Features and Mobile Banking Capabilities
+2025-05-11 21:21:24,generating,✅ Section 6 content generated successfully
+2025-05-11 21:21:24,polishing,✨ Polishing section 6: VI. Digital Features and Mobile Banking Capabilities
+2025-05-11 21:21:24,polishing,✨ Polishing content...
+2025-05-11 21:21:38,polishing,✅ Content polished successfully
+2025-05-11 21:21:38,generating,✅ Section 6 completed: VI. Digital Features and Mobile Banking Capabilities
+2025-05-11 21:21:38,generating,📝 Generating section 7: VII. Customer Service and Support Channels
+2025-05-11 21:21:38,generating,📝 Generating section 7: VII. Customer Service and Support Channels
+2025-05-11 21:22:10,generating,✅ Section 7 content generated successfully
+2025-05-11 21:22:10,polishing,✨ Polishing section 7: VII. Customer Service and Support Channels
+2025-05-11 21:22:10,polishing,✨ Polishing content...
+2025-05-11 21:22:26,polishing,✅ Content polished successfully
+2025-05-11 21:22:26,generating,✅ Section 7 completed: VII. Customer Service and Support Channels
+2025-05-11 21:22:26,generating,📝 Generating section 8: VIII. Market Performance Metrics and Competitive Positioning
+2025-05-11 21:22:26,generating,📝 Generating section 8: VIII. Market Performance Metrics and Competitive Positioning
+2025-05-11 21:22:56,generating,✅ Section 8 content generated successfully
+2025-05-11 21:22:56,polishing,✨ Polishing section 8: VIII. Market Performance Metrics and Competitive Positioning
+2025-05-11 21:22:56,polishing,✨ Polishing content...
+2025-05-11 21:23:11,polishing,✅ Content polished successfully
+2025-05-11 21:23:11,generating,✅ Section 8 completed: VIII. Market Performance Metrics and Competitive Positioning
+2025-05-11 21:23:11,generating,📝 Generating section 9: IX. Analysis of Target Market Segments
+2025-05-11 21:23:11,generating,📝 Generating section 9: IX. Analysis of Target Market Segments
+2025-05-11 21:23:46,generating,✅ Section 9 content generated successfully
+2025-05-11 21:23:46,polishing,✨ Polishing section 9: IX. Analysis of Target Market Segments
+2025-05-11 21:23:46,polishing,✨ Polishing content...
+2025-05-11 21:24:11,polishing,✅ Content polished successfully
+2025-05-11 21:24:11,generating,✅ Section 9 completed: IX. Analysis of Target Market Segments
+2025-05-11 21:24:11,generating,📝 Generating section 10: X. Strategic Recommendations for Kookmin Bank
+2025-05-11 21:24:11,generating,📝 Generating section 10: X. Strategic Recommendations for Kookmin Bank
+2025-05-11 21:24:57,generating,✅ Section 10 content generated successfully
+2025-05-11 21:24:57,polishing,✨ Polishing section 10: X. Strategic Recommendations for Kookmin Bank
+2025-05-11 21:24:57,polishing,✨ Polishing content...
+2025-05-11 21:25:23,polishing,✅ Content polished successfully
+2025-05-11 21:25:23,generating,✅ Section 10 completed: X. Strategic Recommendations for Kookmin Bank
+2025-05-11 21:25:23,generating,📝 Generating section 11: XI. Conclusion
+2025-05-11 21:25:23,generating,📝 Generating section 11: XI. Conclusion
+2025-05-11 21:25:34,generating,✅ Section 11 content generated successfully
+2025-05-11 21:25:34,polishing,✨ Polishing section 11: XI. Conclusion
+2025-05-11 21:25:34,polishing,✨ Polishing content...
+2025-05-11 21:25:46,polishing,✅ Content polished successfully
+2025-05-11 21:25:46,generating,✅ Section 11 completed: XI. Conclusion
+2025-05-11 21:25:46,saving,💾 Saving report files with base name: elevating_the_premium_card_proposition:_a_competitive_analysis_and_strategic_roadmap_for_kookmin_bank_20250511_212546
+2025-05-11 21:25:46,saving,✅ Saved Markdown file: reports\english\elevating_the_premium_card_proposition:_a_competitive_analysis_and_strategic_roadmap_for_kookmin_bank_20250511_212546.md
+2025-05-11 21:25:46,saving,✅ Saved Markdown file: reports\20250511_212546_20250511_6b0cf093_english.md
+2025-05-11 21:25:46,saving,✅ Saved HTML file: reports\20250511_212546_20250511_6b0cf093_english.html
+2025-05-11 21:25:47,saving,✅ Saved PDF file: reports\20250511_212546_20250511_6b0cf093_english.pdf
+2025-05-11 21:25:47,uploading,📤 Uploading PDF to Google Cloud Storage...
+2025-05-11 21:25:51,uploading,✅ PDF uploaded successfully to english folder: english/20250511_212546_20250511_6b0cf093_english.pdf
+2025-05-11 21:25:51,url,🌐 Public URL: https://storage.googleapis.com/credit-card-reports/english/20250511_212546_20250511_6b0cf093_english.pdf
+2025-05-11 21:25:51,metrics,======================================================================
+2025-05-11 21:25:51,metrics,📊 Overall Total Usage:
+2025-05-11 21:25:51,metrics,"   ├─ Total Input Tokens:  237,160"
+2025-05-11 21:25:51,metrics,"   ├─ Total Output Tokens: 51,052"
+2025-05-11 21:25:51,metrics,"   └─ Total All Tokens:   288,212"
+2025-05-11 21:25:51,metrics,   └─ Total Cost:         $0.590402
+2025-05-11 21:25:51,metrics,======================================================================
+2025-05-11 21:25:51,completed,✅ Report generation process completed!

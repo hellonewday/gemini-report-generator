@@ -1,0 +1,28 @@
+Timestamp,Status,Message
+2025-05-11 11:50:25,initialize,🚀 Starting report generation process...
+2025-05-11 11:50:25,initialize,🚀 Request created: 20250511_35360522
+2025-05-11 11:50:25,info,💲 You can view the cost metrics for this request at http://192.168.100.4:8000/api/metrics/20250511_35360522
+2025-05-11 11:50:25,info,"ℹ️ To view the system log, please visit http://192.168.100.4:8000/api/logs/20250511_35360522"
+2025-05-11 11:50:25,generating,💭 Report generation process started. This may take a while.
+2025-05-11 11:50:25,generating,📋 Generating Table of Contents...
+2025-05-11 11:50:25,generating,📋 Generating Table of Contents...
+2025-05-11 11:51:04,generating,✅ Table of Contents generated successfully
+2025-05-11 11:51:04,generating,📋 Extracting Table of Contents...
+2025-05-11 11:51:04,generating,📋 Extracting main sections from Table of Contents...
+2025-05-11 11:51:06,generating,✅ Sections extracted successfully
+2025-05-11 11:51:06,generating,📑 Report Title: Ascendancy in Affluence: A Strategic Blueprint for Premium Credit Card Leadership in the South Korean Market
+2025-05-11 11:51:06,generating,🔍 Found 10 sections to process
+2025-05-11 11:51:06,generating,📝 Generating section 1: II. Introduction: The South Korean Premium Credit Card Market Landscape
+2025-05-11 11:51:06,generating,📝 Generating section 1: II. Introduction: The South Korean Premium Credit Card Market Landscape
+2025-05-11 11:51:28,generating,✅ Section 1 content generated successfully
+2025-05-11 11:51:28,polishing,✨ Polishing section 1: II. Introduction: The South Korean Premium Credit Card Market Landscape
+2025-05-11 11:51:28,polishing,✨ Polishing content...
+2025-05-11 11:51:41,polishing,✅ Content polished successfully
+2025-05-11 11:51:41,generating,✅ Section 1 completed: II. Introduction: The South Korean Premium Credit Card Market Landscape
+2025-05-11 11:51:41,saving,💾 Saving report files with base name: ascendancy_in_affluence:_a_strategic_blueprint_for_premium_credit_card_leadership_in_the_south_korean_market_20250511_115141
+2025-05-11 11:51:41,saving,✅ Saved Markdown file: reports\english\ascendancy_in_affluence:_a_strategic_blueprint_for_premium_credit_card_leadership_in_the_south_korean_market_20250511_115141.md
+2025-05-11 11:51:41,saving,✅ Saved HTML file: reports\english\ascendancy_in_affluence:_a_strategic_blueprint_for_premium_credit_card_leadership_in_the_south_korean_market_20250511_115141.html
+2025-05-11 11:51:41,error,"❌ Error generating PDF: No wkhtmltopdf executable found: ""b''""
+If this file exists please check that this process can read it or you can pass path to it manually in method call, check README. Otherwise please install wkhtmltopdf - https://github.com/JazzCore/python-pdfkit/wiki/Installing-wkhtmltopdf"
+2025-05-11 11:51:41,uploading,📤 Uploading PDF to Google Cloud Storage...
+2025-05-11 11:51:42,error,❌ Error in PDF upload: [Errno 2] No such file or directory: 'reports\\english\\ascendancy_in_affluence:_a_strategic_blueprint_for_premium_credit_card_leadership_in_the_south_korean_market_20250511_115141.pdf'

@@ -1,0 +1,26 @@
+Timestamp,Status,Message
+2025-05-09 16:06:08,initialize,🚀 Starting report generation process...
+2025-05-09 16:06:08,initialize,🚀 Request created: 20250509_e84d98ca
+2025-05-09 16:06:08,info,💲 You can view the cost metrics for this request at http://192.168.100.4:8000/api/metrics/20250509_e84d98ca
+2025-05-09 16:06:08,info,"ℹ️ To view the system log, please visit http://192.168.100.4:8000/api/logs/20250509_e84d98ca"
+2025-05-09 16:06:08,generating,💭 Report generation process started. This may take a while.
+2025-05-09 16:06:08,generating,📋 Generating Table of Contents...
+2025-05-09 16:07:12,generating,📋 Extracting Table of Contents...
+2025-05-09 16:07:14,generating,"📑 Report Title: 시장 선도를 위한 KB국민카드 프리미엄 상품 경쟁 우위 확보 전략: 하나카드, 우리카드 비교 분석 및 미래 성장 로드맵"
+2025-05-09 16:07:14,generating,🔍 Found 9 sections to process
+2025-05-09 16:07:14,generating,"📝 Generating section 1: II. 프리미엄 신용카드 상품 비교 분석: KB국민카드 vs 주요 경쟁사 하나카드, 우리카드"
+2025-05-09 16:08:16,polishing,"✨ Polishing section 1: II. 프리미엄 신용카드 상품 비교 분석: KB국민카드 vs 주요 경쟁사 하나카드, 우리카드"
+2025-05-09 16:09:09,generating,"✅ Section 1 completed: II. 프리미엄 신용카드 상품 비교 분석: KB국민카드 vs 주요 경쟁사 하나카드, 우리카드"
+2025-05-09 16:09:09,saving,💾 Saving report files...
+2025-05-09 16:09:10,saving,✅ PDF generated successfully: reports\20250509_160909_20250509_e84d98ca_korean.pdf
+2025-05-09 16:09:10,uploading,📤 Uploading PDF to Google Cloud Storage...
+2025-05-09 16:09:13,uploading,✅ PDF uploaded successfully to korean folder: korean/20250509_160909_20250509_e84d98ca_korean.pdf
+2025-05-09 16:09:13,url,🌐 Public URL: https://storage.googleapis.com/credit-card-reports/korean/20250509_160909_20250509_e84d98ca_korean.pdf
+2025-05-09 16:09:13,metrics,======================================================================
+2025-05-09 16:09:13,metrics,📊 Overall Total Usage:
+2025-05-09 16:09:13,metrics,"   ├─ Total Input Tokens:  22,471"
+2025-05-09 16:09:13,metrics,"   ├─ Total Output Tokens: 18,279"
+2025-05-09 16:09:13,metrics,"   └─ Total All Tokens:   40,750"
+2025-05-09 16:09:13,metrics,   └─ Total Cost:         $0.131693
+2025-05-09 16:09:13,metrics,======================================================================
+2025-05-09 16:09:13,completed,✅ Report generation process completed!

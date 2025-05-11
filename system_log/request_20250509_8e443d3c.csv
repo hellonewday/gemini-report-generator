@@ -1,0 +1,26 @@
+Timestamp,Status,Message
+2025-05-09 16:53:03,initialize,🚀 Starting report generation process...
+2025-05-09 16:53:03,initialize,🚀 Request created: 20250509_8e443d3c
+2025-05-09 16:53:03,info,💲 You can view the cost metrics for this request at http://192.168.100.4:8000/api/metrics/20250509_8e443d3c
+2025-05-09 16:53:03,info,"ℹ️ To view the system log, please visit http://192.168.100.4:8000/api/logs/20250509_8e443d3c"
+2025-05-09 16:53:04,generating,💭 Report generation process started. This may take a while.
+2025-05-09 16:53:04,generating,📋 Generating Table of Contents...
+2025-05-09 16:53:46,generating,📋 Extracting Table of Contents...
+2025-05-09 16:53:48,generating,📑 Report Title: KB국민은행 프리미엄 신용카드 경쟁력 강화 전략: 주요 경쟁사 상품 심층 비교 분석
+2025-05-09 16:53:48,generating,🔍 Found 7 sections to process
+2025-05-09 16:53:48,generating,📝 Generating section 1: II. 프리미엄 신용카드 상품 비교 분석: KB국민카드 vs 주요 경쟁사
+2025-05-09 16:59:01,polishing,✨ Polishing section 1: II. 프리미엄 신용카드 상품 비교 분석: KB국민카드 vs 주요 경쟁사
+2025-05-09 16:59:14,generating,✅ Section 1 completed: II. 프리미엄 신용카드 상품 비교 분석: KB국민카드 vs 주요 경쟁사
+2025-05-09 16:59:14,saving,💾 Saving report files...
+2025-05-09 16:59:15,saving,✅ PDF generated successfully: reports\20250509_165914_20250509_8e443d3c_korean.pdf
+2025-05-09 16:59:15,uploading,📤 Uploading PDF to Google Cloud Storage...
+2025-05-09 16:59:18,uploading,✅ PDF uploaded successfully to korean folder: korean/20250509_165914_20250509_8e443d3c_korean.pdf
+2025-05-09 16:59:18,url,🌐 Public URL: https://storage.googleapis.com/credit-card-reports/korean/20250509_165914_20250509_8e443d3c_korean.pdf
+2025-05-09 16:59:18,metrics,======================================================================
+2025-05-09 16:59:18,metrics,📊 Overall Total Usage:
+2025-05-09 16:59:18,metrics,"   ├─ Total Input Tokens:  51,805"
+2025-05-09 16:59:18,metrics,"   ├─ Total Output Tokens: 44,928"
+2025-05-09 16:59:18,metrics,"   └─ Total All Tokens:   96,733"
+2025-05-09 16:59:18,metrics,   └─ Total Cost:         $0.449414
+2025-05-09 16:59:18,metrics,======================================================================
+2025-05-09 16:59:18,completed,✅ Report generation process completed!

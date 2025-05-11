@@ -1,0 +1,47 @@
+Timestamp,Status,Message
+2025-05-11 14:53:09,initialize,🚀 Starting report generation process...
+2025-05-11 14:53:09,initialize,🚀 Request created: 20250511_40b99184
+2025-05-11 14:53:09,config,🧱 Scanning configuration parameters
+2025-05-11 14:53:09,config,🌐 Report language: English
+2025-05-11 14:53:09,config,🏦 Your bank: Chase Bank
+2025-05-11 14:53:09,config,"🏢 You are comparing with: Bank of America, Wells Fargo, Citibank"
+2025-05-11 14:53:09,config,"📊 The report will focus on: Market Share and Growth, Revenue and Profitability, Customer Acquisition Cost"
+2025-05-11 14:53:09,config,"📈 The report will track these metrics: Card Issuance Volume, Transaction Volume, Revenue per Card"
+2025-05-11 14:53:09,config,"👥 The report will be tailored to these market segments: High Net Worth Individuals, Business Professionals"
+2025-05-11 14:53:09,config,"📋 The report will have these sections: Executive Summary, Premium Credit Card Product Comparison, Pricing and Fee Analysis"
+2025-05-11 14:53:09,config,📏 Strict structure: True
+2025-05-11 14:53:09,config,🧪 Experimental mode: True
+2025-05-11 14:53:09,info,💲 You can view the cost metrics for this request at http://192.168.100.4:8000/api/metrics/20250511_40b99184
+2025-05-11 14:53:09,info,"ℹ️ To view the system log, please visit http://192.168.100.4:8000/api/logs/20250511_40b99184"
+2025-05-11 14:53:09,generating,💭 Report generation process started. This may take a while.
+2025-05-11 14:53:09,generating,📋 Generating Table of Contents...
+2025-05-11 14:53:09,generating,📋 Generating Table of Contents...
+2025-05-11 14:53:46,generating,✅ Table of Contents generated successfully
+2025-05-11 14:53:46,generating,📋 Extracting Table of Contents...
+2025-05-11 14:53:46,generating,📋 Extracting main sections from Table of Contents...
+2025-05-11 14:53:48,generating,✅ Sections extracted successfully
+2025-05-11 14:53:48,generating,📑 Report Title: Ascendancy in Affluence: A Competitive Analysis of Premium Credit Card Portfolios for Enhanced Market Leadership
+2025-05-11 14:53:48,generating,🔍 Found 11 sections to process
+2025-05-11 14:53:48,generating,📝 Generating section 1: II. Introduction: The Evolving Premium Credit Card Landscape
+2025-05-11 14:53:48,generating,📝 Generating section 1: II. Introduction: The Evolving Premium Credit Card Landscape
+2025-05-11 14:54:29,generating,✅ Section 1 content generated successfully
+2025-05-11 14:54:29,polishing,✨ Polishing section 1: II. Introduction: The Evolving Premium Credit Card Landscape
+2025-05-11 14:54:29,polishing,✨ Polishing content...
+2025-05-11 14:54:50,polishing,✅ Content polished successfully
+2025-05-11 14:54:50,generating,✅ Section 1 completed: II. Introduction: The Evolving Premium Credit Card Landscape
+2025-05-11 14:54:50,saving,💾 Saving report files with base name: ascendancy_in_affluence:_a_competitive_analysis_of_premium_credit_card_portfolios_for_enhanced_market_leadership_20250511_145450
+2025-05-11 14:54:50,saving,✅ Saved Markdown file: reports\english\ascendancy_in_affluence:_a_competitive_analysis_of_premium_credit_card_portfolios_for_enhanced_market_leadership_20250511_145450.md
+2025-05-11 14:54:51,saving,✅ Saved Markdown file: reports\20250511_145450_20250511_40b99184_english.md
+2025-05-11 14:54:51,saving,✅ Saved HTML file: reports\20250511_145450_20250511_40b99184_english.html
+2025-05-11 14:54:51,saving,✅ Saved PDF file: reports\20250511_145450_20250511_40b99184_english.pdf
+2025-05-11 14:54:51,uploading,📤 Uploading PDF to Google Cloud Storage...
+2025-05-11 14:54:55,uploading,✅ PDF uploaded successfully to english folder: english/20250511_145450_20250511_40b99184_english.pdf
+2025-05-11 14:54:55,url,🌐 Public URL: https://storage.googleapis.com/credit-card-reports/english/20250511_145450_20250511_40b99184_english.pdf
+2025-05-11 14:54:55,metrics,======================================================================
+2025-05-11 14:54:55,metrics,📊 Overall Total Usage:
+2025-05-11 14:54:55,metrics,"   ├─ Total Input Tokens:  12,638"
+2025-05-11 14:54:55,metrics,"   ├─ Total Output Tokens: 6,688"
+2025-05-11 14:54:55,metrics,"   └─ Total All Tokens:   19,326"
+2025-05-11 14:54:55,metrics,   └─ Total Cost:         $0.053355
+2025-05-11 14:54:55,metrics,======================================================================
+2025-05-11 14:54:55,completed,✅ Report generation process completed!

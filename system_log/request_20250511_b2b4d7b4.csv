@@ -1,0 +1,117 @@
+Timestamp,Status,Message
+2025-05-11 13:19:01,initialize,🚀 Starting report generation process...
+2025-05-11 13:19:01,initialize,🚀 Request created: 20250511_b2b4d7b4
+2025-05-11 13:19:01,config,📝 Report Configuration:
+2025-05-11 13:19:01,config,🌐 Language: English
+2025-05-11 13:19:01,config,🏦 Primary Bank: Chase Bank
+2025-05-11 13:19:01,config,"🏢 Comparison Banks: Bank of America, Wells Fargo, Citibank"
+2025-05-11 13:19:01,config,"📊 Analysis Focus: Market Share and Growth, Revenue and Profitability, Customer Acquisition Cost"
+2025-05-11 13:19:01,config,"📈 Performance Metrics: Card Issuance Volume, Transaction Volume, Revenue per Card"
+2025-05-11 13:19:01,config,"👥 Market Segments: High Net Worth Individuals, Business Professionals"
+2025-05-11 13:19:01,config,"📋 Report Sections: Executive Summary, Premium Credit Card Product Comparison, Pricing and Fee Analysis"
+2025-05-11 13:19:01,config,📏 Strict Structure: False
+2025-05-11 13:19:01,config,🧪 Demo Mode: False
+2025-05-11 13:19:01,config,"✍️ Writing Style: Tone: Professional and Analytical, Formality: High, Emphasis: Data-Driven Insights, Strategic Implications"
+2025-05-11 13:19:01,info,💲 You can view the cost metrics for this request at http://192.168.100.4:8000/api/metrics/20250511_b2b4d7b4
+2025-05-11 13:19:01,info,"ℹ️ To view the system log, please visit http://192.168.100.4:8000/api/logs/20250511_b2b4d7b4"
+2025-05-11 13:19:01,generating,💭 Report generation process started. This may take a while.
+2025-05-11 13:19:01,generating,📋 Generating Table of Contents...
+2025-05-11 13:19:01,generating,📋 Generating Table of Contents...
+2025-05-11 13:20:10,generating,✅ Table of Contents generated successfully
+2025-05-11 13:20:10,generating,📋 Extracting Table of Contents...
+2025-05-11 13:20:10,generating,📋 Extracting main sections from Table of Contents...
+2025-05-11 13:20:12,generating,✅ Sections extracted successfully
+2025-05-11 13:20:12,generating,📑 Report Title: Ascendancy in Affluence: A Strategic Blueprint for Dominating the Premium Credit Card Market
+2025-05-11 13:20:12,generating,🔍 Found 11 sections to process
+2025-05-11 13:20:12,generating,📝 Generating section 1: I. Executive Summary
+2025-05-11 13:20:12,generating,📝 Generating section 1: I. Executive Summary
+2025-05-11 13:20:33,generating,✅ Section 1 content generated successfully
+2025-05-11 13:20:33,polishing,✨ Polishing section 1: I. Executive Summary
+2025-05-11 13:20:33,polishing,✨ Polishing content...
+2025-05-11 13:20:50,polishing,✅ Content polished successfully
+2025-05-11 13:20:50,generating,✅ Section 1 completed: I. Executive Summary
+2025-05-11 13:20:50,generating,📝 Generating section 2: II. Introduction: The Evolving Landscape of Premium Credit
+2025-05-11 13:20:50,generating,📝 Generating section 2: II. Introduction: The Evolving Landscape of Premium Credit
+2025-05-11 13:21:12,generating,✅ Section 2 content generated successfully
+2025-05-11 13:21:12,polishing,✨ Polishing section 2: II. Introduction: The Evolving Landscape of Premium Credit
+2025-05-11 13:21:12,polishing,✨ Polishing content...
+2025-05-11 13:21:22,polishing,✅ Content polished successfully
+2025-05-11 13:21:22,generating,✅ Section 2 completed: II. Introduction: The Evolving Landscape of Premium Credit
+2025-05-11 13:21:22,generating,📝 Generating section 3: III. Market Overview: Dynamics and Growth Trajectories
+2025-05-11 13:21:22,generating,📝 Generating section 3: III. Market Overview: Dynamics and Growth Trajectories
+2025-05-11 13:21:59,generating,✅ Section 3 content generated successfully
+2025-05-11 13:21:59,polishing,✨ Polishing section 3: III. Market Overview: Dynamics and Growth Trajectories
+2025-05-11 13:21:59,polishing,✨ Polishing content...
+2025-05-11 13:22:27,polishing,✅ Content polished successfully
+2025-05-11 13:22:27,generating,✅ Section 3 completed: III. Market Overview: Dynamics and Growth Trajectories
+2025-05-11 13:22:27,generating,📝 Generating section 4: IV. Financial Performance and Market Metrics Analysis
+2025-05-11 13:22:27,generating,📝 Generating section 4: IV. Financial Performance and Market Metrics Analysis
+2025-05-11 13:23:03,generating,✅ Section 4 content generated successfully
+2025-05-11 13:23:03,polishing,✨ Polishing section 4: IV. Financial Performance and Market Metrics Analysis
+2025-05-11 13:23:03,polishing,✨ Polishing content...
+2025-05-11 13:23:25,polishing,✅ Content polished successfully
+2025-05-11 13:23:25,generating,✅ Section 4 completed: IV. Financial Performance and Market Metrics Analysis
+2025-05-11 13:23:25,generating,📝 Generating section 5: V. Competitive Product Analysis: Chase vs. Key Competitors
+2025-05-11 13:23:25,generating,📝 Generating section 5: V. Competitive Product Analysis: Chase vs. Key Competitors
+2025-05-11 13:23:59,generating,✅ Section 5 content generated successfully
+2025-05-11 13:23:59,polishing,✨ Polishing section 5: V. Competitive Product Analysis: Chase vs. Key Competitors
+2025-05-11 13:23:59,polishing,✨ Polishing content...
+2025-05-11 13:24:14,polishing,✅ Content polished successfully
+2025-05-11 13:24:14,generating,✅ Section 5 completed: V. Competitive Product Analysis: Chase vs. Key Competitors
+2025-05-11 13:24:14,generating,📝 Generating section 6: VI. Feature-by-Feature Competitive Comparison
+2025-05-11 13:24:14,generating,📝 Generating section 6: VI. Feature-by-Feature Competitive Comparison
+2025-05-11 13:31:57,generating,✅ Section 6 content generated successfully
+2025-05-11 13:31:57,polishing,✨ Polishing section 6: VI. Feature-by-Feature Competitive Comparison
+2025-05-11 13:31:57,polishing,✨ Polishing content...
+2025-05-11 13:32:25,polishing,✅ Content polished successfully
+2025-05-11 13:32:25,generating,✅ Section 6 completed: VI. Feature-by-Feature Competitive Comparison
+2025-05-11 13:32:25,generating,📝 Generating section 7: VII. Digital Capabilities and Customer Experience
+2025-05-11 13:32:25,generating,📝 Generating section 7: VII. Digital Capabilities and Customer Experience
+2025-05-11 13:32:58,generating,✅ Section 7 content generated successfully
+2025-05-11 13:32:58,polishing,✨ Polishing section 7: VII. Digital Capabilities and Customer Experience
+2025-05-11 13:32:58,polishing,✨ Polishing content...
+2025-05-11 13:33:10,polishing,✅ Content polished successfully
+2025-05-11 13:33:10,generating,✅ Section 7 completed: VII. Digital Capabilities and Customer Experience
+2025-05-11 13:33:10,generating,📝 Generating section 8: VIII. Target Market Segment Analysis: HNWIs and Business Professionals
+2025-05-11 13:33:10,generating,📝 Generating section 8: VIII. Target Market Segment Analysis: HNWIs and Business Professionals
+2025-05-11 13:40:44,generating,✅ Section 8 content generated successfully
+2025-05-11 13:40:44,polishing,✨ Polishing section 8: VIII. Target Market Segment Analysis: HNWIs and Business Professionals
+2025-05-11 13:40:44,polishing,✨ Polishing content...
+2025-05-11 13:41:03,polishing,✅ Content polished successfully
+2025-05-11 13:41:03,generating,✅ Section 8 completed: VIII. Target Market Segment Analysis: HNWIs and Business Professionals
+2025-05-11 13:41:03,generating,📝 Generating section 9: IX. Strategic Market Positioning and Competitive Advantages
+2025-05-11 13:41:03,generating,📝 Generating section 9: IX. Strategic Market Positioning and Competitive Advantages
+2025-05-11 13:41:46,generating,✅ Section 9 content generated successfully
+2025-05-11 13:41:46,polishing,✨ Polishing section 9: IX. Strategic Market Positioning and Competitive Advantages
+2025-05-11 13:41:46,polishing,✨ Polishing content...
+2025-05-11 13:42:05,polishing,✅ Content polished successfully
+2025-05-11 13:42:05,generating,✅ Section 9 completed: IX. Strategic Market Positioning and Competitive Advantages
+2025-05-11 13:42:05,generating,📝 Generating section 10: X. Strategic Recommendations and Action Plan
+2025-05-11 13:42:05,generating,📝 Generating section 10: X. Strategic Recommendations and Action Plan
+2025-05-11 13:42:35,generating,✅ Section 10 content generated successfully
+2025-05-11 13:42:35,polishing,✨ Polishing section 10: X. Strategic Recommendations and Action Plan
+2025-05-11 13:42:35,polishing,✨ Polishing content...
+2025-05-11 13:42:53,polishing,✅ Content polished successfully
+2025-05-11 13:42:53,generating,✅ Section 10 completed: X. Strategic Recommendations and Action Plan
+2025-05-11 13:42:53,generating,📝 Generating section 11: XI. Conclusion
+2025-05-11 13:42:53,generating,📝 Generating section 11: XI. Conclusion
+2025-05-11 13:43:08,generating,✅ Section 11 content generated successfully
+2025-05-11 13:43:08,polishing,✨ Polishing section 11: XI. Conclusion
+2025-05-11 13:43:08,polishing,✨ Polishing content...
+2025-05-11 13:43:17,polishing,✅ Content polished successfully
+2025-05-11 13:43:17,generating,✅ Section 11 completed: XI. Conclusion
+2025-05-11 13:43:17,saving,💾 Saving report files with base name: ascendancy_in_affluence:_a_strategic_blueprint_for_dominating_the_premium_credit_card_market_20250511_134317
+2025-05-11 13:43:17,saving,✅ Saved Markdown file: reports\english\ascendancy_in_affluence:_a_strategic_blueprint_for_dominating_the_premium_credit_card_market_20250511_134317.md
+2025-05-11 13:43:17,saving,✅ Saved HTML file: reports\english\ascendancy_in_affluence:_a_strategic_blueprint_for_dominating_the_premium_credit_card_market_20250511_134317.html
+2025-05-11 13:43:18,saving,✅ Saved PDF file: reports\english\ascendancy_in_affluence:_a_strategic_blueprint_for_dominating_the_premium_credit_card_market_20250511_134317.pdf
+2025-05-11 13:43:18,uploading,📤 Uploading PDF to Google Cloud Storage...
+2025-05-11 13:43:21,uploading,✅ PDF uploaded successfully to english folder: english/ascendancy_in_affluence:_a_strategic_blueprint_for_dominating_the_premium_credit_card_market_20250511_134317.pdf
+2025-05-11 13:43:21,url,🌐 Public URL: https://storage.googleapis.com/credit-card-reports/english/ascendancy_in_affluence%3A_a_strategic_blueprint_for_dominating_the_premium_credit_card_market_20250511_134317.pdf
+2025-05-11 13:43:21,metrics,======================================================================
+2025-05-11 13:43:21,metrics,📊 Overall Total Usage:
+2025-05-11 13:43:21,metrics,"   ├─ Total Input Tokens:  850,569"
+2025-05-11 13:43:21,metrics,"   ├─ Total Output Tokens: 173,415"
+2025-05-11 13:43:21,metrics,"   └─ Total All Tokens:   1,023,984"
+2025-05-11 13:43:21,metrics,   └─ Total Cost:         $2.442790
+2025-05-11 13:43:21,metrics,======================================================================
+2025-05-11 13:43:21,completed,✅ Report generation process completed!

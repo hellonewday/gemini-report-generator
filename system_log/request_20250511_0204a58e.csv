@@ -1,0 +1,46 @@
+Timestamp,Status,Message
+2025-05-11 14:43:49,initialize,🚀 Starting report generation process...
+2025-05-11 14:43:49,initialize,🚀 Request created: 20250511_0204a58e
+2025-05-11 14:43:49,config,🧱 Scanning configuration parameters
+2025-05-11 14:43:49,config,🌐 Report language: English
+2025-05-11 14:43:49,config,🏦 Your bank: Chase Bank
+2025-05-11 14:43:49,config,"🏢 You are comparing with: Bank of America, Wells Fargo, Citibank"
+2025-05-11 14:43:49,config,"📊 The report will focus on: Market Share and Growth, Revenue and Profitability, Customer Acquisition Cost"
+2025-05-11 14:43:49,config,"📈 The report will track these metrics: Card Issuance Volume, Transaction Volume, Revenue per Card"
+2025-05-11 14:43:49,config,"👥 The report will be tailored to these market segments: High Net Worth Individuals, Business Professionals"
+2025-05-11 14:43:49,config,"📋 The report will have these sections: Executive Summary, Premium Credit Card Product Comparison, Pricing and Fee Analysis"
+2025-05-11 14:43:49,config,📏 Strict structure: True
+2025-05-11 14:43:49,config,🧪 Experimental mode: True
+2025-05-11 14:43:49,info,💲 You can view the cost metrics for this request at http://192.168.100.4:8000/api/metrics/20250511_0204a58e
+2025-05-11 14:43:49,info,"ℹ️ To view the system log, please visit http://192.168.100.4:8000/api/logs/20250511_0204a58e"
+2025-05-11 14:43:49,generating,💭 Report generation process started. This may take a while.
+2025-05-11 14:43:49,generating,📋 Generating Table of Contents...
+2025-05-11 14:43:49,generating,📋 Generating Table of Contents...
+2025-05-11 14:44:55,generating,✅ Table of Contents generated successfully
+2025-05-11 14:44:55,generating,📋 Extracting Table of Contents...
+2025-05-11 14:44:55,generating,📋 Extracting main sections from Table of Contents...
+2025-05-11 14:44:58,generating,✅ Sections extracted successfully
+2025-05-11 14:44:58,generating,📑 Report Title: Strategic Analysis of the Premium Credit Card Market: Positioning Chase for Continued Leadership
+2025-05-11 14:44:58,generating,🔍 Found 7 sections to process
+2025-05-11 14:44:58,generating,📝 Generating section 1: II. U.S. Premium Credit Card Market Overview
+2025-05-11 14:44:58,generating,📝 Generating section 1: II. U.S. Premium Credit Card Market Overview
+2025-05-11 14:45:34,generating,✅ Section 1 content generated successfully
+2025-05-11 14:45:34,polishing,✨ Polishing section 1: II. U.S. Premium Credit Card Market Overview
+2025-05-11 14:45:34,polishing,✨ Polishing content...
+2025-05-11 14:46:01,polishing,✅ Content polished successfully
+2025-05-11 14:46:01,generating,✅ Section 1 completed: II. U.S. Premium Credit Card Market Overview
+2025-05-11 14:46:01,saving,💾 Saving report files with base name: strategic_analysis_of_the_premium_credit_card_market:_positioning_chase_for_continued_leadership_20250511_144601
+2025-05-11 14:46:01,saving,✅ Saved Markdown file: reports\english\strategic_analysis_of_the_premium_credit_card_market:_positioning_chase_for_continued_leadership_20250511_144601.md
+2025-05-11 14:46:01,saving,✅ Saved HTML file: reports\english\strategic_analysis_of_the_premium_credit_card_market:_positioning_chase_for_continued_leadership_20250511_144601.html
+2025-05-11 14:46:01,saving,✅ Saved PDF file: reports\english\strategic_analysis_of_the_premium_credit_card_market:_positioning_chase_for_continued_leadership_20250511_144601.pdf
+2025-05-11 14:46:01,uploading,📤 Uploading PDF to Google Cloud Storage...
+2025-05-11 14:46:04,uploading,✅ PDF uploaded successfully to english folder: english/strategic_analysis_of_the_premium_credit_card_market:_positioning_chase_for_continued_leadership_20250511_144601.pdf
+2025-05-11 14:46:04,url,🌐 Public URL: https://storage.googleapis.com/credit-card-reports/english/strategic_analysis_of_the_premium_credit_card_market%3A_positioning_chase_for_continued_leadership_20250511_144601.pdf
+2025-05-11 14:46:04,metrics,======================================================================
+2025-05-11 14:46:04,metrics,📊 Overall Total Usage:
+2025-05-11 14:46:04,metrics,"   ├─ Total Input Tokens:  13,449"
+2025-05-11 14:46:04,metrics,"   ├─ Total Output Tokens: 7,972"
+2025-05-11 14:46:04,metrics,"   └─ Total All Tokens:   21,421"
+2025-05-11 14:46:04,metrics,   └─ Total Cost:         $0.062553
+2025-05-11 14:46:04,metrics,======================================================================
+2025-05-11 14:46:04,completed,✅ Report generation process completed!

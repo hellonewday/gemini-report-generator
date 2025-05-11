@@ -1,0 +1,47 @@
+Timestamp,Status,Message
+2025-05-11 12:07:40,initialize,🚀 Starting report generation process...
+2025-05-11 12:07:40,initialize,🚀 Request created: 20250511_8ffcded9
+2025-05-11 12:07:40,config,📝 Report Configuration:
+2025-05-11 12:07:40,config,🌐 Language: English
+2025-05-11 12:07:40,config,🏦 Primary Bank: Chase Bank
+2025-05-11 12:07:40,config,"🏢 Comparison Banks: Bank of America, Wells Fargo, Citibank"
+2025-05-11 12:07:40,config,"📊 Analysis Focus: Market Share and Growth, Revenue and Profitability, Customer Acquisition Cost"
+2025-05-11 12:07:40,config,"📈 Performance Metrics: Card Issuance Volume, Transaction Volume, Revenue per Card"
+2025-05-11 12:07:40,config,"👥 Market Segments: High Net Worth Individuals, Business Professionals"
+2025-05-11 12:07:40,config,"📋 Report Sections: Executive Summary, Premium Credit Card Product Comparison, Pricing and Fee Analysis"
+2025-05-11 12:07:40,config,📏 Strict Structure: True
+2025-05-11 12:07:40,config,🧪 Demo Mode: True
+2025-05-11 12:07:40,config,"✍️ Writing Style: Tone: Professional and Analytical, Formality: High, Emphasis: Data-Driven Insights, Strategic Implications"
+2025-05-11 12:07:40,info,💲 You can view the cost metrics for this request at http://192.168.100.4:8000/api/metrics/20250511_8ffcded9
+2025-05-11 12:07:40,info,"ℹ️ To view the system log, please visit http://192.168.100.4:8000/api/logs/20250511_8ffcded9"
+2025-05-11 12:07:41,generating,💭 Report generation process started. This may take a while.
+2025-05-11 12:07:41,generating,📋 Generating Table of Contents...
+2025-05-11 12:07:41,generating,📋 Generating Table of Contents...
+2025-05-11 12:08:45,generating,✅ Table of Contents generated successfully
+2025-05-11 12:08:45,generating,📋 Extracting Table of Contents...
+2025-05-11 12:08:45,generating,📋 Extracting main sections from Table of Contents...
+2025-05-11 12:08:48,generating,✅ Sections extracted successfully
+2025-05-11 12:08:48,generating,📑 Report Title: Strategic Imperative: Elevating Chase's Dominance in the Premium Credit Card Market
+2025-05-11 12:08:48,generating,🔍 Found 7 sections to process
+2025-05-11 12:08:48,generating,📝 Generating section 1: II. U.S. Premium Credit Card Market Landscape
+2025-05-11 12:08:48,generating,📝 Generating section 1: II. U.S. Premium Credit Card Market Landscape
+2025-05-11 12:09:20,generating,✅ Section 1 content generated successfully
+2025-05-11 12:09:20,polishing,✨ Polishing section 1: II. U.S. Premium Credit Card Market Landscape
+2025-05-11 12:09:20,polishing,✨ Polishing content...
+2025-05-11 12:09:46,polishing,✅ Content polished successfully
+2025-05-11 12:09:46,generating,✅ Section 1 completed: II. U.S. Premium Credit Card Market Landscape
+2025-05-11 12:09:46,saving,💾 Saving report files with base name: strategic_imperative:_elevating_chase's_dominance_in_the_premium_credit_card_market_20250511_120946
+2025-05-11 12:09:46,saving,✅ Saved Markdown file: reports\english\strategic_imperative:_elevating_chase's_dominance_in_the_premium_credit_card_market_20250511_120946.md
+2025-05-11 12:09:46,saving,✅ Saved HTML file: reports\english\strategic_imperative:_elevating_chase's_dominance_in_the_premium_credit_card_market_20250511_120946.html
+2025-05-11 12:09:47,saving,✅ Saved PDF file: reports\english\strategic_imperative:_elevating_chase's_dominance_in_the_premium_credit_card_market_20250511_120946.pdf
+2025-05-11 12:09:47,uploading,📤 Uploading PDF to Google Cloud Storage...
+2025-05-11 12:09:49,uploading,✅ PDF uploaded successfully to english folder: english/strategic_imperative:_elevating_chase's_dominance_in_the_premium_credit_card_market_20250511_120946.pdf
+2025-05-11 12:09:49,url,🌐 Public URL: https://storage.googleapis.com/credit-card-reports/english/strategic_imperative%3A_elevating_chase%27s_dominance_in_the_premium_credit_card_market_20250511_120946.pdf
+2025-05-11 12:09:49,metrics,======================================================================
+2025-05-11 12:09:49,metrics,📊 Overall Total Usage:
+2025-05-11 12:09:49,metrics,"   ├─ Total Input Tokens:  14,894"
+2025-05-11 12:09:49,metrics,"   ├─ Total Output Tokens: 8,550"
+2025-05-11 12:09:49,metrics,"   └─ Total All Tokens:   23,444"
+2025-05-11 12:09:49,metrics,   └─ Total Cost:         $0.070481
+2025-05-11 12:09:49,metrics,======================================================================
+2025-05-11 12:09:49,completed,✅ Report generation process completed!

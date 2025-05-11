@@ -2,9 +2,10 @@ REPORT_CONFIG = {
     # Core Business Parameters
     'primary_bank': 'Kookmin Bank',
     'comparison_banks': ['Hana', 'Woori', 'Shinhan Bank'],
-    'report_type': 'Premium Credit Cards',
+    'credit_card_product_type': 'Premium Credit Cards',
     'language': 'Korean',
     'demo_mode': True,  # Toggle for demo mode (generate one section) vs full report
+    'orientation': 'landscape',  # Report orientation - can be 'landscape' or 'portrait'
     
     'analysis_focus': [
         'Market Share and Growth',

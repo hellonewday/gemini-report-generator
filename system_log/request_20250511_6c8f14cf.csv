@@ -1,0 +1,47 @@
+Timestamp,Status,Message
+2025-05-11 13:14:53,initialize,🚀 Starting report generation process...
+2025-05-11 13:14:53,initialize,🚀 Request created: 20250511_6c8f14cf
+2025-05-11 13:14:53,config,📝 Report Configuration:
+2025-05-11 13:14:53,config,🌐 Language: English
+2025-05-11 13:14:53,config,🏦 Primary Bank: Chase Bank
+2025-05-11 13:14:53,config,"🏢 Comparison Banks: Bank of America, Wells Fargo, Citibank"
+2025-05-11 13:14:53,config,"📊 Analysis Focus: Market Share and Growth, Revenue and Profitability, Customer Acquisition Cost"
+2025-05-11 13:14:53,config,"📈 Performance Metrics: Card Issuance Volume, Transaction Volume, Revenue per Card"
+2025-05-11 13:14:53,config,"👥 Market Segments: High Net Worth Individuals, Business Professionals"
+2025-05-11 13:14:53,config,"📋 Report Sections: Executive Summary, Premium Credit Card Product Comparison, Pricing and Fee Analysis"
+2025-05-11 13:14:53,config,📏 Strict Structure: True
+2025-05-11 13:14:53,config,🧪 Demo Mode: True
+2025-05-11 13:14:53,config,"✍️ Writing Style: Tone: Professional and Analytical, Formality: High, Emphasis: Data-Driven Insights, Strategic Implications"
+2025-05-11 13:14:53,info,💲 You can view the cost metrics for this request at http://192.168.100.4:8000/api/metrics/20250511_6c8f14cf
+2025-05-11 13:14:53,info,"ℹ️ To view the system log, please visit http://192.168.100.4:8000/api/logs/20250511_6c8f14cf"
+2025-05-11 13:14:53,generating,💭 Report generation process started. This may take a while.
+2025-05-11 13:14:53,generating,📋 Generating Table of Contents...
+2025-05-11 13:14:53,generating,📋 Generating Table of Contents...
+2025-05-11 13:15:50,generating,✅ Table of Contents generated successfully
+2025-05-11 13:15:50,generating,📋 Extracting Table of Contents...
+2025-05-11 13:15:50,generating,📋 Extracting main sections from Table of Contents...
+2025-05-11 13:15:52,generating,✅ Sections extracted successfully
+2025-05-11 13:15:52,generating,📑 Report Title: Elevating the Premium Card Portfolio: A Competitive Analysis and Strategic Roadmap for Sustained Market Leadership
+2025-05-11 13:15:52,generating,🔍 Found 11 sections to process
+2025-05-11 13:15:52,generating,📝 Generating section 1: II. Introduction: The Evolving Premium Credit Card Market
+2025-05-11 13:15:52,generating,📝 Generating section 1: II. Introduction: The Evolving Premium Credit Card Market
+2025-05-11 13:16:22,generating,✅ Section 1 content generated successfully
+2025-05-11 13:16:22,polishing,✨ Polishing section 1: II. Introduction: The Evolving Premium Credit Card Market
+2025-05-11 13:16:22,polishing,✨ Polishing content...
+2025-05-11 13:16:45,polishing,✅ Content polished successfully
+2025-05-11 13:16:45,generating,✅ Section 1 completed: II. Introduction: The Evolving Premium Credit Card Market
+2025-05-11 13:16:45,saving,💾 Saving report files with base name: elevating_the_premium_card_portfolio:_a_competitive_analysis_and_strategic_roadmap_for_sustained_market_leadership_20250511_131645
+2025-05-11 13:16:45,saving,✅ Saved Markdown file: reports\english\elevating_the_premium_card_portfolio:_a_competitive_analysis_and_strategic_roadmap_for_sustained_market_leadership_20250511_131645.md
+2025-05-11 13:16:45,saving,✅ Saved HTML file: reports\english\elevating_the_premium_card_portfolio:_a_competitive_analysis_and_strategic_roadmap_for_sustained_market_leadership_20250511_131645.html
+2025-05-11 13:16:45,saving,✅ Saved PDF file: reports\english\elevating_the_premium_card_portfolio:_a_competitive_analysis_and_strategic_roadmap_for_sustained_market_leadership_20250511_131645.pdf
+2025-05-11 13:16:45,uploading,📤 Uploading PDF to Google Cloud Storage...
+2025-05-11 13:16:49,uploading,✅ PDF uploaded successfully to english folder: english/elevating_the_premium_card_portfolio:_a_competitive_analysis_and_strategic_roadmap_for_sustained_market_leadership_20250511_131645.pdf
+2025-05-11 13:16:49,url,🌐 Public URL: https://storage.googleapis.com/credit-card-reports/english/elevating_the_premium_card_portfolio%3A_a_competitive_analysis_and_strategic_roadmap_for_sustained_market_leadership_20250511_131645.pdf
+2025-05-11 13:16:49,metrics,======================================================================
+2025-05-11 13:16:49,metrics,📊 Overall Total Usage:
+2025-05-11 13:16:49,metrics,"   ├─ Total Input Tokens:  13,297"
+2025-05-11 13:16:49,metrics,"   ├─ Total Output Tokens: 6,720"
+2025-05-11 13:16:49,metrics,"   └─ Total All Tokens:   20,017"
+2025-05-11 13:16:49,metrics,   └─ Total Cost:         $0.057300
+2025-05-11 13:16:49,metrics,======================================================================
+2025-05-11 13:16:49,completed,✅ Report generation process completed!
