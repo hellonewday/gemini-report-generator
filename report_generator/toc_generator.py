@@ -1,6 +1,6 @@
 import logging
 from typing import Tuple, List, Dict, Any, Optional
-from google.genai.types import Part, Content, GenerateContentConfig, Tool, GoogleSearch
+from google.genai.types import Part, Content, GenerateContentConfig, Tool, GoogleSearch, HttpOptions
 from config import REPORT_CONFIG as DEFAULT_REPORT_CONFIG
 from utils import retry_with_backoff, log_to_request_file
 from google import genai
@@ -13,11 +13,7 @@ def setup_client_and_tools() -> Tuple['genai.Client', Tool]:
     Returns:
         Tuple[genai.Client, Tool]: The initialized client and Google Search tool.
     """
-    client = genai.Client(
-        vertexai=True,
-        project="nth-droplet-458903-p4",
-        location="global",
-    )
+    client = genai.Client(http_options=HttpOptions(api_version="v1"))
     google_search_tool = Tool(google_search=GoogleSearch())
     return client, google_search_tool
 

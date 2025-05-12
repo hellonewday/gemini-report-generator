@@ -919,3 +919,7 @@ xxxxxtt,2025-05-09 14:14:00,Content Polishing,gemini-2.5-flash-preview-04-17,482
 20250512_fa8d02fa,2025-05-12 12:03:50,Table of Contents Extraction,gemini-2.5-flash-preview-04-17,3521,134,3655,0.15,3.5,0.000528,0.000469,0.000997
 20250512_fa8d02fa,2025-05-12 12:04:42,Section 1: II. Premium Credit Card Product Comparison: Kookmin Bank vs. Competitors,gemini-2.5-pro-preview-05-06,4353,2078,6431,1.25,10.0,0.005441,0.02078,0.026221
 20250512_fa8d02fa,2025-05-12 12:05:13,Content Polishing,gemini-2.5-flash-preview-04-17,4609,3800,8409,0.15,3.5,0.000691,0.0133,0.013991
+20250512_403c7125,2025-05-12 14:03:57,Table of Contents Generation,gemini-2.5-pro-preview-05-06,1226,2358,3584,1.25,10.0,0.001533,0.02358,0.025113
+20250512_403c7125,2025-05-12 14:03:59,Table of Contents Extraction,gemini-2.5-flash-preview-04-17,3685,81,3766,0.15,3.5,0.000553,0.000284,0.000837
+20250512_403c7125,2025-05-12 14:04:56,Section 1: II. Premium Credit Card Product Comparison,gemini-2.5-pro-preview-05-06,4509,1958,6467,1.25,10.0,0.005636,0.01958,0.025216
+20250512_403c7125,2025-05-12 14:05:30,Content Polishing,gemini-2.5-flash-preview-04-17,4682,3629,8311,0.15,3.5,0.000702,0.012701,0.013403

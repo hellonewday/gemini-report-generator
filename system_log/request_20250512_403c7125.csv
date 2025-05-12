@@ -1,0 +1,44 @@
+Timestamp,Status,Message
+2025-05-12 14:03:18,initialize,🚀 Starting report generation process...
+2025-05-12 14:03:18,initialize,🚀 Request created: 20250512_403c7125
+2025-05-12 14:03:18,config,🧱 Scanning configuration parameters
+2025-05-12 14:03:18,config,🌐 Report language: English
+2025-05-12 14:03:18,config,🏦 Your bank: Kookmin Bank
+2025-05-12 14:03:18,config,"🏢 You are comparing with: KEB Hana Bank, Woori Bank, Shinhan Bank"
+2025-05-12 14:03:18,config,"📊 The report will focus on: Market Share and Growth, Revenue and Profitability, Customer Acquisition Cost, Customer Lifetime Value, Digital Transformation Impact, Competitive Positioning"
+2025-05-12 14:03:18,config,"📈 The report will track these metrics: Card Issuance Volume, Transaction Volume, Revenue per Card, Customer Retention Rate, Digital Adoption Rate, Market Share by Segment"
+2025-05-12 14:03:18,config,"👥 The report will be tailored to these market segments: High Net Worth Individuals, Business Professionals, Digital-First Customers, Loyalty Program Members"
+2025-05-12 14:03:18,config,"📋 The report will have these sections: Executive Summary, Premium Credit Card Product Comparison, Pricing and Fee Analysis, Rewards and Benefits Comparison, Digital Features and Mobile Banking, Customer Service and Support, Market Performance Metrics, Recommendations and Next Steps, Conclusion"
+2025-05-12 14:03:18,config,📏 Strict structure: True
+2025-05-12 14:03:18,config,🧪 Experimental mode: True
+2025-05-12 14:03:18,config,📄 Report orientation: portrait
+2025-05-12 14:03:18,info,💲 You can view the cost metrics for this request at http://127.0.1.1:8000/api/metrics/20250512_403c7125
+2025-05-12 14:03:18,info,"ℹ️ To view the system log, please visit http://127.0.1.1:8000/api/logs/20250512_403c7125"
+2025-05-12 14:03:19,generating,💭 Report generation process started. This may take a while.
+2025-05-12 14:03:19,generating,📋 Generating Table of Contents...
+2025-05-12 14:03:57,generating,✅ Table of Contents generated successfully
+2025-05-12 14:03:57,generating,📋 Extracting main sections from Table of Contents...
+2025-05-12 14:03:59,generating,✅ Sections extracted successfully
+2025-05-12 14:03:59,generating,📑 Report Title: Strategic Analysis of Premium Credit Card Offerings: Kookmin Bank vs. Key Competitors
+2025-05-12 14:03:59,generating,"🔍 Extracted 9 sections: I. Executive Summary, II. Premium Credit Card Product Comparison, III. Pricing and Fee Analysis, IV. Rewards and Benefits Comparison, V. Digital Features and Mobile Banking, VI. Customer Service and Support, VII. Market Performance Metrics, VIII. Recommendations and Next Steps, IX. Conclusion"
+2025-05-12 14:03:59,generating,📝 Generating section 1: II. Premium Credit Card Product Comparison
+2025-05-12 14:04:56,generating,✅ Section 1 content generated successfully
+2025-05-12 14:04:56,polishing,✨ Polishing section 1: II. Premium Credit Card Product Comparison
+2025-05-12 14:04:56,polishing,✨ Polishing content...
+2025-05-12 14:05:30,polishing,✅ Content polished successfully
+2025-05-12 14:05:30,generating,✅ Section 1 completed: II. Premium Credit Card Product Comparison
+2025-05-12 14:05:30,saving,💾 Saving report files with base name: strategic_analysis_of_premium_credit_card_offerings:_kookmin_bank_vs._key_competitors_20250512_140530
+2025-05-12 14:05:30,saving,✅ Saved Markdown file: reports/20250512_140530_20250512_403c7125_english.md
+2025-05-12 14:05:30,saving,✅ Saved HTML file: reports/20250512_140530_20250512_403c7125_english.html
+2025-05-12 14:05:31,saving,✅ Saved PDF file: reports/20250512_140530_20250512_403c7125_english.pdf
+2025-05-12 14:05:31,uploading,📤 Uploading PDF to Google Cloud Storage...
+2025-05-12 14:05:34,uploading,✅ PDF uploaded successfully to english folder: english/20250512_140530_20250512_403c7125_english.pdf
+2025-05-12 14:05:34,url,🌐 Public URL: https://storage.googleapis.com/credit-card-reports/english/20250512_140530_20250512_403c7125_english.pdf
+2025-05-12 14:05:34,metrics,======================================================================
+2025-05-12 14:05:34,metrics,📊 Overall Total Usage:
+2025-05-12 14:05:34,metrics,"   ├─ Total Input Tokens:  14,102"
+2025-05-12 14:05:34,metrics,"   ├─ Total Output Tokens: 8,026"
+2025-05-12 14:05:34,metrics,"   └─ Total All Tokens:   22,128"
+2025-05-12 14:05:34,metrics,   └─ Total Cost:         $0.064569
+2025-05-12 14:05:34,metrics,======================================================================
+2025-05-12 14:05:34,completed,✅ Report generation process completed!
