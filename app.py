@@ -1,14 +1,16 @@
 from fastapi import FastAPI, BackgroundTasks, HTTPException, Query
 from datetime import datetime
 import uuid
-import threading
+import mimetypes
+from google.cloud import storage
 import csv
 import os
-from typing import List, Dict, Optional
+from typing import List, Dict, Optional, Any
 from main1 import main
 from fastapi.middleware.cors import CORSMiddleware
 import pandas as pd
-from pydantic import BaseModel, Field, validator
+from pydantic import BaseModel, validator
+import math
 
 app = FastAPI()
 
@@ -37,7 +39,7 @@ class ReportConfig(BaseModel):
     primary_bank: str
     comparison_banks: List[str]
     demo_mode: bool
-    orientation: Optional[str] = "landscape"  # Report orientation - can be 'landscape' or 'portrait'
+    orientation: Optional[str] = "landscape" 
     credit_card_product_type: Optional[str] = "Premium Credit Cards"
     writing_style: Optional[WritingStyle] = None
     model_id: Optional[str] = "gemini-2.5-pro-preview-05-06"
@@ -320,4 +322,63 @@ async def get_statistics(
             "top_cost_requests": top_cost_requests,
             "top_token_requests": top_token_requests,
         },
+    }
+
+def human_readable_size(size_bytes: int) -> str:
+    if size_bytes == 0:
+        return "0 B"
+    size_name = ("B", "KB", "MB", "GB", "TB")
+    i = int(math.floor(math.log(size_bytes, 1024)))
+    p = math.pow(1024, i)
+    s = round(size_bytes / p, 2)
+    return f"{s} {size_name[i]}"
+
+def build_tree_from_blobs(blobs, bucket_name: str) -> Dict[str, Any]:
+    tree = {}
+
+    for blob in blobs:
+        parts = blob.name.strip("/").split("/")
+        current_level = tree
+        for part in parts[:-1]:  # Traverse folders
+            current_level = current_level.setdefault(part, {})
+
+        filename = parts[-1]
+        file_type, _ = mimetypes.guess_type(filename)
+        file_type = file_type or "application/octet-stream"
+
+        file_info = {
+            "name": filename,
+            "public_url": f"https://storage.googleapis.com/{bucket_name}/{blob.name}",
+            "type": file_type,
+            "timestamp": blob.updated.isoformat(),
+            "size": human_readable_size(blob.size)
+        }
+
+        current_level.setdefault("files", []).append(file_info)
+
+    # Recursive sort and count
+    def enrich_folder(folder: Dict[str, Any]) -> int:
+        length = 0
+        if "files" in folder:
+            folder["files"].sort(key=lambda x: x["timestamp"], reverse=True)
+            length += len(folder["files"])
+        for key, value in folder.items():
+            if isinstance(value, dict):
+                length += enrich_folder(value)
+        folder["length"] = length
+        return length
+
+    enrich_folder(tree)
+    return tree
+
+def list_bucket_objects_tree(bucket_name: str) -> Dict[str, Any]:
+    client = storage.Client()
+    blobs = client.list_blobs(bucket_name)
+    return build_tree_from_blobs(blobs, bucket_name)
+
+@app.get("/api/directory/{bucket_name}")
+def get_bucket_tree(bucket_name: str):
+    return {
+        "bucket": bucket_name,
+        "tree": list_bucket_objects_tree(bucket_name)
     }

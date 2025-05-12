@@ -908,3 +908,14 @@ xxxxxtt,2025-05-09 14:14:00,Content Polishing,gemini-2.5-flash-preview-04-17,482
 20250512_92027c46,2025-05-12 01:27:20,Content Polishing,gemini-2.5-flash-preview-04-17,2792,1739,4531,0.15,3.5,0.000419,0.006086,0.006505
 20250512_92027c46,2025-05-12 01:27:30,Section 12: XII. Conclusion,gemini-2.5-pro-preview-05-06,35550,605,36155,1.25,10.0,0.044437,0.00605,0.050487
 20250512_92027c46,2025-05-12 01:27:47,Content Polishing,gemini-2.5-flash-preview-04-17,1656,605,2261,0.15,3.5,0.000248,0.002118,0.002366
+20250512_e13f5446,2025-05-12 11:41:42,Table of Contents Generation,gemini-2.5-pro-preview-05-06,1226,1791,3017,1.25,10.0,0.001533,0.01791,0.019443
+20250512_e13f5446,2025-05-12 11:41:45,Table of Contents Extraction,gemini-2.5-flash-preview-04-17,3118,137,3255,0.15,3.5,0.000468,0.00048,0.000948
+20250512_e13f5446,2025-05-12 11:42:20,Section 1: II. Premium Credit Card Product Comparison: Kookmin Bank and Key Competitors,gemini-2.5-pro-preview-05-06,3950,1407,5357,1.25,10.0,0.004938,0.01407,0.019008
+20250512_e13f5446,2025-05-12 11:42:34,Content Polishing,gemini-2.5-flash-preview-04-17,2458,1405,3863,0.15,3.5,0.000369,0.004917,0.005286
+20250512_3f57c292,2025-05-12 11:48:21,Table of Contents Generation,gemini-2.5-pro-preview-05-06,1226,2024,3250,1.25,10.0,0.001533,0.02024,0.021773
+20250512_3f57c292,2025-05-12 11:48:23,Table of Contents Extraction,gemini-2.5-flash-preview-04-17,3351,98,3449,0.15,3.5,0.000503,0.000343,0.000846
+20250512_3f57c292,2025-05-12 11:49:11,Section 1: II. Premium Credit Card Product Comparison: Kookmin Bank and Key Competitors,gemini-2.5-pro-preview-05-06,4183,2202,6385,1.25,10.0,0.005229,0.02202,0.027249
+20250512_fa8d02fa,2025-05-12 12:03:48,Table of Contents Generation,gemini-2.5-pro-preview-05-06,1226,2194,3420,1.25,10.0,0.001533,0.02194,0.023473
+20250512_fa8d02fa,2025-05-12 12:03:50,Table of Contents Extraction,gemini-2.5-flash-preview-04-17,3521,134,3655,0.15,3.5,0.000528,0.000469,0.000997
+20250512_fa8d02fa,2025-05-12 12:04:42,Section 1: II. Premium Credit Card Product Comparison: Kookmin Bank vs. Competitors,gemini-2.5-pro-preview-05-06,4353,2078,6431,1.25,10.0,0.005441,0.02078,0.026221
+20250512_fa8d02fa,2025-05-12 12:05:13,Content Polishing,gemini-2.5-flash-preview-04-17,4609,3800,8409,0.15,3.5,0.000691,0.0133,0.013991

@@ -211,9 +211,8 @@ def save_report_files(
             'footer-right': '[page] / [topage]',
             'footer-font-size': '7',
             }
-        path_wkhtmltopdf = r'C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe'
-        config = pdfkit.configuration(wkhtmltopdf=path_wkhtmltopdf)
-        pdfkit.from_string(html_doc, pdf_file, options=pdf_options, configuration=config)
+        
+        pdfkit.from_string(html_doc, pdf_file, options=pdf_options)
         
         log_to_request_file(request_id, "saving", f"✅ Saved PDF file: {pdf_file}")
     except Exception as e:

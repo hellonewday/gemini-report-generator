@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  credit-card-comparison-report:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: credit-card-comparison-report
+    ports:
+      - "3333:3333"
+    env_file:
+      - .env
+    environment:
+      GOOGLE_APPLICATION_CREDENTIALS: /app/.config/gcloud/application_default_credentials.json
+    volumes:
+      - ${HOME}/.config/gcloud:/app/.config/gcloud
+      - ./reports:/app/reports
+      - ./system_log:/app/system_log
+    restart: unless-stopped

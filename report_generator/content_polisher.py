@@ -37,8 +37,22 @@ def polish_content(
     # Use provided config or fall back to default
     report_config = config or DEFAULT_REPORT_CONFIG
     
+    # Build localization section separately
+    language = report_config['language']
+    localization_section = ""
+
+    if language.lower() != 'english':
+        localization_section = f"""
+    ### LANGUAGE & LOCALIZATION REQUIREMENTS:
+    - Eliminate any translated-sounding or awkward phrasing
+    - Remove hybrid expressions or unnatural literal translations
+    - Make all wording feel native and idiomatic to a {language}-speaking C-level audience
+    - Ensure culturally appropriate tone and vocabulary for business contexts
+    """
+
+    # Then compose the full user prompt
     user_prompt = Part.from_text(text=f"""
-    You are a professional {report_config['language']} editor with strong business writing experience. Improve the content's narrative flow and transitions while preserving its language, tone, and cultural context. Return only the revised text—no introductions, explanations, or additional information.
+    You are a professional {language} editor with strong business writing experience. Improve the content's narrative flow and transitions while preserving its language, tone, and cultural context. Return only the revised text—no introductions, explanations, or additional information.
 
     Requirements:
     - Improve sentence flow, paragraph transitions, and overall readability
@@ -48,16 +62,11 @@ def polish_content(
     - Do not add introductions, explanations, descriptions or additional information. If the content is already well written, just return it as is.
     - Do not add any commentary or notes about the changes made
     - Keep superscript references and all HTML tags intact
-    - Ensure suitability for a {report_config['language']}-speaking audience
+    - Ensure suitability for a {language}-speaking audience
     - Maintain the original language and cultural context of the content
     - Keep all HTML tags intact, especially those related to references
-    {f"""
-    ### LANGUAGE & LOCALIZATION REQUIREMENTS:
-    - Eliminate any translated-sounding or awkward phrasing
-    - Remove hybrid expressions or unnatural literal translations
-    - Make all wording feel native and idiomatic to a {report_config['language']}-speaking C-level audience
-    - Ensure culturally appropriate tone and vocabulary for business contexts
-    """ if report_config['language'].lower() != 'english' else ''}
+
+    {localization_section}
 
     CRITICAL: 
     - Preserve ALL superscript references (e.g., <sup><a href="#ref-section-1-1">[1.1]</a></sup>) exactly as they appear, including their HTML tags and exact placement in the text

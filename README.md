@@ -50,6 +50,31 @@ A WebSocket-based application for generating credit card market analysis reports
      ```
    - The frontend will be available at `http://localhost:3000`.
 
+## Docker Deployment
+
+1. **Build and run using Docker Compose**:
+   ```bash
+   # Create a .env file with your environment variables first
+   docker-compose up -d
+   ```
+
+2. **Access the application**:
+   - The FastAPI server will be available at `http://localhost:3333`
+
+3. **Authentication with Google Cloud**:
+   - Make sure you have valid Google Cloud credentials in `${HOME}/.config/gcloud/application_default_credentials.json`
+   - Or set the `GOOGLE_API_KEY` environment variable in your `.env` file
+
+4. **View logs**:
+   ```bash
+   docker logs credit-card-comparison-report
+   ```
+
+5. **Stop the container**:
+   ```bash
+   docker-compose down
+   ```
+
 ## Usage
 
 1. Open the frontend in a browser (`http://localhost:3000`).
@@ -77,3 +102,4 @@ A WebSocket-based application for generating credit card market analysis reports
 - **WebSocket errors**: Check the FastAPI server logs and ensure the backend is running.
 - **PDF generation failures**: Verify `wkhtmltopdf` is installed and the path is correct.
 - **CORS issues**: Ensure the frontend origin (`http://localhost:3000`) is allowed in the CORS middleware.
+- **Docker issues**: Make sure your Google Cloud credentials are properly mounted and accessible from within the container.
