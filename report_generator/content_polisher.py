@@ -85,7 +85,7 @@ def polish_content(
             temperature=0.7,
             response_modalities=["TEXT"],
             safety_settings=report_config.get('safety_settings', None),
-            system_instruction=[Part.from_text(text=system_prompt)]
+            system_instruction=system_prompt
         )
     )
     text = response.text

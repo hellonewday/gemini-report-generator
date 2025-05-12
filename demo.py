@@ -1,29 +1,50 @@
-from langchain_google_vertexai import ChatVertexAI, HarmBlockThreshold, HarmCategory
-from google.cloud.aiplatform_v1beta1.types import Tool as VertexTool
-from langchain_core.messages import HumanMessage, SystemMessage, AIMessage
+from google import genai
+from google.genai import types
 
-llm = ChatVertexAI(
-    model="gemini-2.5-flash-preview-04-17",
-    project="nth-droplet-458903-p4",
-    temperature=0,
-    max_tokens=None,
-    max_retries=6,
-    stop=None,
-    safety_settings={
-        HarmCategory.HARM_CATEGORY_HATE_SPEECH: HarmBlockThreshold.BLOCK_LOW_AND_ABOVE,
-        HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE,
-        HarmCategory.HARM_CATEGORY_HARASSMENT: HarmBlockThreshold.BLOCK_LOW_AND_ABOVE,
-        HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT: HarmBlockThreshold.BLOCK_ONLY_HIGH,
-    },
-)
+def generate():
+  client = genai.Client(
+      vertexai=True,
+      project="nth-droplet-458903-p4",
+      location="us-central1",
+  )
 
-messages = [
-    SystemMessage(
-        content="You are a helpful assistant. You can answer questions and provide information."
+
+  model = "gemini-2.5-pro-preview-05-06"
+  contents = [
+    types.Content(
+      role="user",
+      parts=[
+        types.Part.from_text(text="""I need some tips to study English""")
+      ]
     ),
-    HumanMessage(
-            content="What is the capital of France?"
-    ),
-]
-ai_msg = llm.invoke(messages, tools=[VertexTool(google_search={})])
-print(ai_msg)
+  ]
+
+  generate_content_config = types.GenerateContentConfig(
+    temperature = 1,
+    top_p = 0.95,
+    seed = 0,
+    max_output_tokens = 8192,
+    response_modalities = ["TEXT"],
+    safety_settings = [types.SafetySetting(
+      category="HARM_CATEGORY_HATE_SPEECH",
+      threshold="OFF"
+    ),types.SafetySetting(
+      category="HARM_CATEGORY_DANGEROUS_CONTENT",
+      threshold="OFF"
+    ),types.SafetySetting(
+      category="HARM_CATEGORY_SEXUALLY_EXPLICIT",
+      threshold="OFF"
+    ),types.SafetySetting(
+      category="HARM_CATEGORY_HARASSMENT",
+      threshold="OFF"
+    )],
+  )
+  print(contents);
+  for chunk in client.models.generate_content_stream(
+    model = model,
+    contents = contents,
+    config = generate_content_config,
+    ):
+    print(chunk.text, end="")
+
+generate()

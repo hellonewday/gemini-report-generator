@@ -175,7 +175,7 @@ def generate_section_content(
             temperature=0,
             max_output_tokens=65535,
             response_modalities=["TEXT"],
-            system_instruction=[Part.from_text(text=system_prompt)]
+            system_instruction=system_prompt
         )
     )
     text = response.text
@@ -211,7 +211,7 @@ def generate_section_content(
         for idx, chunk in enumerate(grounding_chunks):
             web = chunk.web
             if web:
-                section_references += f'<div class="reference-item" id="ref-section-{section_number}-{idx+1}">{idx+1}. <a href="{web.uri}">{web.domain}</a></div>\n'
+                section_references += f'<div class="reference-item" id="ref-section-{section_number}-{idx+1}">{idx+1}. <a href="{web.uri}">{web.title}</a></div>\n'
             else:
                 section_references += f'<div class="reference-item" id="ref-section-{section_number}-{idx+1}">{idx+1}. No web metadata available.</div>\n'
         section_references += '</div>\n---\n\n'
